@@ -1,219 +1,988 @@
+
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Reward & Win Game</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0b0f19; color: #ffffff; padding-bottom: 75px; }
-        
-        /* Top Header */
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #131a26; border-bottom: 1px solid #1f293d; }
-        .user-info { display: flex; align-items: center; gap: 10px; }
-        .avatar { width: 40px; height: 40px; background: #6366f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; }
-        .user-details h4 { font-size: 14px; color: #f3f4f6; }
-        .user-details p { font-size: 11px; color: #9ca3af; }
-        .wallet-box { display: flex; align-items: center; background: #1f293d; padding: 6px 12px; border-radius: 20px; gap: 6px; border: 1px solid #374151; }
-        .coin-icon { color: #facc15; font-size: 16px; }
-        .coin-count { font-weight: bold; font-size: 14px; color: #facc15; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prince Gamer - Coin Game</title>
 
-        /* Banner */
-        .banner { background: linear-gradient(135deg, #3b82f6, #8b5cf6); margin: 12px; padding: 16px; border-radius: 14px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
-        .banner h2 { font-size: 16px; margin-bottom: 2px; letter-spacing: 0.5px; }
-        .banner p { font-size: 11px; opacity: 0.9; margin-bottom: 10px; }
-        .features { display: flex; gap: 12px; font-size: 10px; opacity: 0.9; }
+<style>
+*{box-sizing:border-box}
 
-        /* Section Titles */
-        .section-title { font-size: 13px; font-weight: bold; margin: 16px 16px 8px 16px; color: #e5e7eb; display: flex; justify-content: space-between; align-items: center; }
+body{
+  margin:0;
+  background:#070d1d;
+  color:white;
+  font-family:Arial,sans-serif;
+}
 
-        /* Cards Grid */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 0 16px; }
-        
-        .card { background: #131a26; border: 1px solid #1f293d; border-radius: 12px; padding: 12px; text-align: center; }
-        .card h3 { font-size: 12px; margin-top: 6px; color: #f3f4f6; }
-        .card p { font-size: 10px; color: #9ca3af; margin: 2px 0 8px 0; }
-        .btn-action { background: #10b981; color: white; border: none; padding: 5px 10px; border-radius: 15px; font-size: 10px; font-weight: bold; width: 100%; cursor: pointer; }
-        
-        /* Mini Game Card (4 grid) */
-        .mini-card { background: #131a26; border: 1px solid #1f293d; border-radius: 10px; padding: 10px 4px; text-align: center; cursor: pointer; }
-        .mini-card div { font-size: 20px; margin-bottom: 4px; }
-        .mini-card span { font-size: 10px; color: #d1d5db; font-weight: 600; }
+.app{
+  max-width:520px;
+  min-height:100vh;
+  margin:auto;
+  padding-bottom:90px;
+  background:linear-gradient(180deg,#111827,#070d1d);
+}
 
-        /* Refer Banner */
-        .refer-banner { background: linear-gradient(135deg, #059669, #10b981); margin: 12px 16px; padding: 12px 16px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; }
-        .refer-text h4 { font-size: 13px; }
-        .refer-text p { font-size: 10px; opacity: 0.9; }
-        .refer-btn { background: #facc15; color: #000; border: none; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; cursor: pointer; }
+/* HEADER */
+.header{
+  padding:16px;
+  background:#121b2b;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-        /* Withdraw Container */
-        .withdraw-container { padding: 0 16px; margin-top: 10px; }
-        .withdraw-btn { background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; width: 100%; padding: 12px; border-radius: 10px; font-weight: bold; font-size: 13px; cursor: pointer; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); }
+.user{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-        /* Modals */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; }
-        .modal-content { background: #131a26; padding: 20px; border-radius: 14px; width: 90%; max-width: 320px; text-align: center; border: 1px solid #374151; }
-        .modal-content h3 { margin-bottom: 8px; color: #facc15; font-size: 16px; }
-        .modal-content p { font-size: 12px; margin-bottom: 15px; color: #9ca3af; }
-        .modal-content input { width: 100%; padding: 10px; background: #0b0f19; border: 1px solid #374151; color: white; border-radius: 8px; margin-bottom: 12px; text-align: center; font-size: 14px; }
-        .modal-btn { background: #10b981; color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: bold; width: 100%; margin-bottom: 6px; font-size: 12px; }
-        .close-btn { background: #ef4444; }
+.avatar{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#478cff,#9a45ff);
+  display:grid;
+  place-items:center;
+  font-size:25px;
+  font-weight:bold;
+}
 
-        /* Bottom Nav */
-        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #131a26; border-top: 1px solid #1f293d; display: flex; justify-content: space-around; padding: 8px 0; z-index: 100; }
-        .nav-item { text-align: center; color: #9ca3af; font-size: 10px; text-decoration: none; cursor: pointer; }
-        .nav-item.active { color: #3b82f6; }
-        .nav-item div { font-size: 16px; margin-bottom: 2px; }
-    </style>
+.name{
+  font-weight:bold;
+  font-size:18px;
+}
+
+.id{
+  color:#8995aa;
+  font-size:13px;
+}
+
+.balance{
+  background:#1b2941;
+  border:1px solid #465878;
+  border-radius:30px;
+  padding:11px 16px;
+  color:#ffd928;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* HERO */
+.hero{
+  margin:20px;
+  padding:25px 20px;
+  border-radius:25px;
+  background:linear-gradient(120deg,#167cff,#653bf2,#a63cff);
+  box-shadow:0 10px 30px #0008;
+}
+
+.hero h1{
+  margin:0;
+  font-size:29px;
+}
+
+.hero p{
+  font-size:15px;
+}
+
+.tags{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:13px;
+  font-weight:bold;
+}
+
+/* BONUS */
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:20px;
+}
+
+.card{
+  padding:18px 10px;
+  border-radius:20px;
+  text-align:center;
+  border:1px solid #26344e;
+}
+
+.green{
+  background:linear-gradient(135deg,#075b49,#132335);
+}
+
+.blue{
+  background:linear-gradient(135deg,#193d91,#132335);
+}
+
+.big{
+  font-size:38px;
+}
+
+.card h3{
+  margin:8px 0;
+}
+
+.gray{
+  color:#919caf;
+  margin-bottom:14px;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  border:0;
+  border-radius:25px;
+  padding:12px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+  background:#12c98b;
+  color:white;
+}
+
+.blueBtn{
+  background:#247fff;
+}
+
+.yellow{
+  background:#ffd522;
+  color:#111;
+}
+
+/* GAMES */
+.section{
+  margin:20px;
+}
+
+.title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.games{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+}
+
+.game{
+  background:#121b2b;
+  border:1px solid #28354d;
+  border-radius:16px;
+  padding:14px 4px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.gameIcon{
+  font-size:30px;
+}
+
+.gameName{
+  display:block;
+  margin-top:7px;
+  font-size:12px;
+}
+
+/* REFER */
+.refer{
+  margin:20px;
+  padding:18px;
+  border-radius:20px;
+  background:linear-gradient(100deg,#08b889,#0b8d70);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.refer button{
+  width:auto;
+  padding:11px 20px;
+}
+
+/* WITHDRAW */
+.withdraw{
+  margin:20px;
+  padding:18px;
+  text-align:center;
+  border-radius:20px;
+  background:linear-gradient(100deg,#8c25ff,#bd00d8);
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(520px,100%);
+  height:75px;
+  background:#111a2b;
+  border-top:1px solid #28344b;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+
+.nav button{
+  background:none;
+  color:#9aa6ba;
+  border-radius:0;
+  font-size:12px;
+}
+
+.navIcon{
+  display:block;
+  font-size:23px;
+  margin-bottom:4px;
+}
+
+/* POPUP */
+.popup{
+  position:fixed;
+  inset:0;
+  background:#000b;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.popup.show{
+  display:flex;
+}
+
+.box{
+  width:min(430px,100%);
+  background:#111c2d;
+  border:1px solid #354764;
+  border-radius:25px;
+  padding:22px;
+  text-align:center;
+}
+
+.result{
+  padding:15px;
+  margin:15px 0;
+  border-radius:15px;
+  background:#19283e;
+  color:#66efb8;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.close{
+  background:#29364c;
+  margin-top:10px;
+}
+
+/* WHEEL */
+.wheel{
+  width:220px;
+  height:220px;
+  margin:15px auto;
+  border-radius:50%;
+  border:10px solid #202d45;
+  background:
+    conic-gradient(
+      #ff4757 0 60deg,
+      #ffd21f 60deg 120deg,
+      #2ed573 120deg 180deg,
+      #1e90ff 180deg 240deg,
+      #a55eea 240deg 300deg,
+      #ff6b81 300deg
+    );
+  display:grid;
+  place-items:center;
+  font-size:40px;
+}
+
+.spin{
+  animation:spin 1s ease;
+}
+
+@keyframes spin{
+  to{transform:rotate(720deg)}
+}
+
+.option{
+  margin:8px 0;
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Header -->
-    <div class="header">
-        <div class="user-info">
-            <div class="avatar">P</div>
-            <div class="user-details">
-                <h4>Prince_Gamer</h4>
-                <p>ID: 10001</p>
-            </div>
-        </div>
-        <div class="wallet-box">
-            <span class="coin-icon">🪙</span>
-            <span class="coin-count" id="coinDisplay">1050</span>
-        </div>
+<div class="app">
+
+<!-- HEADER -->
+<div class="header">
+
+  <div class="user">
+    <div class="avatar">P</div>
+
+    <div>
+      <div class="name">Prince_Gamer</div>
+      <div class="id">ID: 10001</div>
+    </div>
+  </div>
+
+  <div class="balance">
+    🪙 <span id="coins">1050</span>
+  </div>
+
+</div>
+
+
+<!-- HERO -->
+<div class="hero">
+
+  <h1>PLAY & EARN =<br>REAL MONEY</h1>
+
+  <p>Play Games • Complete Tasks • Earn Coins</p>
+
+  <div class="tags">
+    <span>⚡ Fast Rewards</span>
+    <span>🔒 Secure</span>
+    <span>🏆 Rewards</span>
+  </div>
+
+</div>
+
+
+<!-- BONUS -->
+<div class="two">
+
+  <div class="card green">
+
+    <div class="big">🎁</div>
+
+    <h3>DAILY BONUS</h3>
+
+    <div class="gray">
+      Claim 50 Coins
     </div>
 
-    <!-- Banner -->
-    <div class="banner">
-        <h2>PLAY • EARN • WITHDRAW</h2>
-        <p>1,000 Coins = ₹10 Real Cash Instant</p>
-        <div class="features">
-            <span>⚡ Fast Payout</span>
-            <span>🔒 100% Secure</span>
-        </div>
+    <button onclick="dailyBonus()">
+      CLAIM NOW
+    </button>
+
+  </div>
+
+
+  <div class="card blue">
+
+    <div class="big">📺</div>
+
+    <h3>WATCH ADS</h3>
+
+    <div class="gray">
+      Earn 20 Coins
     </div>
 
-    <!-- Daily Bonus & Ads -->
-    <div class="grid-2">
-        <div class="card" style="background: linear-gradient(135deg, #064e3b, #131a26);">
-            <div style="font-size: 22px;">🎁</div>
-            <h3>DAILY BONUS</h3>
-            <p>Claim 50 Coins</p>
-            <button class="btn-action" onclick="claimBonus()">CLAIM NOW</button>
-        </div>
-        <div class="card" style="background: linear-gradient(135deg, #1e3a8a, #131a26);">
-            <div style="font-size: 22px;">📺</div>
-            <h3>WATCH ADS</h3>
-            <p>Earn 20 Coins</p>
-            <button class="btn-action" style="background: #3b82f6;" onclick="watchAd()">WATCH NOW</button>
-        </div>
+    <button class="blueBtn" onclick="watchAd()">
+      WATCH NOW
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- GAMES -->
+<div class="section">
+
+  <div class="title">
+    <h2>🎮 Play & Win</h2>
+    <b>🔥 Popular</b>
+  </div>
+
+  <div class="games">
+
+    <div class="game" onclick="spinWheel()">
+      <div class="gameIcon">🎡</div>
+      <span class="gameName">Spin Wheel</span>
     </div>
 
-    <!-- Play & Win Grid -->
-    <div class="section-title">
-        <span>Play & Win</span>
-        <span style="color: #3b82f6; font-size: 11px;">Popular</span>
-    </div>
-    <div class="grid-4">
-        <div class="mini-card" onclick="openSpin()">
-            <div>🎡</div>
-            <span>Spin Wheel</span>
-        </div>
-        <div class="mini-card" onclick="openQuiz()">
-            <div>🧮</div>
-            <span>Math Quiz</span>
-        </div>
-        <div class="mini-card" onclick="openScratch()">
-            <div>🎟️</div>
-            <span>Lucky Card</span>
-        </div>
-        <div class="mini-card" onclick="window.open('https://telegram.org', '_blank')">
-            <div>📢</div>
-            <span>Telegram</span>
-        </div>
+    <div class="game" onclick="mathQuiz()">
+      <div class="gameIcon">🧮</div>
+      <span class="gameName">Math Quiz</span>
     </div>
 
-    <!-- Refer & Earn Banner -->
-    <div class="refer-banner">
-        <div class="refer-text">
-            <h4>REFER & EARN</h4>
-            <p>Get +100 Coins per Friend</p>
-        </div>
-        <button class="refer-btn" onclick="shareApp()">INVITE</button>
+    <div class="game" onclick="luckyCard()">
+      <div class="gameIcon">🎟️</div>
+      <span class="gameName">Lucky Card</span>
     </div>
 
-    <!-- Withdraw Button -->
-    <div class="withdraw-container">
-        <button class="withdraw-btn" onclick="openWithdraw()">💰 WITHDRAW REAL CASH (₹10)</button>
+    <div class="game" onclick="telegram()">
+      <div class="gameIcon">📣</div>
+      <span class="gameName">Telegram</span>
     </div>
 
-    <!-- Quiz Modal -->
-    <div class="modal" id="quizModal">
-        <div class="modal-content">
-            <h3>Math Quiz Game</h3>
-            <p id="quizQuestion">Solve: 5 + 3 = ?</p>
-            <input type="number" id="quizAnswer" placeholder="Enter Answer">
-            <button class="modal-btn" onclick="submitQuiz()">Submit & Win 50 Coins</button>
-            <button class="modal-btn close-btn" onclick="closeModal('quizModal')">Close</button>
-        </div>
+  </div>
+
+</div>
+
+
+<!-- REFER -->
+<div class="refer">
+
+  <div>
+    <b style="font-size:18px">
+      REFER & EARN
+    </b>
+
+    <br>
+
+    Get +100 Coins per Friend
+  </div>
+
+  <button class="yellow" onclick="refer()">
+    INVITE
+  </button>
+
+</div>
+
+
+<!-- WITHDRAW -->
+<div class="withdraw" onclick="withdraw()">
+  💰 WITHDRAW REAL CASH (₹10)
+</div>
+
+
+</div>
+
+
+<!-- NAVIGATION -->
+<div class="nav">
+
+  <button>
+    <span class="navIcon">🏠</span>
+    Home
+  </button>
+
+  <button onclick="spinWheel()">
+    <span class="navIcon">🎮</span>
+    Games
+  </button>
+
+  <button onclick="withdraw()">
+    <span class="navIcon">💰</span>
+    Wallet
+  </button>
+
+  <button onclick="profile()">
+    <span class="navIcon">👤</span>
+    Profile
+  </button>
+
+</div>
+
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+
+  <div class="box" id="box"></div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   COIN SYSTEM
+========================= */
+
+let coins =
+  Number(localStorage.getItem("coins")) || 1050;
+
+document.getElementById("coins").innerText = coins;
+
+
+function saveCoins(){
+
+  localStorage.setItem(
+    "coins",
+    coins
+  );
+
+  document.getElementById("coins").innerText =
+    coins;
+}
+
+
+function addCoins(amount){
+
+  coins += amount;
+
+  saveCoins();
+
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+function openPopup(html){
+
+  document.getElementById("box").innerHTML =
+    html;
+
+  document.getElementById("popup")
+    .classList.add("show");
+
+}
+
+
+function closePopup(){
+
+  document.getElementById("popup")
+    .classList.remove("show");
+
+}
+
+
+/* =========================
+   DAILY BONUS
+========================= */
+
+function dailyBonus(){
+
+  let today =
+    new Date().toDateString();
+
+  let claimed =
+    localStorage.getItem("dailyBonus");
+
+  if(claimed === today){
+
+    openPopup(`
+      <h2>🎁 Daily Bonus</h2>
+
+      <p>
+        Aaj ka bonus already claim
+        kar chuke ho.
+      </p>
+
+      <button class="close"
+        onclick="closePopup()">
+        CLOSE
+      </button>
+    `);
+
+    return;
+  }
+
+
+  addCoins(50);
+
+  localStorage.setItem(
+    "dailyBonus",
+    today
+  );
+
+
+  openPopup(`
+    <h2>🎉 Bonus Claimed!</h2>
+
+    <div class="result">
+      +50 Coins 🪙
     </div>
 
-    <!-- Spin Modal -->
-    <div class="modal" id="spinModal">
-        <div class="modal-content">
-            <h3>Spin Wheel</h3>
-            <p id="spinResult">Click below to spin and win coins!</p>
-            <button class="modal-btn" onclick="doSpin()">SPIN NOW</button>
-            <button class="modal-btn close-btn" onclick="closeModal('spinModal')">Close</button>
-        </div>
+    <button onclick="closePopup()">
+      CONTINUE
+    </button>
+  `);
+
+}
+
+
+/* =========================
+   WATCH AD DEMO
+========================= */
+
+function watchAd(){
+
+  addCoins(20);
+
+  openPopup(`
+    <h2>📺 Ad Reward</h2>
+
+    <p>
+      Demo ad complete.
+    </p>
+
+    <div class="result">
+      +20 Coins 🪙
     </div>
 
-    <!-- Scratch Modal -->
-    <div class="modal" id="scratchModal">
-        <div class="modal-content">
-            <h3>Lucky Card</h3>
-            <p id="scratchResult">Tap to reveal your mystery reward!</p>
-            <button class="modal-btn" onclick="doScratch()">REVEAL CARD</button>
-            <button class="modal-btn close-btn" onclick="closeModal('scratchModal')">Close</button>
-        </div>
+    <button onclick="closePopup()">
+      CONTINUE
+    </button>
+  `);
+
+}
+
+
+/* =========================
+   SPIN WHEEL
+========================= */
+
+function spinWheel(){
+
+  openPopup(`
+
+    <h2>🎡 Spin Wheel</h2>
+
+    <div
+      class="wheel"
+      id="wheel">
+      🪙
     </div>
 
-    <!-- Withdraw Modal -->
-    <div class="modal" id="withdrawModal">
-        <div class="modal-content">
-            <h3>Withdraw Cash (₹10)</h3>
-            <p>Enter your UPI ID or Paytm Number</p>
-            <input type="text" id="upiInput" placeholder="e.g. 9876543210@paytm">
-            <button class="modal-btn" onclick="processWithdraw()">Withdraw Now</button>
-            <button class="modal-btn close-btn" onclick="closeModal('withdrawModal')">Close</button>
-        </div>
+    <p>
+      Spin complete hone par
+      +10 Coins milenge.
+    </p>
+
+    <button onclick="doSpin()">
+      SPIN +10
+    </button>
+
+    <button
+      class="close"
+      onclick="closePopup()">
+      CLOSE
+    </button>
+
+  `);
+
+}
+
+
+function doSpin(){
+
+  let wheel =
+    document.getElementById("wheel");
+
+  wheel.classList.add("spin");
+
+
+  setTimeout(function(){
+
+    addCoins(10);
+
+    openPopup(`
+
+      <h2>🎉 Congratulations!</h2>
+
+      <div class="result">
+        +10 Coins 🪙
+      </div>
+
+      <p>
+        Current Balance:
+        ${coins} Coins
+      </p>
+
+      <button onclick="closePopup()">
+        CONTINUE
+      </button>
+
+    `);
+
+  },1000);
+
+}
+
+
+/* =========================
+   MATH QUIZ
+========================= */
+
+function mathQuiz(){
+
+  openPopup(`
+
+    <h2>🧮 Math Quiz</h2>
+
+    <p>
+      What is 7 × 8?
+    </p>
+
+    <button
+      class="option"
+      onclick="answerMath(56)">
+      56
+    </button>
+
+    <button
+      class="option"
+      onclick="answerMath(54)">
+      54
+    </button>
+
+    <button
+      class="option"
+      onclick="answerMath(64)">
+      64
+    </button>
+
+    <button
+      class="option"
+      onclick="answerMath(48)">
+      48
+    </button>
+
+  `);
+
+}
+
+
+function answerMath(answer){
+
+  if(answer === 56){
+
+    addCoins(10);
+
+    openPopup(`
+
+      <h2>✅ Correct!</h2>
+
+      <div class="result">
+        +10 Coins 🪙
+      </div>
+
+      <p>
+        Balance: ${coins} Coins
+      </p>
+
+      <button onclick="closePopup()">
+        CONTINUE
+      </button>
+
+    `);
+
+  }else{
+
+    openPopup(`
+
+      <h2>❌ Wrong Answer</h2>
+
+      <p>
+        Try again!
+      </p>
+
+      <button onclick="mathQuiz()">
+        TRY AGAIN
+      </button>
+
+    `);
+
+  }
+
+}
+
+
+/* =========================
+   LUCKY CARD
+========================= */
+
+function luckyCard(){
+
+  openPopup(`
+
+    <h2>🎟️ Lucky Card</h2>
+
+    <p>
+      Ek card choose karo.
+    </p>
+
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+    ">
+
+      <button onclick="chooseCard()">
+        🃏
+      </button>
+
+      <button onclick="chooseCard()">
+        🃏
+      </button>
+
+      <button onclick="chooseCard()">
+        🃏
+      </button>
+
     </div>
 
-    <!-- Bottom Navigation Bar -->
-    <div class="bottom-nav">
-        <a class="nav-item active" onclick="switchNav(this)">
-            <div>🏠</div>
-            <span>Home</span>
-        </a>
-        <a class="nav-item" onclick="openQuiz(); switchNav(this)">
-            <div>🎮</div>
-            <span>Games</span>
-        </a>
-        <a class="nav-item" onclick="openWithdraw(); switchNav(this)">
-            <div>💰</div>
-            <span>Wallet</span>
-        </a>
-        <a class="nav-item" onclick="alert('Profile ID: 10001\nTotal Coins: ' + coins); switchNav(this)">
-            <div>👤</div>
-            <span>Profile</span>
-        </a>
+    <button
+      class="close"
+      onclick="closePopup()">
+      CLOSE
+    </button>
+
+  `);
+
+}
+
+
+function chooseCard(){
+
+  addCoins(10);
+
+  openPopup(`
+
+    <h2>🎉 Lucky Card!</h2>
+
+    <div class="result">
+      +10 Coins 🪙
     </div>
 
-    <script>
-        let coins = localStorage.getItem('userCoins') ? parseInt(localStorage.getItem('userCoins')) : 1050;
-        updateCoins();
+    <button onclick="closePopup()">
+      CONTINUE
+    </button>
 
-        function updateCoins() {
-            document.getElementById('coinDisplay').innerText = coins;
+  `);
 
+}
+
+
+/* =========================
+   REFERRAL
+========================= */
+
+function refer(){
+
+  openPopup(`
+
+    <h2>👥 Refer & Earn</h2>
+
+    <p>
+      Har friend join karne par
+      +100 Coins.
+    </p>
+
+    <div class="result">
+      Referral Reward: +100 🪙
+    </div>
+
+    <button onclick="closePopup()">
+      CLOSE
+    </button>
+
+  `);
+
+}
+
+
+/* =========================
+   TELEGRAM
+========================= */
+
+function telegram(){
+
+  openPopup(`
+
+    <h2>📣 Telegram</h2>
+
+    <p>
+      Yahan apne Telegram channel
+      ka link laga sakte ho.
+    </p>
+
+    <button onclick="closePopup()">
+      CLOSE
+    </button>
+
+  `);
+
+}
+
+
+/* =========================
+   WITHDRAW
+========================= */
+
+function withdraw(){
+
+  openPopup(`
+
+    <h2>💰 Withdraw</h2>
+
+    <p>
+      Your Balance:
+    </p>
+
+    <div class="result">
+      🪙 ${coins} Coins
+    </div>
+
+    <p>
+      1000 Coins = ₹10
+    </p>
+
+    <p style="color:#8d99ad">
+      Ye front-end demo hai.
+      Real payment ke liye secure
+      backend aur payment provider
+      connect karna hoga.
+    </p>
+
+    <button
+      class="close"
+      onclick="closePopup()">
+      CLOSE
+    </button>
+
+  `);
+
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function profile(){
+
+  openPopup(`
+
+    <h2>👤 Profile</h2>
+
+    <p>
+      <b>Prince_Gamer</b>
+    </p>
+
+    <p>
+      ID: 10001
+    </p>
+
+    <div class="result">
+      🪙 ${coins} Coins
+    </div>
+
+    <button onclick="closePopup()">
+      CLOSE
+    </button>
+
+  `);
+
+}
+
+</script>
+
+</body>
+</html>
