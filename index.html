@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>रिवॉर्ड गेम प्रोफाइल</title>
+ <style>
+ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f0f2f5; color: #333; }
+ .header { background: #4a90e2; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+ .profile-section { display: flex; align-items: center; }
+ .profile-pic { width: 60px; height: 60px; background-color: #ccc; border-radius: 50%; margin-right: 15px; border: 2px solid white; }
+ .user-name { font-size: 1.2rem; font-weight: bold; }
+ .coin-section { background: #ffcc00; color: #333; padding: 10px 20px; border-radius: 25px; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; }
+ .coin-icon { margin-right: 8px; }
+ .menu-grid { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+ .menu-card { background: white; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; cursor: pointer; }
+ .menu-card:active { transform: scale(0.95); }
+ .menu-card div { font-size: 1.5rem; margin-bottom: 10px; }
+ .menu-card span { font-weight: 600; color: #555; }
+ </style>
+</head>
+<body>
+ <header class="header">
+ <div class="profile-section">
+ <div class="profile-pic"></div>
+ <div class="user-name">खिलाड़ी का नाम</div>
+ </div>
+ <div class="coin-section">
+ <span class="coin-icon">🪙</span> 1,000 कॉइन्स
+ </div>
+ </header>
+
+ <main class="menu-grid">
+ <div class="menu-card" onclick="alert('विड्रॉल ऑप्शन खुला')">
+ <div>💰</div>
+ <span>विड्रॉल</span>
+ </div>
+ <div class="menu-card" onclick="alert('डेली बोनस ऑप्शन खुला')">
+ <div>🎁</div>
+ <span>डेली बोनस</span>
+ </div>
+ <div class="menu-card" onclick="alert('प्रोमो कोड ऑप्शन खुला')">
+ <div>🎟️</div>
+ <span>प्रोमो कोड</span>
+ </div>
+ <div class="menu-card" onclick="alert('टेलीग्राम ऑप्शन खुला')">
+ <div>📱</div>
+ <span>टेलीग्राम</span>
+ </div>
+ </main>
+</body>
+</html>
