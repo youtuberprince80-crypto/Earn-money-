@@ -1,321 +1,391 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Prince Gamer - Coin Game</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Prince Gamer - Play & Win</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
+*{
+  box-sizing:border-box;
   margin:0;
-  background:#070d1d;
-  color:white;
+  padding:0;
   font-family:Arial,sans-serif;
 }
 
-.app{
-  max-width:520px;
+body{
+  background:linear-gradient(145deg,#050b22,#101936,#160d35);
+  color:white;
   min-height:100vh;
+}
+
+button{
+  border:0;
+  cursor:pointer;
+}
+
+.app{
+  max-width:720px;
   margin:auto;
+  min-height:100vh;
   padding-bottom:90px;
-  background:linear-gradient(180deg,#111827,#070d1d);
 }
 
 /* HEADER */
 .header{
-  padding:16px;
-  background:#121b2b;
+  padding:25px 22px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
+  background:#101a32;
 }
 
-.user{
+.profile{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:14px;
 }
 
 .avatar{
-  width:52px;
-  height:52px;
+  width:70px;
+  height:70px;
   border-radius:50%;
-  background:linear-gradient(135deg,#478cff,#9a45ff);
-  display:grid;
-  place-items:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  background:linear-gradient(135deg,#247cff,#913cff);
+  box-shadow:0 0 25px #563cff;
+}
+
+.name{
   font-size:25px;
   font-weight:bold;
 }
 
-.name{
-  font-weight:bold;
-  font-size:18px;
-}
-
 .id{
-  color:#8995aa;
-  font-size:13px;
+  color:#aab2c9;
+  margin-top:5px;
 }
 
-.balance{
-  background:#1b2941;
-  border:1px solid #465878;
-  border-radius:30px;
-  padding:11px 16px;
-  color:#ffd928;
-  font-size:18px;
+.coins{
+  padding:14px 20px;
+  border-radius:35px;
+  background:#182743;
+  border:1px solid #38517c;
+  color:#ffd52e;
+  font-size:24px;
   font-weight:bold;
 }
 
 /* HERO */
 .hero{
-  margin:20px;
-  padding:25px 20px;
-  border-radius:25px;
-  background:linear-gradient(120deg,#167cff,#653bf2,#a63cff);
-  box-shadow:0 10px 30px #0008;
+  margin:35px 25px 25px;
+  padding:35px 28px;
+  border-radius:35px;
+  background:linear-gradient(120deg,#087cff,#4929ed,#a91cff);
+  box-shadow:0 10px 40px #3921aa66;
 }
 
 .hero h1{
-  margin:0;
-  font-size:29px;
+  font-size:43px;
+  line-height:1.1;
+}
+
+.hero h1 span{
+  color:#ffd42f;
 }
 
 .hero p{
-  font-size:15px;
+  font-size:19px;
+  margin-top:20px;
 }
 
-.tags{
+.features{
   display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  font-size:13px;
+  gap:18px;
+  margin-top:25px;
   font-weight:bold;
 }
 
-/* BONUS */
-.two{
+/* CARDS */
+.offers{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin:20px;
+  gap:18px;
+  padding:0 25px;
 }
 
-.card{
-  padding:18px 10px;
-  border-radius:20px;
+.offer{
+  border-radius:28px;
+  padding:25px 15px;
   text-align:center;
-  border:1px solid #26344e;
+  background:linear-gradient(145deg,#075a55,#112d43);
+  border:1px solid #177e75;
 }
 
-.green{
-  background:linear-gradient(135deg,#075b49,#132335);
+.offer:nth-child(2){
+  background:linear-gradient(145deg,#123b8d,#102849);
 }
 
-.blue{
-  background:linear-gradient(135deg,#193d91,#132335);
+.offer-icon{
+  font-size:55px;
 }
 
-.big{
-  font-size:38px;
+.offer h2{
+  margin:12px 0;
 }
 
-.card h3{
-  margin:8px 0;
+.offer p{
+  color:#b8c0d2;
+  font-size:18px;
 }
 
-.gray{
-  color:#919caf;
-  margin-bottom:14px;
-}
-
-/* BUTTON */
-button{
+.btn{
+  margin-top:18px;
   width:100%;
-  border:0;
-  border-radius:25px;
-  padding:12px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  background:#12c98b;
+  padding:15px;
+  border-radius:30px;
   color:white;
+  font-size:17px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#12d58c,#00aefb);
 }
 
-.blueBtn{
-  background:#247fff;
-}
-
-.yellow{
-  background:#ffd522;
-  color:#111;
-}
-
-/* GAMES */
+/* SECTION */
 .section{
-  margin:20px;
+  padding:30px 25px;
 }
 
-.title{
+.section-title{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  margin-bottom:20px;
+}
+
+.section-title h2{
+  font-size:32px;
 }
 
 .games{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:9px;
+  gap:12px;
 }
 
 .game{
-  background:#121b2b;
-  border:1px solid #28354d;
-  border-radius:16px;
-  padding:14px 4px;
+  padding:18px 5px;
+  min-height:150px;
+  border-radius:22px;
   text-align:center;
-  cursor:pointer;
+  background:#111b32;
+  border:1px solid #283957;
+  transition:.2s;
 }
 
-.gameIcon{
-  font-size:30px;
+.game:hover{
+  transform:translateY(-4px);
+  border-color:#7b35ff;
 }
 
-.gameName{
+.game-icon{
+  font-size:48px;
+  margin-bottom:12px;
+}
+
+.game-name{
+  font-size:15px;
+}
+
+/* PAGES */
+.page{
+  display:none;
+  padding:25px;
+}
+
+.page.active{
   display:block;
-  margin-top:7px;
-  font-size:12px;
 }
 
-/* REFER */
-.refer{
-  margin:20px;
-  padding:18px;
+.box{
+  background:#111b32;
+  border:1px solid #2b3b5c;
+  border-radius:25px;
+  padding:25px;
+  margin-bottom:18px;
+}
+
+.box h2{
+  margin-bottom:15px;
+}
+
+.back{
+  margin-bottom:20px;
+  background:#273656;
+  color:white;
+  padding:10px 18px;
   border-radius:20px;
-  background:linear-gradient(100deg,#08b889,#0b8d70);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
 }
 
-.refer button{
-  width:auto;
-  padding:11px 20px;
-}
-
-/* WITHDRAW */
-.withdraw{
-  margin:20px;
-  padding:18px;
+/* WHEEL */
+.wheel-wrap{
   text-align:center;
-  border-radius:20px;
-  background:linear-gradient(100deg,#8c25ff,#bd00d8);
-  font-size:18px;
+}
+
+.wheel{
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  margin:25px auto;
+  border:12px solid #202c4d;
+  background:conic-gradient(
+    #ff3d71 0deg 60deg,
+    #187cff 60deg 120deg,
+    #ffd129 120deg 180deg,
+    #7b35ff 180deg 240deg,
+    #10cf88 240deg 300deg,
+    #ff7b22 300deg 360deg
+  );
+  position:relative;
+  transition:transform 4s cubic-bezier(.1,.8,.2,1);
+  box-shadow:0 0 35px #7a35ff88;
+}
+
+.wheel::after{
+  content:"10  •  15  •  10  •  15  •  10  •  15";
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
   font-weight:bold;
-  cursor:pointer;
+  font-size:17px;
+  text-shadow:0 2px 5px black;
+  transform:rotate(-15deg);
+}
+
+.pointer{
+  font-size:40px;
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+}
+
+.spin-btn{
+  padding:17px 45px;
+  border-radius:35px;
+  background:linear-gradient(90deg,#8d2cff,#ec25b8);
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+}
+
+/* QUIZ */
+.question{
+  font-size:23px;
+  margin:20px 0;
+}
+
+.option{
+  display:block;
+  width:100%;
+  padding:16px;
+  margin:10px 0;
+  border-radius:15px;
+  background:#1b2947;
+  color:white;
+  text-align:left;
+  font-size:17px;
+}
+
+.option:hover{
+  background:#3b2b78;
+}
+
+/* RESULT */
+.result{
+  margin-top:15px;
+  padding:15px;
+  border-radius:15px;
+  background:#172b42;
+}
+
+/* WALLET */
+.balance-big{
+  text-align:center;
+  font-size:48px;
+  color:#ffd52f;
+  margin:20px 0;
+}
+
+.notice{
+  padding:15px;
+  border-radius:15px;
+  background:#332b12;
+  color:#ffd968;
+  line-height:1.5;
 }
 
 /* NAV */
 .nav{
   position:fixed;
   bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(520px,100%);
-  height:75px;
-  background:#111a2b;
-  border-top:1px solid #28344b;
+  left:0;
+  right:0;
+  max-width:720px;
+  margin:auto;
+  height:85px;
+  background:#111b31;
+  border-top:1px solid #293858;
   display:grid;
   grid-template-columns:repeat(4,1fr);
+  z-index:20;
 }
 
 .nav button{
   background:none;
-  color:#9aa6ba;
-  border-radius:0;
-  font-size:12px;
-}
-
-.navIcon{
-  display:block;
-  font-size:23px;
-  margin-bottom:4px;
-}
-
-/* POPUP */
-.popup{
-  position:fixed;
-  inset:0;
-  background:#000b;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.popup.show{
-  display:flex;
-}
-
-.box{
-  width:min(430px,100%);
-  background:#111c2d;
-  border:1px solid #354764;
-  border-radius:25px;
-  padding:22px;
-  text-align:center;
-}
-
-.result{
-  padding:15px;
-  margin:15px 0;
-  border-radius:15px;
-  background:#19283e;
-  color:#66efb8;
-  font-size:22px;
+  color:#9ca8bd;
+  font-size:14px;
   font-weight:bold;
 }
 
-.close{
-  background:#29364c;
-  margin-top:10px;
+.nav button span{
+  display:block;
+  font-size:30px;
+  margin-bottom:3px;
 }
 
-/* WHEEL */
-.wheel{
-  width:220px;
-  height:220px;
-  margin:15px auto;
-  border-radius:50%;
-  border:10px solid #202d45;
-  background:
-    conic-gradient(
-      #ff4757 0 60deg,
-      #ffd21f 60deg 120deg,
-      #2ed573 120deg 180deg,
-      #1e90ff 180deg 240deg,
-      #a55eea 240deg 300deg,
-      #ff6b81 300deg
-    );
-  display:grid;
-  place-items:center;
-  font-size:40px;
+.nav button.active{
+  color:#24a6ff;
 }
 
-.spin{
-  animation:spin 1s ease;
-}
+/* RESPONSIVE */
+@media(max-width:500px){
+  .hero h1{
+    font-size:34px;
+  }
 
-@keyframes spin{
-  to{transform:rotate(720deg)}
-}
+  .games{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-.option{
-  margin:8px 0;
+  .features{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .coins{
+    font-size:18px;
+    padding:12px;
+  }
+
+  .name{
+    font-size:21px;
+  }
 }
 </style>
 </head>
@@ -324,10 +394,9 @@ button{
 
 <div class="app">
 
-<!-- HEADER -->
-<div class="header">
+<header class="header">
 
-  <div class="user">
+  <div class="profile">
     <div class="avatar">P</div>
 
     <div>
@@ -336,162 +405,255 @@ button{
     </div>
   </div>
 
-  <div class="balance">
-    🪙 <span id="coins">1050</span>
+  <div class="coins">
+    🪙 <span id="coinBalance">1140</span>
   </div>
 
-</div>
+</header>
 
 
-<!-- HERO -->
-<div class="hero">
+<!-- HOME -->
 
-  <h1>PLAY & EARN =<br>REAL MONEY</h1>
+<main id="homePage">
 
-  <p>Play Games • Complete Tasks • Earn Coins</p>
+<section class="hero">
+  <h1>
+    PLAY & EARN =<br>
+    <span>DEMO COINS</span>
+  </h1>
 
-  <div class="tags">
-    <span>⚡ Fast Rewards</span>
+  <p>
+    Play Games • Complete Tasks • Collect Coins
+  </p>
+
+  <div class="features">
+    <span>⚡ Fast Games</span>
     <span>🔒 Secure</span>
     <span>🏆 Rewards</span>
   </div>
+</section>
 
-</div>
 
+<section class="offers">
 
-<!-- BONUS -->
-<div class="two">
-
-  <div class="card green">
-
-    <div class="big">🎁</div>
-
-    <h3>DAILY BONUS</h3>
-
-    <div class="gray">
-      Claim 50 Coins
-    </div>
-
-    <button onclick="dailyBonus()">
+  <div class="offer">
+    <div class="offer-icon">🎁</div>
+    <h2>DAILY BONUS</h2>
+    <p>Claim 50 Coins</p>
+    <button class="btn" onclick="dailyBonus()">
       CLAIM NOW
     </button>
-
   </div>
 
-
-  <div class="card blue">
-
-    <div class="big">📺</div>
-
-    <h3>WATCH ADS</h3>
-
-    <div class="gray">
-      Earn 20 Coins
-    </div>
-
-    <button class="blueBtn" onclick="watchAd()">
+  <div class="offer">
+    <div class="offer-icon">📺</div>
+    <h2>WATCH ADS</h2>
+    <p>Demo: Earn 20 Coins</p>
+    <button class="btn" onclick="watchAd()">
       WATCH NOW
     </button>
-
   </div>
 
-</div>
+</section>
 
 
-<!-- GAMES -->
-<div class="section">
+<section class="section">
 
-  <div class="title">
+  <div class="section-title">
     <h2>🎮 Play & Win</h2>
     <b>🔥 Popular</b>
   </div>
 
   <div class="games">
 
-    <div class="game" onclick="spinWheel()">
-      <div class="gameIcon">🎡</div>
-      <span class="gameName">Spin Wheel</span>
+    <div class="game" onclick="openPage('wheelPage')">
+      <div class="game-icon">🎡</div>
+      <div class="game-name">Spin Wheel</div>
     </div>
 
-    <div class="game" onclick="mathQuiz()">
-      <div class="gameIcon">🧮</div>
-      <span class="gameName">Math Quiz</span>
+    <div class="game" onclick="openPage('quizPage')">
+      <div class="game-icon">🧮</div>
+      <div class="game-name">Math Quiz</div>
     </div>
 
-    <div class="game" onclick="luckyCard()">
-      <div class="gameIcon">🎟️</div>
-      <span class="gameName">Lucky Card</span>
+    <div class="game" onclick="openPage('cardPage')">
+      <div class="game-icon">🃏</div>
+      <div class="game-name">Lucky Card</div>
     </div>
 
-    <div class="game" onclick="telegram()">
-      <div class="gameIcon">📣</div>
-      <span class="gameName">Telegram</span>
+    <div class="game" onclick="openTelegram()">
+      <div class="game-icon">📢</div>
+      <div class="game-name">Telegram</div>
     </div>
 
   </div>
 
-</div>
+</section>
+
+</main>
 
 
-<!-- REFER -->
-<div class="refer">
+<!-- WHEEL -->
 
-  <div>
-    <b style="font-size:18px">
-      REFER & EARN
-    </b>
+<section id="wheelPage" class="page">
 
-    <br>
+<button class="back" onclick="goHome()">← Home</button>
 
-    Get +100 Coins per Friend
-  </div>
+<div class="box wheel-wrap">
 
-  <button class="yellow" onclick="refer()">
-    INVITE
-  </button>
+<h2>🎡 Spin Wheel</h2>
 
-</div>
+<p>
+Spin करके demo coins प्राप्त करें
+</p>
 
+<div style="position:relative">
 
-<!-- WITHDRAW -->
-<div class="withdraw" onclick="withdraw()">
-  💰 WITHDRAW REAL CASH (₹10)
-</div>
+<div class="pointer">🔻</div>
 
+<div id="wheel" class="wheel"></div>
 
 </div>
 
+<button class="spin-btn" onclick="spinWheel()">
+SPIN NOW
+</button>
 
-<!-- NAVIGATION -->
-<div class="nav">
-
-  <button>
-    <span class="navIcon">🏠</span>
-    Home
-  </button>
-
-  <button onclick="spinWheel()">
-    <span class="navIcon">🎮</span>
-    Games
-  </button>
-
-  <button onclick="withdraw()">
-    <span class="navIcon">💰</span>
-    Wallet
-  </button>
-
-  <button onclick="profile()">
-    <span class="navIcon">👤</span>
-    Profile
-  </button>
+<div id="spinResult" class="result">
+Result यहाँ दिखाई देगा
+</div>
 
 </div>
 
+</section>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
 
-  <div class="box" id="box"></div>
+<!-- QUIZ -->
+
+<section id="quizPage" class="page">
+
+<button class="back" onclick="goHome()">← Home</button>
+
+<div class="box">
+
+<h2>🧮 Math Quiz</h2>
+
+<div id="quizArea"></div>
+
+</div>
+
+</section>
+
+
+<!-- CARD -->
+
+<section id="cardPage" class="page">
+
+<button class="back" onclick="goHome()">← Home</button>
+
+<div class="box" style="text-align:center">
+
+<h2>🃏 Lucky Card</h2>
+
+<p>एक card चुनो और demo coins पाओ!</p>
+
+<div id="cards"
+style="
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:25px;
+">
+
+<button class="option" onclick="pickCard(this)">🃏</button>
+<button class="option" onclick="pickCard(this)">🃏</button>
+<button class="option" onclick="pickCard(this)">🃏</button>
+
+</div>
+
+<div id="cardResult" class="result">
+Card चुनें
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WALLET -->
+
+<section id="walletPage" class="page">
+
+<div class="box">
+
+<h2>💰 Wallet</h2>
+
+<div class="balance-big">
+🪙 <span id="walletCoins">1140</span>
+</div>
+
+<div class="notice">
+यह एक demo game wallet है। इसमें दिखाई गई coins
+वास्तविक पैसे नहीं हैं और इन्हें UPI/cash में
+withdraw नहीं किया जा सकता।
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROFILE -->
+
+<section id="profilePage" class="page">
+
+<div class="box">
+
+<h2>👤 Profile</h2>
+
+<p style="margin:12px 0">
+<b>Name:</b> Prince_Gamer
+</p>
+
+<p style="margin:12px 0">
+<b>User ID:</b> 10001
+</p>
+
+<p style="margin:12px 0">
+<b>Demo Coins:</b>
+<span id="profileCoins">1140</span>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- NAV -->
+
+<nav class="nav">
+
+<button id="homeNav" class="active" onclick="goHome()">
+<span>🏠</span>
+Home
+</button>
+
+<button onclick="openPage('wheelPage')">
+<span>🎮</span>
+Games
+</button>
+
+<button onclick="openPage('walletPage')">
+<span>💰</span>
+Wallet
+</button>
+
+<button onclick="openPage('profilePage')">
+<span>👤</span>
+Profile
+</button>
+
+</nav>
 
 </div>
 
@@ -503,51 +665,46 @@ button{
 ========================= */
 
 let coins =
-  Number(localStorage.getItem("coins")) || 1050;
+Number(localStorage.getItem("demoCoins")) || 1140;
 
-document.getElementById("coins").innerText = coins;
+function updateCoins(){
 
+  document.getElementById("coinBalance").innerText=coins;
+  document.getElementById("walletCoins").innerText=coins;
+  document.getElementById("profileCoins").innerText=coins;
 
-function saveCoins(){
-
-  localStorage.setItem(
-    "coins",
-    coins
-  );
-
-  document.getElementById("coins").innerText =
-    coins;
+  localStorage.setItem("demoCoins",coins);
 }
-
 
 function addCoins(amount){
 
   coins += amount;
-
-  saveCoins();
+  updateCoins();
 
 }
 
 
 /* =========================
-   POPUP
+   NAVIGATION
 ========================= */
 
-function openPopup(html){
+function openPage(id){
 
-  document.getElementById("box").innerHTML =
-    html;
+  document.getElementById("homePage").style.display="none";
 
-  document.getElementById("popup")
-    .classList.add("show");
+  document.querySelectorAll(".page")
+  .forEach(p=>p.classList.remove("active"));
+
+  document.getElementById(id).classList.add("active");
 
 }
 
+function goHome(){
 
-function closePopup(){
+  document.getElementById("homePage").style.display="block";
 
-  document.getElementById("popup")
-    .classList.remove("show");
+  document.querySelectorAll(".page")
+  .forEach(p=>p.classList.remove("active"));
 
 }
 
@@ -558,51 +715,21 @@ function closePopup(){
 
 function dailyBonus(){
 
-  let today =
-    new Date().toDateString();
+  let today=new Date().toDateString();
+  let claimed=localStorage.getItem("bonusDate");
 
-  let claimed =
-    localStorage.getItem("dailyBonus");
+  if(claimed===today){
 
-  if(claimed === today){
-
-    openPopup(`
-      <h2>🎁 Daily Bonus</h2>
-
-      <p>
-        Aaj ka bonus already claim
-        kar chuke ho.
-      </p>
-
-      <button class="close"
-        onclick="closePopup()">
-        CLOSE
-      </button>
-    `);
+    alert("आज का Daily Bonus पहले ही ले चुके हो!");
 
     return;
   }
 
-
   addCoins(50);
 
-  localStorage.setItem(
-    "dailyBonus",
-    today
-  );
+  localStorage.setItem("bonusDate",today);
 
-
-  openPopup(`
-    <h2>🎉 Bonus Claimed!</h2>
-
-    <div class="result">
-      +50 Coins 🪙
-    </div>
-
-    <button onclick="closePopup()">
-      CONTINUE
-    </button>
-  `);
+  alert("🎁 +50 Demo Coins मिले!");
 
 }
 
@@ -613,23 +740,15 @@ function dailyBonus(){
 
 function watchAd(){
 
-  addCoins(20);
+  alert("Demo Ad चल रहा है...");
 
-  openPopup(`
-    <h2>📺 Ad Reward</h2>
+  setTimeout(()=>{
 
-    <p>
-      Demo ad complete.
-    </p>
+    addCoins(20);
 
-    <div class="result">
-      +20 Coins 🪙
-    </div>
+    alert("📺 +20 Demo Coins मिले!");
 
-    <button onclick="closePopup()">
-      CONTINUE
-    </button>
-  `);
+  },1500);
 
 }
 
@@ -638,70 +757,46 @@ function watchAd(){
    SPIN WHEEL
 ========================= */
 
+let spinning=false;
+
 function spinWheel(){
 
-  openPopup(`
+  if(spinning)return;
 
-    <h2>🎡 Spin Wheel</h2>
+  spinning=true;
 
-    <div
-      class="wheel"
-      id="wheel">
-      🪙
-    </div>
+  const wheel=document.getElementById("wheel");
 
-    <p>
-      Spin complete hone par
-      +10 Coins milenge.
-    </p>
+  /*
+    Demo wheel result:
+    केवल 10 या 15 coins
+  */
 
-    <button onclick="doSpin()">
-      SPIN +10
-    </button>
+  let result =
+  Math.random()<0.5 ? 10 : 15;
 
-    <button
-      class="close"
-      onclick="closePopup()">
-      CLOSE
-    </button>
+  /*
+    Pointer को 10/15 segment पर
+    visually रोकने के लिए rotation
+  */
 
-  `);
+  let rotation =
+  1440 + (result===10 ? 30 : 90);
 
-}
+  wheel.style.transform=
+  "rotate("+rotation+"deg)";
 
+  setTimeout(()=>{
 
-function doSpin(){
+    addCoins(result);
 
-  let wheel =
-    document.getElementById("wheel");
+    document.getElementById("spinResult").innerHTML=
+      "🎉 Spin Result: <b>"+result+
+      " Demo Coins</b>";
 
-  wheel.classList.add("spin");
+    spinning=false;
 
-
-  setTimeout(function(){
-
-    addCoins(10);
-
-    openPopup(`
-
-      <h2>🎉 Congratulations!</h2>
-
-      <div class="result">
-        +10 Coins 🪙
-      </div>
-
-      <p>
-        Current Balance:
-        ${coins} Coins
-      </p>
-
-      <button onclick="closePopup()">
-        CONTINUE
-      </button>
-
-    `);
-
-  },1000);
+  },4000);
 
 }
 
@@ -710,84 +805,190 @@ function doSpin(){
    MATH QUIZ
 ========================= */
 
-function mathQuiz(){
+const questions=[
 
-  openPopup(`
+{
+ q:"12 + 8 = ?",
+ a:["18","20","22","24"],
+ c:1
+},
 
-    <h2>🧮 Math Quiz</h2>
+{
+ q:"15 × 3 = ?",
+ a:["35","40","45","50"],
+ c:2
+},
 
-    <p>
-      What is 7 × 8?
-    </p>
+{
+ q:"100 − 37 = ?",
+ a:["53","63","73","67"],
+ c:1
+},
 
-    <button
-      class="option"
-      onclick="answerMath(56)">
-      56
-    </button>
+{
+ q:"81 ÷ 9 = ?",
+ a:["7","8","9","10"],
+ c:2
+},
 
-    <button
-      class="option"
-      onclick="answerMath(54)">
-      54
-    </button>
+{
+ q:"7 × 8 = ?",
+ a:["54","56","58","64"],
+ c:1
+},
 
-    <button
-      class="option"
-      onclick="answerMath(64)">
-      64
-    </button>
+{
+ q:"25 + 35 = ?",
+ a:["50","55","60","65"],
+ c:2
+},
 
-    <button
-      class="option"
-      onclick="answerMath(48)">
-      48
-    </button>
+{
+ q:"90 − 45 = ?",
+ a:["35","40","45","50"],
+ c:2
+},
 
-  `);
+{
+ q:"11 × 6 = ?",
+ a:["56","66","76","86"],
+ c:1
+},
+
+{
+ q:"144 ÷ 12 = ?",
+ a:["10","11","12","13"],
+ c:2
+},
+
+{
+ q:"9 × 9 = ?",
+ a:["72","81","90","99"],
+ c:1
+},
+
+{
+ q:"50 + 75 = ?",
+ a:["115","120","125","130"],
+ c:2
+},
+
+{
+ q:"200 − 85 = ?",
+ a:["105","115","125","135"],
+ c:1
+},
+
+{
+ q:"14 × 4 = ?",
+ a:["46","52","56","64"],
+ c:2
+},
+
+{
+ q:"160 ÷ 8 = ?",
+ a:["15","20","25","30"],
+ c:1
+},
+
+{
+ q:"33 + 44 = ?",
+ a:["67","77","87","97"],
+ c:1
+},
+
+{
+ q:"13 × 5 = ?",
+ a:["55","60","65","70"],
+ c:2
+},
+
+{
+ q:"72 ÷ 8 = ?",
+ a:["7","8","9","10"],
+ c:2
+},
+
+{
+ q:"99 − 49 = ?",
+ a:["40","45","50","55"],
+ c:2
+},
+
+{
+ q:"16 × 2 = ?",
+ a:["28","30","32","34"],
+ c:2
+},
+
+{
+ q:"125 + 25 = ?",
+ a:["140","145","150","155"],
+ c:2
+}
+
+];
+
+let currentQuestion=0;
+
+function loadQuiz(){
+
+  let q=questions[currentQuestion];
+
+  let html=
+  `<div class="question">${q.q}</div>`;
+
+  q.a.forEach((answer,index)=>{
+
+    html+=
+    `<button class="option"
+    onclick="answerQuiz(${index})">
+    ${answer}
+    </button>`;
+
+  });
+
+  document.getElementById("quizArea").innerHTML=html;
 
 }
 
+function answerQuiz(index){
 
-function answerMath(answer){
+  let q=questions[currentQuestion];
 
-  if(answer === 56){
+  if(index===q.c){
 
     addCoins(10);
 
-    openPopup(`
-
-      <h2>✅ Correct!</h2>
-
-      <div class="result">
-        +10 Coins 🪙
-      </div>
-
-      <p>
-        Balance: ${coins} Coins
-      </p>
-
-      <button onclick="closePopup()">
-        CONTINUE
-      </button>
-
-    `);
+    alert("✅ सही! +10 Demo Coins");
 
   }else{
 
-    openPopup(`
+    alert("❌ गलत Answer");
 
-      <h2>❌ Wrong Answer</h2>
+  }
 
-      <p>
-        Try again!
-      </p>
+  currentQuestion++;
 
-      <button onclick="mathQuiz()">
-        TRY AGAIN
-      </button>
+  if(currentQuestion>=questions.length){
 
-    `);
+    currentQuestion=0;
+
+    document.getElementById("quizArea").innerHTML=
+    `
+    <div class="result">
+      🎉 Quiz Complete!<br><br>
+      सभी questions फिर से शुरू होंगे।
+    </div>
+    <button class="btn"
+    onclick="loadQuiz()">
+    PLAY AGAIN
+    </button>
+    `;
+
+  }else{
+
+    loadQuiz();
 
   }
 
@@ -798,92 +999,23 @@ function answerMath(answer){
    LUCKY CARD
 ========================= */
 
-function luckyCard(){
+function pickCard(card){
 
-  openPopup(`
+  document
+  .querySelectorAll("#cards button")
+  .forEach(b=>b.disabled=true);
 
-    <h2>🎟️ Lucky Card</h2>
+  let reward =
+  [5,10,15][Math.floor(Math.random()*3)];
 
-    <p>
-      Ek card choose karo.
-    </p>
+  card.innerText="🎁";
 
-    <div style="
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-    ">
+  addCoins(reward);
 
-      <button onclick="chooseCard()">
-        🃏
-      </button>
-
-      <button onclick="chooseCard()">
-        🃏
-      </button>
-
-      <button onclick="chooseCard()">
-        🃏
-      </button>
-
-    </div>
-
-    <button
-      class="close"
-      onclick="closePopup()">
-      CLOSE
-    </button>
-
-  `);
-
-}
-
-
-function chooseCard(){
-
-  addCoins(10);
-
-  openPopup(`
-
-    <h2>🎉 Lucky Card!</h2>
-
-    <div class="result">
-      +10 Coins 🪙
-    </div>
-
-    <button onclick="closePopup()">
-      CONTINUE
-    </button>
-
-  `);
-
-}
-
-
-/* =========================
-   REFERRAL
-========================= */
-
-function refer(){
-
-  openPopup(`
-
-    <h2>👥 Refer & Earn</h2>
-
-    <p>
-      Har friend join karne par
-      +100 Coins.
-    </p>
-
-    <div class="result">
-      Referral Reward: +100 🪙
-    </div>
-
-    <button onclick="closePopup()">
-      CLOSE
-    </button>
-
-  `);
+  document.getElementById("cardResult").innerHTML=
+  "🎉 Lucky Card: <b>+"+
+  reward+
+  " Demo Coins</b>";
 
 }
 
@@ -892,95 +1024,20 @@ function refer(){
    TELEGRAM
 ========================= */
 
-function telegram(){
+function openTelegram(){
 
-  openPopup(`
-
-    <h2>📣 Telegram</h2>
-
-    <p>
-      Yahan apne Telegram channel
-      ka link laga sakte ho.
-    </p>
-
-    <button onclick="closePopup()">
-      CLOSE
-    </button>
-
-  `);
+  window.open(
+    "https://t.me/Luxurytrades00",
+    "_blank"
+  );
 
 }
 
 
-/* =========================
-   WITHDRAW
-========================= */
+/* START */
 
-function withdraw(){
-
-  openPopup(`
-
-    <h2>💰 Withdraw</h2>
-
-    <p>
-      Your Balance:
-    </p>
-
-    <div class="result">
-      🪙 ${coins} Coins
-    </div>
-
-    <p>
-      1000 Coins = ₹10
-    </p>
-
-    <p style="color:#8d99ad">
-      Ye front-end demo hai.
-      Real payment ke liye secure
-      backend aur payment provider
-      connect karna hoga.
-    </p>
-
-    <button
-      class="close"
-      onclick="closePopup()">
-      CLOSE
-    </button>
-
-  `);
-
-}
-
-
-/* =========================
-   PROFILE
-========================= */
-
-function profile(){
-
-  openPopup(`
-
-    <h2>👤 Profile</h2>
-
-    <p>
-      <b>Prince_Gamer</b>
-    </p>
-
-    <p>
-      ID: 10001
-    </p>
-
-    <div class="result">
-      🪙 ${coins} Coins
-    </div>
-
-    <button onclick="closePopup()">
-      CLOSE
-    </button>
-
-  `);
-
-}
+updateCoins();
+loadQuiz();
 
 </script>
 
