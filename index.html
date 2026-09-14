@@ -1,52 +1,240 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>रिवॉर्ड गेम प्रोफाइल</title>
- <style>
- body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f0f2f5; color: #333; }
- .header { background: #4a90e2; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
- .profile-section { display: flex; align-items: center; }
- .profile-pic { width: 60px; height: 60px; background-color: #ccc; border-radius: 50%; margin-right: 15px; border: 2px solid white; }
- .user-name { font-size: 1.2rem; font-weight: bold; }
- .coin-section { background: #ffcc00; color: #333; padding: 10px 20px; border-radius: 25px; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; }
- .coin-icon { margin-right: 8px; }
- .menu-grid { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
- .menu-card { background: white; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s; cursor: pointer; }
- .menu-card:active { transform: scale(0.95); }
- .menu-card div { font-size: 1.5rem; margin-bottom: 10px; }
- .menu-card span { font-weight: 600; color: #555; }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reward Earn & Quiz Game</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0d1117; color: #ffffff; padding-bottom: 70px; }
+        
+        /* Top Header */
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: #161b22; border-bottom: 1px solid #30363d; }
+        .user-info { display: flex; align-items: center; gap: 10px; }
+        .avatar { width: 40px; height: 40px; background: #6e40c9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; }
+        .user-details h4 { font-size: 14px; color: #f0f6fc; }
+        .user-details p { font-size: 11px; color: #8b949e; }
+        .wallet-box { display: flex; align-items: center; background: #21262d; padding: 6px 12px; border-radius: 20px; gap: 6px; border: 1px solid #30363d; }
+        .coin-icon { color: #f1e05a; font-size: 16px; }
+        .coin-count { font-weight: bold; font-size: 14px; color: #f1e05a; }
+
+        /* Banner */
+        .banner { background: linear-gradient(135deg, #1f6feb, #8957e5); margin: 12px; padding: 16px; border-radius: 12px; }
+        .banner h2 { font-size: 16px; margin-bottom: 4px; }
+        .banner p { font-size: 12px; opacity: 0.9; margin-bottom: 10px; }
+        .features { display: flex; gap: 12px; font-size: 10px; opacity: 0.8; }
+
+        /* Section Titles */
+        .section-title { font-size: 14px; font-weight: bold; margin: 16px 16px 8px 16px; color: #f0f6fc; }
+
+        /* Cards Grid */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0 16px; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 14px; text-align: center; }
+        .card h3 { font-size: 13px; margin-top: 6px; }
+        .card p { font-size: 11px; color: #8b949e; margin: 4px 0 10px 0; }
+        .btn-action { background: #238636; color: white; border: none; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; width: 100%; cursor: pointer; }
+        
+        /* Modal / Popup for Quiz & Withdraw */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: #161b22; padding: 20px; border-radius: 12px; width: 90%; max-width: 320px; text-align: center; border: 1px solid #30363d; }
+        .modal-content h3 { margin-bottom: 10px; color: #f1e05a; }
+        .modal-content p { font-size: 13px; margin-bottom: 15px; color: #8b949e; }
+        .modal-content input { width: 100%; padding: 8px; background: #0d1117; border: 1px solid #30363d; color: white; border-radius: 6px; margin-bottom: 12px; text-align: center; }
+        .modal-btn { background: #238636; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; margin-bottom: 6px; }
+        .close-btn { background: #da3633; }
+
+        /* Withdraw Button Container */
+        .withdraw-container { padding: 16px; }
+        .withdraw-btn { background: linear-gradient(135deg, #238636, #2ea043); color: white; border: none; width: 100%; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 14px; cursor: pointer; }
+
+        /* Bottom Nav */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #161b22; border-top: 1px solid #30363d; display: flex; justify-content: space-around; padding: 8px 0; z-index: 100; }
+        .nav-item { text-align: center; color: #8b949e; font-size: 10px; text-decoration: none; cursor: pointer; }
+        .nav-item.active { color: #58a6ff; }
+        .nav-item div { font-size: 16px; margin-bottom: 2px; }
+    </style>
 </head>
 <body>
- <header class="header">
- <div class="profile-section">
- <div class="profile-pic"></div>
- <div class="user-name">खिलाड़ी का नाम</div>
- </div>
- <div class="coin-section">
- <span class="coin-icon">🪙</span> 1,000 कॉइन्स
- </div>
- </header>
 
- <main class="menu-grid">
- <div class="menu-card" onclick="alert('विड्रॉल ऑप्शन खुला')">
- <div>💰</div>
- <span>विड्रॉल</span>
- </div>
- <div class="menu-card" onclick="alert('डेली बोनस ऑप्शन खुला')">
- <div>🎁</div>
- <span>डेली बोनस</span>
- </div>
- <div class="menu-card" onclick="alert('प्रोमो कोड ऑप्शन खुला')">
- <div>🎟️</div>
- <span>प्रोमो कोड</span>
- </div>
- <div class="menu-card" onclick="alert('टेलीग्राम ऑप्शन खुला')">
- <div>📱</div>
- <span>टेलीग्राम</span>
- </div>
- </main>
+    <!-- Top Header -->
+    <div class="header">
+        <div class="user-info">
+            <div class="avatar">P</div>
+            <div class="user-details">
+                <h4>Prince_Gamer</h4>
+                <p>ID: 10001</p>
+            </div>
+        </div>
+        <div class="wallet-box">
+            <span class="coin-icon">🪙</span>
+            <span class="coin-count" id="coinDisplay">1000</span>
+        </div>
+    </div>
+
+    <!-- Promo Banner -->
+    <div class="banner">
+        <h2>PLAY • EARN • WITHDRAW</h2>
+        <p>1,000 Coins = ₹10 Real Cash</p>
+        <div class="features">
+            <span>⚡ Instant Payout</span>
+            <span>🔒 100% Safe</span>
+        </div>
+    </div>
+
+    <!-- Daily Bonus & Watch Ads -->
+    <div class="grid-2">
+        <div class="card" style="background: linear-gradient(135deg, #135525, #161b22);">
+            <div style="font-size: 24px;">🎁</div>
+            <h3>DAILY BONUS</h3>
+            <p>Claim 50 Coins</p>
+            <button class="btn-action" onclick="claimBonus()">CLAIM NOW</button>
+        </div>
+        <div class="card" style="background: linear-gradient(135deg, #1f396e, #161b22);">
+            <div style="font-size: 24px;">📺</div>
+            <h3>WATCH ADS</h3>
+            <p>Earn 20 Coins</p>
+            <button class="btn-action" style="background: #1f6feb;" onclick="watchAd()">WATCH NOW</button>
+        </div>
+    </div>
+
+    <!-- Play & Win -->
+    <div class="section-title">Play & Win Coins</div>
+    <div class="grid-2">
+        <div class="card">
+            <div style="font-size: 24px;">🧮</div>
+            <h3>Math Quiz</h3>
+            <p>Solve & Win 50 Coins</p>
+            <button class="btn-action" style="background: #8957e5;" onclick="openQuiz()">PLAY QUIZ</button>
+        </div>
+        <div class="card" onclick="window.open('https://telegram.org', '_blank')" style="cursor: pointer;">
+            <div style="font-size: 24px;">📢</div>
+            <h3>Telegram</h3>
+            <p>Join & Get 100 Coins</p>
+            <button class="btn-action" style="background: #0088cc;">JOIN US</button>
+        </div>
+    </div>
+
+    <!-- Withdraw Section -->
+    <div class="withdraw-container">
+        <button class="withdraw-btn" onclick="openWithdraw()">💰 WITHDRAW REAL CASH (₹10 = 1000 Coins)</button>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal" id="quizModal">
+        <div class="modal-content">
+            <h3>Math Quiz</h3>
+            <p id="quizQuestion">5 + 3 = ?</p>
+            <input type="number" id="quizAnswer" placeholder="Enter Answer">
+            <button class="modal-btn" onclick="submitQuiz()">Submit Answer</button>
+            <button class="modal-btn close-btn" onclick="closeQuiz()">Close</button>
+        </div>
+    </div>
+
+    <!-- Withdraw Modal -->
+    <div class="modal" id="withdrawModal">
+        <div class="modal-content">
+            <h3>Withdraw Cash</h3>
+            <p>Enter UPI ID or Paytm Number</p>
+            <input type="text" id="upiInput" placeholder="UPI ID / Number">
+            <button class="modal-btn" onclick="processWithdraw()">Withdraw ₹10</button>
+            <button class="modal-btn close-btn" onclick="closeWithdraw()">Close</button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a class="nav-item active">
+            <div>🏠</div>
+            <span>Home</span>
+        </a>
+        <a class="nav-item" onclick="openQuiz()">
+            <div>🎮</div>
+            <span>Quiz</span>
+        </a>
+        <a class="nav-item" onclick="openWithdraw()">
+            <div>💰</div>
+            <span>Wallet</span>
+        </a>
+        <a class="nav-item" onclick="alert('Profile ID: 10001\nTotal Coins: ' + coins)">
+            <div>👤</div>
+            <span>Profile</span>
+        </a>
+    </div>
+
+    <script>
+        // LocalStorage se coins load karna taaki refresh karne par data na ude
+        let coins = localStorage.getItem('userCoins') ? parseInt(localStorage.getItem('userCoins')) : 1000;
+        updateCoins();
+
+        function updateCoins() {
+            document.getElementById('coinDisplay').innerText = coins;
+            localStorage.setItem('userCoins', coins);
+        }
+
+        function claimBonus() {
+            coins += 50;
+            updateCoins();
+            alert(' बधाई हो! 50 कॉइन्स सफलतापूर्वक मिल गए हैं।');
+        }
+
+        function watchAd() {
+            alert('विज्ञापन चल रहा है... कृपया 2 सेकंड प्रतीक्षा करें।');
+            setTimeout(() => {
+                coins += 20;
+                updateCoins();
+                alert('सफलतापूर्वक विज्ञापन देखा! 20 कॉइन्स आपके खाते में जुड़ गए।');
+            }, 1000);
+        }
+
+        let currentAnswer = 8;
+        function openQuiz() {
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            let num2 = Math.floor(Math.random() * 10) + 1;
+            currentAnswer = num1 + num2;
+            document.getElementById('quizQuestion').innerText = `${num1} + ${num2} = ?`;
+            document.getElementById('quizAnswer').value = '';
+            document.getElementById('quizModal').style.display = 'flex';
+        }
+
+        function closeQuiz() {
+            document.getElementById('quizModal').style.display = 'none';
+        }
+
+        function submitQuiz() {
+            let userAnswer = parseInt(document.getElementById('quizAnswer').value);
+            if (userAnswer === currentAnswer) {
+                coins += 50;
+                updateCoins();
+                alert('सही जवाब! आपको 50 कॉइन्स मिल गए हैं।');
+                closeQuiz();
+            } else {
+                alert('गलत जवाब! फिर से कोशिश करें।');
+            }
+        }
+
+        function openWithdraw() {
+            document.getElementById('withdrawModal').style.display = 'flex';
+        }
+
+        function closeWithdraw() {
+            document.getElementById('withdrawModal').style.display = 'none';
+        }
+
+        function processWithdraw() {
+            let upi = document.getElementById('upiInput').value;
+            if(!upi) {
+                alert('कृपया अपना UPI आईडी या नंबर दर्ज करें।');
+                return;
+            }
+            if (coins >= 1000) {
+                coins -= 1000;
+                updateCoins();
+                alert('बधाई हो! ₹10 का विड्रॉल अनुरोध सफलतापूर्वक स्वीकार कर लिया गया है और जल्द ही आपके खाते में भेज दिया जाएगा।');
+                closeWithdraw();
+            } else {
+                alert('अपर्याप्त कॉइन्स! विड्रॉल के लिए कम से कम 1,000 कॉइन होने चाहिए।');
+            }
+        }
+    </script>
 </body>
 </html>
