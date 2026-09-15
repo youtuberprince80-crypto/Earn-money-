@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Prince Gamer - Play & Earn</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Play & Earn</title>
 
 <style>
 *{
@@ -16,18 +15,15 @@
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f4f5fa;
-  color:#172033;
+  background:#f3f5fb;
+  color:#182033;
   padding-bottom:82px;
-}
-
-button,input{
-  font:inherit;
 }
 
 button{
   border:0;
   cursor:pointer;
+  font-family:inherit;
 }
 
 .app{
@@ -35,83 +31,83 @@ button{
   margin:auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .hero{
-  color:white;
-  padding:25px 28px 28px;
-  background:linear-gradient(135deg,#5424d8,#087bed);
-  border-radius:0 0 40px 40px;
+  background:linear-gradient(135deg,#5124c7,#176fe8);
+  color:#fff;
+  padding:22px 26px 26px;
+  border-radius:0 0 42px 42px;
 }
 
-.profile-top{
+.heroTop{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:10px;
+}
+
+.profileArea{
+  display:flex;
+  align-items:center;
+  gap:10px;
   cursor:pointer;
 }
 
-.profile-left{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
 .avatar{
-  width:58px;
-  height:58px;
-  background:white;
-  color:#5424d8;
+  width:52px;
+  height:52px;
+  min-width:52px;
   border-radius:50%;
+  background:#fff;
+  color:#5425c5;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:25px;
+  font-size:24px;
   font-weight:bold;
 }
 
-.name{
-  font-size:20px;
-  font-weight:800;
+.profileText h2{
+  font-size:21px;
 }
 
-.uid{
-  opacity:.8;
+.profileText p{
+  font-size:14px;
+  opacity:.85;
   margin-top:3px;
 }
 
-.balance{
+.coinBalance{
   display:flex;
   align-items:center;
-  gap:8px;
-  padding:10px 15px;
-  border-radius:30px;
-  background:rgba(255,255,255,.16);
-  font-size:21px;
+  gap:7px;
+  padding:8px 14px;
+  background:rgba(255,255,255,.13);
+  border-radius:28px;
+  font-size:20px;
   font-weight:bold;
 }
 
-.coin-small{
+.coinIcon{
   width:36px;
   height:36px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(#ffe768,#f5a900);
-  border:2px solid #fff3a3;
-  box-shadow:0 2px 7px rgba(0,0,0,.2);
-  font-size:18px;
+  font-size:22px;
 }
 
 .hero h1{
   font-size:38px;
-  margin-top:38px;
-  line-height:1.1;
+  line-height:1.05;
+  margin-top:34px;
 }
 
-.hero p{
-  margin-top:10px;
-  font-size:18px;
+.heroSub{
+  font-size:17px;
+  margin-top:12px;
   opacity:.9;
 }
 
@@ -123,293 +119,366 @@ button{
 }
 
 .feature{
-  padding:14px 5px;
-  text-align:center;
+  min-height:82px;
   background:rgba(255,255,255,.13);
-  border-radius:18px;
-  font-size:15px;
-}
-
-.feature b{
-  display:block;
-  font-size:25px;
-  margin-bottom:5px;
-}
-
-/* PAGE */
-.page{
-  padding:25px;
-}
-
-.page-title{
-  font-size:29px;
-  font-weight:800;
-  margin-bottom:18px;
-}
-
-/* REFERRAL */
-.ref-wrap{
-  overflow:hidden;
-  border-radius:28px;
-  margin-bottom:28px;
-}
-
-.ref-track{
+  border-radius:20px;
   display:flex;
-  width:300%;
-  transition:transform .55s ease;
-  will-change:transform;
-}
-
-.ref-slide{
-  width:33.3333%;
-  min-height:145px;
-  padding:25px;
-  color:white;
-  flex-shrink:0;
-  background:linear-gradient(120deg,#17172f,#5d20cf,#167be9);
-  display:flex;
+  flex-direction:column;
   align-items:center;
-  justify-content:space-between;
+  justify-content:center;
+  text-align:center;
 }
 
-.ref-slide:nth-child(2){
-  background:linear-gradient(120deg,#30206b,#5a21d4,#088bea);
-}
-
-.ref-slide:nth-child(3){
-  background:linear-gradient(120deg,#18204b,#4322b9,#1288e8);
-}
-
-.ref-text h2{
-  font-size:22px;
+.featureIcon{
+  font-size:27px;
+  line-height:1;
   margin-bottom:7px;
 }
 
-.ref-text p{
+.feature span{
+  font-size:15px;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+  padding:24px 24px 10px;
+}
+
+.sectionTitle{
+  font-size:30px;
+  margin:25px 4px 18px;
+}
+
+/* ================= REFERRAL ================= */
+
+.refBanner{
+  height:150px;
+  border-radius:30px;
+  padding:22px;
+  color:#fff;
+  background:linear-gradient(110deg,#25143e,#5421c9,#147de8);
+  position:relative;
+  overflow:hidden;
+}
+
+.bannerSlide{
+  position:absolute;
+  inset:0;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  transform:translateX(0);
+  transition:transform .55s ease;
+}
+
+.bannerText h3{
+  font-size:25px;
+  margin-bottom:7px;
+}
+
+.bannerText p{
+  font-size:15px;
   opacity:.9;
 }
 
-.invite{
-  background:white;
-  color:#5123b9;
-  padding:14px 23px;
-  border-radius:17px;
-  font-weight:800;
+.inviteBtn{
+  background:#fff;
+  color:#5223bd;
+  padding:14px 21px;
+  border-radius:18px;
+  font-weight:bold;
   font-size:16px;
+  white-space:nowrap;
 }
 
-/* CARDS */
-.grid{
+.dots{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:6px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.45);
+}
+
+.dot.active{
+  width:25px;
+  border-radius:10px;
+  background:#fff;
+}
+
+/* ================= CARDS ================= */
+
+.gamesGrid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr 1fr;
   gap:16px;
 }
 
-.card{
-  background:white;
+.gameCard{
+  background:#fff;
   border-radius:25px;
-  padding:22px;
-  box-shadow:0 5px 20px rgba(30,40,80,.06);
+  padding:20px;
+  min-height:205px;
+  box-shadow:0 4px 18px rgba(30,40,70,.06);
 }
 
-.card-icon{
-  width:68px;
-  height:68px;
+.gameIcon{
+  width:56px;
+  height:56px;
+  border-radius:17px;
+  background:#f0eaff;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:20px;
-  background:#f0eaff;
-  font-size:36px;
-  margin-bottom:17px;
+  font-size:29px;
+  margin-bottom:14px;
 }
 
-.card h3{
+.gameCard h3{
   font-size:21px;
 }
 
-.card p{
-  color:#8b929d;
-  margin-top:7px;
-  line-height:1.4;
+.gameCard p{
+  color:#89909d;
+  margin-top:6px;
+  line-height:1.35;
 }
 
-.play-btn,
-.claim-btn{
+.actionBtn{
   width:100%;
-  margin-top:16px;
-  padding:13px;
+  margin-top:15px;
+  padding:12px;
   border-radius:15px;
-  color:white;
-  background:linear-gradient(90deg,#5c20cf,#137fea);
+  color:#fff;
+  background:linear-gradient(100deg,#5722c5,#217ce8);
   font-weight:bold;
+  font-size:15px;
 }
 
-.claim-btn:disabled{
-  background:#d7dbe2;
-  color:#777;
+.actionBtn.claimed{
+  background:#d9dde5;
+  color:#727985;
 }
 
-/* WALLET */
-.money-box{
-  background:linear-gradient(135deg,#5420bd,#087cec);
-  color:white;
-  padding:30px;
+/* ================= WALLET ================= */
+
+.walletBox{
+  background:linear-gradient(135deg,#5122c4,#1478e9);
+  color:#fff;
   border-radius:30px;
+  padding:28px;
 }
 
-.money-box small{
-  font-size:18px;
+.walletLabel{
+  font-size:19px;
   opacity:.9;
 }
 
-.money-row{
+.walletCoins{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
+  font-size:55px;
+  font-weight:bold;
   margin:8px 0;
 }
 
-.coin-large{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(#ffe768,#efa500);
-  border:2px solid #fff0a0;
-  font-size:23px;
-}
-
-.coin-number{
-  font-size:58px;
-  font-weight:800;
-}
-
-.rate{
+.walletRate{
   margin-top:15px;
-  padding:14px 18px;
-  border-radius:18px;
+  padding:12px 17px;
+  border-radius:17px;
   background:rgba(255,255,255,.13);
   font-size:17px;
 }
 
-.wallet-grid{
-  margin-top:22px;
+.walletActions{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr 1fr;
   gap:16px;
+  margin-top:20px;
 }
 
-/* WITHDRAWAL */
-.withdrawal-card{
-  background:white;
-  border-radius:24px;
-  padding:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-  cursor:pointer;
+.walletAction{
+  background:#fff;
+  border-radius:25px;
+  padding:25px;
+  text-align:left;
+  min-height:145px;
 }
 
-.withdrawal-banner{
-  min-height:82px;
+.withdrawIcon{
+  width:58px;
+  height:58px;
+  border-radius:17px;
+  background:#19c566;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(
-    180deg,#39ff00 0%,#16c800 48%,#079500 100%
-  );
-  color:white;
-  font-size:25px;
-  font-weight:900;
-  letter-spacing:1px;
-  border:3px solid #32ff00;
-  border-radius:22px;
-  box-shadow:
-    0 0 10px #39ff00,
-    0 0 24px rgba(57,255,0,.55),
-    inset 0 2px 5px rgba(255,255,255,.35);
-  text-shadow:0 2px 4px rgba(0,0,0,.4);
+  font-size:29px;
+  margin-bottom:14px;
 }
 
-.withdraw-info{
-  padding:12px 3px 2px;
+.walletAction h3{
+  font-size:21px;
 }
 
-.withdraw-info h3{
-  font-size:20px;
+.walletAction p{
+  color:#8a909c;
+  margin-top:7px;
 }
 
-.withdraw-info p{
-  color:#8b929d;
-  margin-top:5px;
-}
+/* ================= HISTORY ================= */
 
-/* HISTORY */
 .history{
-  background:white;
-  border-radius:25px;
+  background:#fff;
+  border-radius:28px;
   margin-top:20px;
   padding:20px;
 }
 
-.history h2{
+.historyTitle{
+  font-size:25px;
   margin-bottom:8px;
 }
 
-.history-item{
+.historyItem{
   display:flex;
   align-items:center;
-  gap:13px;
-  padding:16px 0;
-  border-bottom:1px solid #eee;
+  gap:12px;
+  padding:15px 0;
+  border-bottom:1px solid #edf0f4;
 }
 
-.history-item:last-child{
+.historyItem:last-child{
   border-bottom:0;
 }
 
-.history-icon{
+.historyIcon{
   width:48px;
   height:48px;
+  min-width:48px;
   border-radius:15px;
   background:#f0eaff;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:24px;
-  flex-shrink:0;
 }
 
-.history-main{
+.historyInfo{
   flex:1;
 }
 
-.history-main b{
+.historyInfo strong{
   display:block;
+  font-size:16px;
 }
 
-.history-main small{
+.historyInfo small{
   display:block;
-  color:#999;
-  margin-top:5px;
+  color:#969ca7;
+  margin-top:4px;
 }
 
 .plus{
-  color:#14964e;
-  font-weight:800;
+  color:#209957;
+  font-weight:bold;
+  font-size:18px;
 }
 
-/* MODAL */
+/* ================= PAGES ================= */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
+}
+
+/* ================= QUIZ ================= */
+
+.quizBox{
+  background:#fff;
+  border-radius:28px;
+  padding:25px;
+  text-align:center;
+}
+
+.question{
+  font-size:34px;
+  font-weight:bold;
+  margin:25px 0;
+}
+
+.answerGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.answer{
+  padding:16px;
+  border-radius:16px;
+  background:#eeeaff;
+  font-size:18px;
+  font-weight:bold;
+}
+
+/* ================= PROFILE ================= */
+
+.profileMenu{
+  background:#fff;
+  border-radius:28px;
+  padding:10px 20px;
+}
+
+.menuItem{
+  padding:19px 4px;
+  border-bottom:1px solid #edf0f4;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.menuItem:last-child{
+  border:0;
+}
+
+.menuIcon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  background:#eeeaff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+}
+
+/* ================= MODAL ================= */
+
 .overlay{
+  display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.55);
-  display:none;
-  align-items:flex-end;
+  background:rgba(0,0,0,.48);
+  z-index:100;
+  align-items:center;
   justify-content:center;
-  z-index:1000;
+  padding:20px;
 }
 
 .overlay.show{
@@ -417,182 +486,98 @@ button{
 }
 
 .modal{
+  background:#fff;
   width:100%;
-  max-width:700px;
-  background:white;
-  border-radius:30px 30px 0 0;
+  max-width:430px;
+  border-radius:28px;
   padding:25px;
-  max-height:88vh;
-  overflow:auto;
+  animation:pop .22s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
 }
 
 .modal h2{
-  margin-bottom:18px;
+  margin-bottom:12px;
 }
 
-.close{
-  float:right;
-  background:#eee;
-  width:35px;
-  height:35px;
-  border-radius:50%;
+.modal p{
+  color:#737a86;
+  line-height:1.5;
 }
 
-.field{
-  margin:12px 0;
-}
-
-.field label{
-  display:block;
-  margin-bottom:7px;
-  font-weight:bold;
-}
-
-.field input{
+.modalClose{
   width:100%;
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:14px;
-  outline:none;
-}
-
-.primary{
-  width:100%;
-  padding:15px;
-  border-radius:15px;
-  background:linear-gradient(90deg,#5420ce,#087fe7);
-  color:white;
-  font-weight:bold;
-  margin-top:12px;
-}
-
-.secondary{
-  width:100%;
+  margin-top:18px;
   padding:14px;
   border-radius:15px;
-  background:#eee;
-  margin-top:9px;
-}
-
-/* PROFILE */
-.profile-menu{
-  display:grid;
-  gap:12px;
-}
-
-.menu-btn{
-  width:100%;
-  text-align:left;
-  background:#f7f7fa;
-  padding:18px;
-  border-radius:17px;
+  background:#5424c6;
+  color:#fff;
   font-weight:bold;
 }
 
-/* INVITE */
-.share-buttons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
+/* ================= BOTTOM NAV ================= */
 
-.whatsapp{
-  background:#20bd62;
-  color:white;
-  padding:15px;
-  border-radius:15px;
-  font-weight:bold;
-}
-
-.share{
-  background:#5420ce;
-  color:white;
-  padding:15px;
-  border-radius:15px;
-  font-weight:bold;
-}
-
-.rules{
-  background:#f6f4ff;
-  padding:17px;
-  border-radius:18px;
-  line-height:1.55;
-  margin:15px 0;
-}
-
-/* QUIZ */
-.quiz-box{
-  background:white;
-  padding:25px;
-  border-radius:25px;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-
-.question{
-  font-size:30px;
-  text-align:center;
-  font-weight:bold;
-  margin:25px 0;
-}
-
-.answers{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.answer{
-  padding:15px;
-  border-radius:15px;
-  background:#f0eaff;
-  font-weight:bold;
-}
-
-/* NAV */
-.nav{
+.bottomNav{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
-  height:78px;
-  background:white;
-  border-top:1px solid #eee;
+  height:76px;
+  background:#fff;
+  box-shadow:0 -4px 18px rgba(20,30,60,.08);
+  display:flex;
+  justify-content:center;
+  z-index:50;
+}
+
+.navInner{
+  width:100%;
+  max-width:700px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  z-index:900;
 }
 
-.nav button{
-  background:white;
-  color:#9197a0;
+.navItem{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:#969ca7;
+  cursor:pointer;
+}
+
+.navIcon{
+  font-size:24px;
+  height:30px;
+}
+
+.navItem span{
   font-size:14px;
+  margin-top:3px;
 }
 
-.nav-icon{
-  display:block;
-  font-size:27px;
-  margin-bottom:3px;
+.navItem.active{
+  color:#5623c6;
 }
 
-.nav button.active{
-  color:#5520c6;
-  font-weight:bold;
-}
+/* ================= TOAST ================= */
 
-/* TOAST */
 .toast{
   position:fixed;
   left:50%;
-  bottom:95px;
+  bottom:92px;
   transform:translateX(-50%) translateY(20px);
   background:#172033;
-  color:white;
+  color:#fff;
   padding:13px 20px;
-  border-radius:30px;
+  border-radius:20px;
   opacity:0;
   pointer-events:none;
   transition:.3s;
-  z-index:2000;
+  z-index:200;
   white-space:nowrap;
 }
 
@@ -601,43 +586,97 @@ button{
   transform:translateX(-50%) translateY(0);
 }
 
-/* CELEBRATION */
-.confetti{
-  position:fixed;
-  top:-20px;
-  font-size:25px;
-  animation:fall 1.4s linear forwards;
-  z-index:3000;
-}
+/* ================= MOBILE ================= */
 
-@keyframes fall{
-  to{
-    transform:translateY(100vh) rotate(500deg);
-    opacity:0;
+@media(max-width:600px){
+
+  .hero{
+    padding:20px 20px 24px;
   }
-}
 
-@media(max-width:450px){
   .hero h1{
-    font-size:34px;
+    font-size:36px;
   }
 
-  .page{
-    padding:20px;
+  .content{
+    padding:20px 18px;
   }
 
-  .card{
-    padding:18px;
+  .sectionTitle{
+    font-size:28px;
   }
 
-  .card-icon{
-    width:60px;
-    height:60px;
+  .gameCard{
+    padding:17px;
+    min-height:195px;
+  }
+
+  .gameIcon{
+    width:54px;
+    height:54px;
+    font-size:27px;
+  }
+
+  .walletCoins{
+    font-size:50px;
+  }
+
+  .walletActions{
+    gap:12px;
+  }
+
+  .walletAction{
+    padding:19px;
+  }
+
+  .withdrawIcon{
+    width:56px;
+    height:56px;
+    font-size:27px;
+  }
+
+  .bannerText h3{
+    font-size:21px;
+  }
+
+  .inviteBtn{
+    padding:12px 16px;
+  }
+}
+
+@media(max-width:390px){
+
+  .hero h1{
     font-size:31px;
   }
 
-  .coin-number{
-    font-size:50px;
+  .avatar{
+    width:46px;
+    height:46px;
+    min-width:46px;
+  }
+
+  .coinBalance{
+    padding:6px 10px;
+    font-size:17px;
+  }
+
+  .coinIcon{
+    width:31px;
+    height:31px;
+    font-size:19px;
+  }
+
+  .gamesGrid{
+    gap:11px;
+  }
+
+  .gameCard h3{
+    font-size:18px;
+  }
+
+  .gameCard p{
+    font-size:13px;
   }
 }
 </style>
@@ -647,339 +686,456 @@ button{
 
 <div class="app">
 
-<!-- HERO -->
+<!-- ================= HOME ================= -->
+
+<section id="homePage" class="page active">
+
 <header class="hero">
 
-  <div class="profile-top" onclick="openProfile()">
-    <div class="profile-left">
-      <div class="avatar">P</div>
-      <div>
-        <div class="name">Prince_Gamer</div>
-        <div class="uid">ID: 10001</div>
-      </div>
-    </div>
+<div class="heroTop">
 
-    <div class="balance">
-      <div class="coin-small">🪙</div>
-      <span id="topCoins">0</span>
-    </div>
-  </div>
+<div class="profileArea" onclick="openProfile()">
+<div class="avatar">P</div>
 
-  <h1>PLAY & EARN = MONEY</h1>
-  <p>Play Games • Complete Tasks • Collect Coins</p>
+<div class="profileText">
+<h2>Prince_Gamer</h2>
+<p>ID: 10001</p>
+</div>
+</div>
 
-  <div class="features">
-    <div class="feature">
-      <b>⚡</b>Fast Rewards
-    </div>
-    <div class="feature">
-      <b>🔒</b>Secure
-    </div>
-    <div class="feature">
-      <b>🎁</b>Rewards
-    </div>
-  </div>
+<div class="coinBalance">
+<div class="coinIcon">🪙</div>
+<span id="topCoins">0</span>
+</div>
+
+</div>
+
+<h1>PLAY & EARN =<br>MONEY</h1>
+
+<div class="heroSub">
+Play Games • Complete Tasks • Collect Coins
+</div>
+
+<div class="features">
+
+<div class="feature">
+<div class="featureIcon">⚡</div>
+<span>Fast Rewards</span>
+</div>
+
+<div class="feature">
+<div class="featureIcon">🔒</div>
+<span>Secure</span>
+</div>
+
+<div class="feature">
+<div class="featureIcon">🎁</div>
+<span>Rewards</span>
+</div>
+
+</div>
 
 </header>
 
-<!-- HOME -->
-<section id="homePage" class="page">
+<div class="content">
 
-  <!-- REFERRAL -->
-  <div class="ref-wrap">
-    <div id="refTrack" class="ref-track">
+<div class="refBanner">
 
-      <div class="ref-slide">
-        <div class="ref-text">
-          <h2>🎁 Refer & Earn</h2>
-          <p>Friends ko invite karo.</p>
-        </div>
-        <button class="invite" onclick="openInvite()">INVITE</button>
-      </div>
+<div class="bannerSlide" id="bannerSlide">
 
-      <div class="ref-slide">
-        <div class="ref-text">
-          <h2>💰 Earn 100 Coins</h2>
-          <p>Successful referral par reward.</p>
-        </div>
-        <button class="invite" onclick="openInvite()">INVITE</button>
-      </div>
+<div class="bannerText">
+<h3 id="bannerTitle">🎁 Refer & Earn</h3>
+<p id="bannerText">Friends ko invite karo.</p>
+</div>
 
-      <div class="ref-slide">
-        <div class="ref-text">
-          <h2>👥 Invite Friends</h2>
-          <p>Share karo aur reward pao.</p>
-        </div>
-        <button class="invite" onclick="openInvite()">INVITE</button>
-      </div>
+<button class="inviteBtn" onclick="openInvite()">
+INVITE
+</button>
 
-    </div>
-  </div>
+</div>
 
-  <h2 class="page-title">🎮 Play & Earn</h2>
+<div class="dots">
+<div class="dot active"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
 
-  <div class="grid">
+</div>
 
-    <div class="card">
-      <div class="card-icon">🎁</div>
-      <h3>Daily Bonus</h3>
-      <p>Har din ek baar bonus claim karo.</p>
-      <button id="dailyBtn"
-              class="claim-btn"
-              onclick="claimDaily()">
-        CLAIM +50
-      </button>
-    </div>
+<h2 class="sectionTitle">🎮 Play & Earn</h2>
 
-    <div class="card">
-      <div class="card-icon">📺</div>
-      <h3>Watch Ads</h3>
-      <p>Rewarded ad complete karo.</p>
-      <button class="play-btn" onclick="watchAd()">
-        WATCH
-      </button>
-    </div>
+<div class="gamesGrid">
 
-    <div class="card">
-      <div class="card-icon">🃏</div>
-      <h3>Reward Cards</h3>
-      <p>Fixed reward card.</p>
-      <button class="play-btn" onclick="rewardCard()">
-        OPEN
-      </button>
-    </div>
+<div class="gameCard">
+<div class="gameIcon">🎁</div>
+<h3>Daily Bonus</h3>
+<p>Har din ek baar bonus claim karo.</p>
+<button id="dailyBtn" class="actionBtn" onclick="claimDaily()">
+CLAIM
+</button>
+</div>
 
-    <div class="card">
-      <div class="card-icon">🧮</div>
-      <h3>Math Quiz</h3>
-      <p>Sahi answer do aur coins earn karo.</p>
-      <button class="play-btn" onclick="openQuiz()">
-        PLAY
-      </button>
-    </div>
+<div class="gameCard">
+<div class="gameIcon">📺</div>
+<h3>Watch Ads</h3>
+<p>Rewarded task complete karo.</p>
+<button class="actionBtn" onclick="watchAd()">
+WATCH
+</button>
+</div>
 
-  </div>
+<div class="gameCard">
+<div class="gameIcon">🃏</div>
+<h3>Reward Cards</h3>
+<p>Fixed reward cards.</p>
+<button class="actionBtn" onclick="rewardCard()">
+OPEN
+</button>
+</div>
 
+<div class="gameCard">
+<div class="gameIcon">🧮</div>
+<h3>Math Quiz</h3>
+<p>Sahi answer par coins collect karo.</p>
+<button class="actionBtn" onclick="openQuiz()">
+PLAY
+</button>
+</div>
+
+</div>
+
+</div>
 </section>
 
-<!-- WALLET -->
-<section id="walletPage" class="page" style="display:none">
 
-  <h2 class="page-title">💰 Wallet</h2>
+<!-- ================= GAMES ================= -->
 
-  <div class="money-box">
-    <small>Total Coins</small>
+<section id="gamesPage" class="page">
 
-    <div class="money-row">
-      <div class="coin-large">🪙</div>
-      <div class="coin-number" id="walletCoins">0</div>
-    </div>
+<div class="content">
 
-    <small>Available Coins</small>
+<h2 class="sectionTitle">🎮 Games</h2>
 
-    <div class="rate">
-      💰 1000 Coins = ₹10
-    </div>
-  </div>
+<div class="gamesGrid">
 
-  <div class="wallet-grid">
+<div class="gameCard">
+<div class="gameIcon">🎁</div>
+<h3>Daily Bonus</h3>
+<p>Daily fixed reward.</p>
+<button id="dailyBtn2" class="actionBtn" onclick="claimDaily()">
+CLAIM
+</button>
+</div>
 
-    <div class="withdrawal-card" onclick="openWithdrawal()">
-      <div class="withdrawal-banner">
-        WITHDRAWAL
-      </div>
+<div class="gameCard">
+<div class="gameIcon">📺</div>
+<h3>Watch Ads</h3>
+<p>Watch task complete karo.</p>
+<button class="actionBtn" onclick="watchAd()">WATCH</button>
+</div>
 
-      <div class="withdraw-info">
-        <h3>Withdrawal</h3>
-        <p>Minimum 5000 Coins</p>
-      </div>
-    </div>
+<div class="gameCard">
+<div class="gameIcon">🃏</div>
+<h3>Reward Cards</h3>
+<p>Fixed reward.</p>
+<button class="actionBtn" onclick="rewardCard()">OPEN</button>
+</div>
 
-    <div class="card" onclick="showCoinHistory()">
-      <div class="card-icon">📊</div>
-      <h3>Coin History</h3>
-      <p>All earning activity</p>
-    </div>
+<div class="gameCard">
+<div class="gameIcon">🧮</div>
+<h3>Math Quiz</h3>
+<p>Quiz khelo aur points earn karo.</p>
+<button class="actionBtn" onclick="openQuiz()">PLAY</button>
+</div>
 
-  </div>
+</div>
 
-  <div class="history">
-    <h2>🪙 Coin History</h2>
-    <div id="historyList"></div>
-  </div>
-
-  <div class="history">
-    <h2>💸 Withdrawal History</h2>
-    <div id="withdrawHistory"></div>
-  </div>
-
+</div>
 </section>
 
-<!-- PROFILE -->
-<section id="profilePage" class="page" style="display:none">
 
-  <h2 class="page-title">👤 Profile</h2>
+<!-- ================= WALLET ================= -->
 
-  <div class="card" style="margin-bottom:18px">
-    <div class="profile-left">
-      <div class="avatar">P</div>
-      <div>
-        <div class="name">Prince_Gamer</div>
-        <div class="uid">ID: 10001</div>
-      </div>
-    </div>
-  </div>
+<section id="walletPage" class="page">
 
-  <div class="profile-menu">
-    <button class="menu-btn" onclick="showPage('wallet')">
-      💰 Wallet
-    </button>
+<div class="content">
 
-    <button class="menu-btn" onclick="openWithdrawal()">
-      💸 Withdrawal
-    </button>
+<div class="walletBox">
 
-    <button class="menu-btn" onclick="openSettings()">
-      ⚙️ Settings
-    </button>
+<div class="walletLabel">Total Coins</div>
 
-    <button class="menu-btn" onclick="openInvite()">
-      🎁 Refer & Earn
-    </button>
+<div class="walletCoins">
+🪙 <span id="walletCoins">0</span>
+</div>
 
-    <button class="menu-btn" onclick="logout()">
-      🚪 Logout
-    </button>
-  </div>
+<div class="walletLabel">Available Coins</div>
 
+<div class="walletRate">
+💰 1000 Coins = ₹10
+</div>
+
+</div>
+
+<div class="walletActions">
+
+<div class="walletAction" onclick="openWithdrawal()">
+
+<div class="withdrawIcon">💸</div>
+
+<h3>Withdrawal</h3>
+
+<p>Minimum 5000 Coins</p>
+
+</div>
+
+<div class="walletAction" onclick="showCoinHistory()">
+
+<div class="gameIcon">📊</div>
+
+<h3>Coin History</h3>
+
+<p>All earning activity</p>
+
+</div>
+
+</div>
+
+<div class="history">
+
+<h2 class="historyTitle">🪙 Coin History</h2>
+
+<div id="historyList"></div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= PROFILE ================= -->
+
+<section id="profilePage" class="page">
+
+<div class="content">
+
+<h2 class="sectionTitle">👤 Profile</h2>
+
+<div class="profileMenu">
+
+<div class="menuItem" onclick="goWallet()">
+<div class="menuIcon">💰</div>
+Wallet
+</div>
+
+<div class="menuItem" onclick="openSettings()">
+<div class="menuIcon">⚙️</div>
+Settings
+</div>
+
+<div class="menuItem" onclick="openWithdrawal()">
+<div class="menuIcon">💸</div>
+Withdrawal
+</div>
+
+<div class="menuItem" onclick="openInvite()">
+<div class="menuIcon">🎁</div>
+Refer & Earn
+</div>
+
+<div class="menuItem" onclick="logoutUser()">
+<div class="menuIcon">🚪</div>
+Logout
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section id="quizPage" class="page">
+
+<div class="content">
+
+<h2 class="sectionTitle">🧮 Math Quiz</h2>
+
+<div class="quizBox">
+
+<p>Correct answer choose karo</p>
+
+<div id="question" class="question"></div>
+
+<div id="answers" class="answerGrid"></div>
+
+</div>
+
+</div>
 </section>
 
 </div>
 
-<!-- BOTTOM NAV -->
-<nav class="nav">
 
-  <button id="navHome"
-          class="active"
-          onclick="showPage('home')">
-    <span class="nav-icon">🏠</span>
-    Home
-  </button>
+<!-- ================= BOTTOM NAV ================= -->
 
-  <button id="navGames"
-          onclick="showPage('home')">
-    <span class="nav-icon">🎮</span>
-    Games
-  </button>
+<div class="bottomNav">
 
-  <button id="navWallet"
-          onclick="showPage('wallet')">
-    <span class="nav-icon">💰</span>
-    Wallet
-  </button>
+<div class="navInner">
 
-  <button id="navProfile"
-          onclick="openProfile()">
-    <span class="nav-icon">👤</span>
-    Profile
-  </button>
+<div class="navItem active" onclick="showPage('homePage',this)">
+<div class="navIcon">🏠</div>
+<span>Home</span>
+</div>
 
-</nav>
+<div class="navItem" onclick="showPage('gamesPage',this)">
+<div class="navIcon">🎮</div>
+<span>Games</span>
+</div>
 
-<!-- GENERAL MODAL -->
-<div id="modal" class="overlay" onclick="outsideClose(event)">
-  <div class="modal">
-    <button class="close" onclick="closeModal()">×</button>
-    <div id="modalContent"></div>
-  </div>
+<div class="navItem" onclick="showPage('walletPage',this)">
+<div class="navIcon">💰</div>
+<span>Wallet</span>
+</div>
+
+<div class="navItem" onclick="openProfile()">
+<div class="navIcon">👤</div>
+<span>Profile</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div id="overlay" class="overlay">
+
+<div class="modal">
+
+<h2 id="modalTitle"></h2>
+
+<div id="modalContent"></div>
+
+<button class="modalClose" onclick="closeModal()">
+CLOSE
+</button>
+
+</div>
+
 </div>
 
 <div id="toast" class="toast"></div>
 
+
 <script>
 
-/* =========================
-   CONFIG
-========================= */
-
-const MIN_WITHDRAW = 5000;
-const COIN_RATE = 1000;
-
-/*
-  Apne secure backend/gateway ke
-  actual endpoints yaha lagana.
-*/
-const VERIFY_UPI_API = "/api/verify-upi";
-const WITHDRAW_API = "/api/withdraw";
-
-
-/* =========================
-   STORAGE
-========================= */
+/* =====================================
+   DATA
+===================================== */
 
 let coins = Number(localStorage.getItem("coins") || 0);
 
-let history =
-  JSON.parse(localStorage.getItem("coinHistory") || "[]");
-
-let withdrawals =
-  JSON.parse(localStorage.getItem("withdrawals") || "[]");
+let historyData =
+JSON.parse(localStorage.getItem("coinHistory") || "[]");
 
 
-/* =========================
-   BASIC HELPERS
-========================= */
+/* =====================================
+   COINS
+===================================== */
 
-function save(){
+function saveCoins(){
   localStorage.setItem("coins",coins);
-  localStorage.setItem("coinHistory",JSON.stringify(history));
-  localStorage.setItem("withdrawals",JSON.stringify(withdrawals));
-  updateUI();
+  updateCoins();
 }
 
-function updateUI(){
+function updateCoins(){
+
   document.getElementById("topCoins").textContent =
     coins.toLocaleString();
 
   document.getElementById("walletCoins").textContent =
     coins.toLocaleString();
-
-  renderHistory();
-  renderWithdrawals();
-  updateDailyButton();
 }
 
-function toast(text){
-  const t=document.getElementById("toast");
+function addCoins(amount,title,icon){
 
-  t.textContent=text;
-  t.classList.add("show");
-
-  setTimeout(()=>{
-    t.classList.remove("show");
-  },2500);
-}
-
-function addCoins(amount,source,icon="🪙"){
   coins += amount;
 
-  history.unshift({
-    source,
-    amount,
-    icon,
+  historyData.unshift({
+    title:title,
+    amount:amount,
+    icon:icon,
     time:new Date().toLocaleString()
   });
 
-  save();
+  historyData =
+    historyData.slice(0,50);
+
+  localStorage.setItem(
+    "coinHistory",
+    JSON.stringify(historyData)
+  );
+
+  saveCoins();
+
+  renderHistory();
 }
 
 
-/* =========================
+/* =====================================
+   HISTORY
+===================================== */
+
+function renderHistory(){
+
+  const list =
+    document.getElementById("historyList");
+
+  if(!historyData.length){
+
+    list.innerHTML =
+      `<p style="color:#9298a3;padding:20px 0">
+      Abhi koi earning history nahi hai.
+      </p>`;
+
+    return;
+  }
+
+  list.innerHTML =
+    historyData.map(item => `
+
+      <div class="historyItem">
+
+        <div class="historyIcon">
+          ${item.icon}
+        </div>
+
+        <div class="historyInfo">
+
+          <strong>${item.title}</strong>
+
+          <small>${item.time}</small>
+
+        </div>
+
+        <div class="plus">
+          +${item.amount}
+        </div>
+
+      </div>
+
+    `).join("");
+}
+
+
+/* =====================================
    DAILY BONUS
-========================= */
+===================================== */
 
 function todayKey(){
-  const d=new Date();
+
+  const d = new Date();
 
   return d.getFullYear()+"-"+
          (d.getMonth()+1)+"-"+
@@ -988,262 +1144,337 @@ function todayKey(){
 
 function updateDailyButton(){
 
-  const btn=document.getElementById("dailyBtn");
+  const claimed =
+    localStorage.getItem("dailyClaimed") === todayKey();
 
-  if(localStorage.getItem("dailyClaimed")===todayKey()){
-    btn.textContent="CLAIMED ✓";
-    btn.disabled=true;
-  }else{
-    btn.textContent="CLAIM +50";
-    btn.disabled=false;
-  }
+  document.querySelectorAll("#dailyBtn,#dailyBtn2")
+    .forEach(btn => {
+
+      if(claimed){
+
+        btn.textContent="CLAIMED ✓";
+        btn.classList.add("claimed");
+
+      }else{
+
+        btn.textContent="CLAIM";
+        btn.classList.remove("claimed");
+
+      }
+
+    });
 }
 
 function claimDaily(){
 
   if(localStorage.getItem("dailyClaimed")===todayKey()){
-    toast("आज का bonus already claimed है");
+
+    toast("Aaj ka bonus already claimed hai.");
+
     return;
   }
 
-  localStorage.setItem("dailyClaimed",todayKey());
+  localStorage.setItem(
+    "dailyClaimed",
+    todayKey()
+  );
 
-  addCoins(50,"Daily Bonus","🎁");
+  addCoins(
+    50,
+    "Daily Bonus",
+    "🎁"
+  );
 
-  celebration();
+  updateDailyButton();
 
-  toast("+50 Coins added");
+  toast("+50 Coins added 🎉");
 }
 
 
-/* =========================
-   WATCH ADS
-========================= */
+/* =====================================
+   WATCH TASK
+===================================== */
 
 function watchAd(){
 
-  /*
-    Actual Google rewarded-ad SDK ke
-    completion callback se:
-       onRewardedAdComplete();
-    call karna.
-  */
-
-  openModal(`
-    <h2>📺 Watch Ad</h2>
-    <p style="color:#777;line-height:1.5">
-      Rewarded advertisement complete hone ke
-      baad reward milega.
+  openModal(
+    "📺 Watch",
+    `
+    <p style="text-align:center">
+      Task complete karne ke liye
+      neeche button press karo.
     </p>
 
-    <button class="primary"
-            onclick="onRewardedAdComplete()">
-      AD COMPLETED
+    <button
+      class="actionBtn"
+      onclick="completeAd()">
+      COMPLETE TASK
     </button>
-  `);
+    `
+  );
 }
 
-function onRewardedAdComplete(){
+function completeAd(){
 
   closeModal();
 
-  addCoins(20,"Watch Ads","📺");
+  addCoins(
+    20,
+    "Watch Ads",
+    "📺"
+  );
 
-  toast("+20 Coins added");
+  toast("+20 Coins added 🎉");
 }
 
 
-/* =========================
+/* =====================================
    FIXED REWARD CARD
-========================= */
+===================================== */
 
 function rewardCard(){
 
-  openModal(`
-    <h2>🃏 Reward Card</h2>
+  openModal(
+    "🃏 Reward Card",
+    `
+    <p>Ek fixed reward card choose karo:</p>
 
-    <p style="color:#777">
-      Fixed reward available.
-    </p>
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:18px">
 
-    <button class="primary"
-            onclick="claimRewardCard()">
-      CLAIM +10 COINS
-    </button>
-  `);
+      <button
+       class="answer"
+       onclick="claimCard(10)">
+       +10
+      </button>
+
+      <button
+       class="answer"
+       onclick="claimCard(10)">
+       +10
+      </button>
+
+      <button
+       class="answer"
+       onclick="claimCard(10)">
+       +10
+      </button>
+
+    </div>
+    `
+  );
 }
 
-function claimRewardCard(){
+function claimCard(amount){
 
   closeModal();
 
-  addCoins(10,"Reward Card","🃏");
+  addCoins(
+    amount,
+    "Reward Card",
+    "🃏"
+  );
 
-  celebration();
-
-  toast("+10 Coins added");
+  toast("Reward collected 🎉");
 }
 
 
-/* =========================
+/* =====================================
    QUIZ
-========================= */
+===================================== */
+
+let correctAnswer=0;
 
 function openQuiz(){
 
-  openModal(`
-    <h2>🧮 Math Quiz</h2>
-
-    <div class="quiz-box">
-      <p style="text-align:center;color:#777">
-        Correct answer par +10 Coins
-      </p>
-
-      <div class="question" id="question"></div>
-
-      <div class="answers" id="answers"></div>
-    </div>
-  `);
+  showPage("quizPage");
 
   loadQuiz();
 }
 
-let quizAnswer=0;
-
 function loadQuiz(){
 
-  const a=Math.floor(Math.random()*20)+1;
-  const b=Math.floor(Math.random()*20)+1;
+  const a =
+    Math.floor(Math.random()*15)+2;
 
-  quizAnswer=a+b;
+  const b =
+    Math.floor(Math.random()*15)+2;
 
-  document.getElementById("question").textContent =
-    `${a} + ${b} = ?`;
+  correctAnswer=a+b;
 
-  const options=[
-    quizAnswer,
-    quizAnswer+2,
-    quizAnswer-2,
-    quizAnswer+5
-  ].sort(()=>Math.random()-.5);
+  document.getElementById("question")
+    .textContent =
+    a+" + "+b+" = ?";
 
-  document.getElementById("answers").innerHTML =
-    options.map(x=>`
-      <button class="answer"
-              onclick="answerQuiz(${x})">
+  let answers=[
+    correctAnswer,
+    correctAnswer+2,
+    correctAnswer-2,
+    correctAnswer+5
+  ];
+
+  answers.sort(()=>Math.random()-.5);
+
+  document.getElementById("answers")
+    .innerHTML =
+    answers.map(x=>`
+
+      <button
+        class="answer"
+        onclick="answerQuiz(${x})">
         ${x}
       </button>
+
     `).join("");
 }
 
 function answerQuiz(answer){
 
-  if(answer===quizAnswer){
+  if(answer===correctAnswer){
 
-    addCoins(10,"Math Quiz - Correct Answer","🧮");
+    addCoins(
+      10,
+      "Math Quiz - Correct Answer",
+      "🧮"
+    );
 
-    celebration();
-
-    toast("Correct! +10 Coins");
-
-    setTimeout(loadQuiz,900);
+    toast("Correct answer! +10 🎉");
 
   }else{
 
-    toast("Wrong answer");
+    toast("Wrong answer. Try again.");
 
-    setTimeout(loadQuiz,700);
   }
+
+  setTimeout(loadQuiz,900);
 }
 
 
-/* =========================
-   PROFILE
-========================= */
+/* =====================================
+   REFERRAL BANNER
+===================================== */
 
-function openProfile(){
-  showPage("profile");
+const banners=[
+  ["🎁 Refer & Earn","Friends ko invite karo."],
+  ["💰 Earn 100 Coins","Successful referral par reward."],
+  ["🚀 Invite Friends","Share karo aur points collect karo."]
+];
+
+let bannerIndex=0;
+
+function changeBanner(){
+
+  const slide =
+    document.getElementById("bannerSlide");
+
+  slide.style.transform="translateX(-100%)";
+
+  setTimeout(()=>{
+
+    bannerIndex=
+      (bannerIndex+1)%banners.length;
+
+    document.getElementById("bannerTitle")
+      .textContent=banners[bannerIndex][0];
+
+    document.getElementById("bannerText")
+      .textContent=banners[bannerIndex][1];
+
+    slide.style.transition="none";
+    slide.style.transform="translateX(100%)";
+
+    requestAnimationFrame(()=>{
+
+      requestAnimationFrame(()=>{
+
+        slide.style.transition=
+          "transform .55s ease";
+
+        slide.style.transform=
+          "translateX(0)";
+
+      });
+
+    });
+
+    document.querySelectorAll(".dot")
+      .forEach((d,i)=>
+        d.classList.toggle(
+          "active",
+          i===bannerIndex
+        )
+      );
+
+  },550);
 }
 
-function openSettings(){
-
-  openModal(`
-    <h2>⚙️ Settings</h2>
-
-    <div class="profile-menu">
-
-      <button class="menu-btn">
-        🔔 Notifications
-      </button>
-
-      <button class="menu-btn">
-        🔐 Account Security
-      </button>
-
-      <button class="menu-btn">
-        ℹ️ About
-      </button>
-
-    </div>
-  `);
-}
+setInterval(changeBanner,4000);
 
 
-/* =========================
-   REFER & SHARE
-========================= */
+/* =====================================
+   INVITE / SHARE
+===================================== */
 
 function openInvite(){
 
   const shareText =
-    "Join my rewards website and register your account. " +
-    "Follow the referral rules to receive the referral reward.";
+    "Play & Earn app par join karo!";
 
-  const shareUrl=location.href;
+  openModal(
+    "🎁 Refer & Earn",
+    `
 
-  openModal(`
-    <h2>🎁 Refer & Earn</h2>
+    <p>
+      <b>Refer & Earn Rules</b>
+    </p>
 
-    <div class="rules">
-      <b>Referral Rules</b><br><br>
+    <p style="margin-top:10px">
+      App ko apne pehchaan wale ya dosto
+      ke saath share karein.
+    </p>
 
-      Agar aap app ko kisi pehchan wale ya
-      dost ke saath share karte ho, to unhe
-      website par apna ID register karna hoga.
+    <p style="margin-top:8px">
+      Aapke friend ko website par apna
+      ID register karna hoga aur referral
+      ke rules follow karne honge.
+    </p>
 
-      <br><br>
+    <p style="margin-top:8px">
+      Rules complete hone par referral
+      reward milega.
+    </p>
 
-      Jab referred person registration aur
-      referral rules complete karega, tab
-      aapko <b>100 Coins</b> referral reward
-      milega.
+    <div style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:18px">
 
-      <br><br>
-
-      Thank you for supporting us ❤️
-    </div>
-
-    <div class="share-buttons">
-
-      <button class="whatsapp"
-              onclick="shareWhatsApp()">
+      <button
+        class="actionBtn"
+        onclick="shareWhatsApp()">
         WhatsApp
       </button>
 
-      <button class="share"
-              onclick="nativeShare()">
+      <button
+        class="actionBtn"
+        onclick="shareApp()">
         Share
       </button>
 
     </div>
-  `);
+    `
+  );
 }
 
 function shareWhatsApp(){
 
-  const text =
+  const text=
     encodeURIComponent(
-      "Join my rewards website: "+location.href
+      "Play & Earn app join karo!"
     );
 
   window.open(
@@ -1252,11 +1483,11 @@ function shareWhatsApp(){
   );
 }
 
-async function nativeShare(){
+async function shareApp(){
 
   const data={
     title:"Play & Earn",
-    text:"Join my rewards website",
+    text:"Play & Earn app join karo!",
     url:location.href
   };
 
@@ -1270,309 +1501,94 @@ async function nativeShare(){
 
     navigator.clipboard?.writeText(location.href);
 
-    toast("Link copied");
+    toast("Share link copied.");
   }
 }
 
 
-/*
-  IMPORTANT:
-  Referral reward ko sirf frontend
-  button click se dena secure nahi hai.
+/* =====================================
+   PROFILE
+===================================== */
 
-  Backend ko referred user's registration,
-  referral code aur eligibility verify karke
-  +100 Coins server-side credit karna chahiye.
-*/
+function openProfile(){
+
+  showPage("profilePage");
+}
+
+function goWallet(){
+
+  showPage("walletPage");
+}
+
+function openSettings(){
+
+  openModal(
+    "⚙️ Settings",
+    `
+    <p>
+      Account settings yahan manage ki
+      ja sakti hain.
+    </p>
+    `
+  );
+}
+
+function logoutUser(){
+
+  toast("Logout option selected.");
+}
 
 
-/* =========================
-   WALLET
-========================= */
+/* =====================================
+   WITHDRAWAL UI
+===================================== */
 
 function openWithdrawal(){
 
-  if(coins<MIN_WITHDRAW){
+  openModal(
+    "💸 Withdrawal",
+    `
 
-    openModal(`
-      <h2>💸 Withdrawal</h2>
-
-      <p style="color:#777;line-height:1.5">
-        Minimum withdrawal is
-        <b>5000 Coins</b>.
-      </p>
-
-      <p style="margin-top:12px">
-        Your balance:
-        <b>${coins.toLocaleString()} Coins</b>
-      </p>
-    `);
-
-    return;
-  }
-
-  openModal(`
-    <h2>💸 Withdrawal</h2>
-
-    <p style="color:#777">
-      1000 Coins = ₹10
+    <p>
+      Minimum withdrawal:
+      <b>5000 Coins</b>
     </p>
 
-    <div class="field">
-      <label>UPI ID</label>
-      <input id="upiInput"
-             type="text"
-             placeholder="example@upi"
-             autocomplete="off">
-    </div>
-
-    <div class="field">
-      <label>Coins</label>
-      <input id="withdrawCoins"
-             type="number"
-             min="${MIN_WITHDRAW}"
-             value="${MIN_WITHDRAW}">
-    </div>
-
-    <button class="primary"
-            onclick="submitWithdrawal()">
-      REQUEST WITHDRAWAL
-    </button>
-  `);
-}
-
-
-/*
-  Basic format check only.
-  Actual UPI existence/ownership verification
-  must happen through your gateway/backend.
-*/
-
-function basicUpiFormat(value){
-
-  return /^[a-zA-Z0-9._-]+@[a-zA-Z]{2,}$/.test(
-    value.trim()
-  );
-}
-
-async function submitWithdrawal(){
-
-  const upi =
-    document.getElementById("upiInput")
-    .value.trim();
-
-  const amount =
-    Number(document.getElementById("withdrawCoins").value);
-
-  if(!basicUpiFormat(upi)){
-
-    toast("Valid UPI ID format enter karo");
-    return;
-  }
-
-  if(!Number.isInteger(amount) ||
-     amount<MIN_WITHDRAW ||
-     amount>coins){
-
-    toast("Withdrawal coins invalid hain");
-    return;
-  }
-
-  /*
-    SECURITY:
-    Real implementation me yaha backend ko request bhejo.
-    Backend gateway se UPI verify kare aur payout create kare.
-
-    Example:
-
-    fetch(WITHDRAW_API,{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        userId:"10001",
-        upi,
-        coins:amount
-      })
-    })
-  */
-
-  /*
-    Frontend-only fallback:
-    request ko Pending history me store karta hai.
-    Actual payout backend se process hona chahiye.
-  */
-
-  withdrawals.unshift({
-    coins:amount,
-    upi:maskUpi(upi),
-    status:"Pending",
-    time:new Date().toLocaleString()
-  });
-
-  coins-=amount;
-
-  save();
-
-  closeModal();
-
-  openModal(`
-    <h2>✅ Withdrawal Request</h2>
-
-    <p style="line-height:1.6;color:#555">
-      Your withdrawal request has been
-      received successfully.
-      <br><br>
-      Status: <b>Pending</b>
-      <br>
-      Requested Coins:
-      <b>${amount.toLocaleString()}</b>
-      <br>
-      Amount:
-      <b>₹${(amount/100).toFixed(2)}</b>
-      <br><br>
-      Thank you.
+    <p style="margin-top:10px">
+      Current balance:
+      <b>${coins.toLocaleString()} Coins</b>
     </p>
 
-    <button class="primary"
-            onclick="closeModal()">
-      OK
-    </button>
-  `);
-}
+    <p style="
+      margin-top:12px;
+      font-size:13px">
+      Withdrawal/payout ko production
+      environment mein secure server-side
+      verification ke saath implement karein.
+    </p>
 
-function maskUpi(upi){
-
-  const parts=upi.split("@");
-
-  if(parts.length!==2) return upi;
-
-  const name=parts[0];
-
-  return (
-    name.substring(0,2)+
-    "***@"+
-    parts[1]
+    `
   );
 }
 
 
-/* =========================
-   HISTORY
-========================= */
-
-function renderHistory(){
-
-  const box=document.getElementById("historyList");
-
-  if(!history.length){
-
-    box.innerHTML=`
-      <p style="color:#999;padding:15px 0">
-        No coin history yet
-      </p>
-    `;
-
-    return;
-  }
-
-  box.innerHTML=history.map(item=>`
-
-    <div class="history-item">
-
-      <div class="history-icon">
-        ${item.icon}
-      </div>
-
-      <div class="history-main">
-        <b>${escapeHtml(item.source)}</b>
-        <small>${escapeHtml(item.time)}</small>
-      </div>
-
-      <div class="plus">
-        +${item.amount}
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-function renderWithdrawals(){
-
-  const box=document.getElementById("withdrawHistory");
-
-  if(!withdrawals.length){
-
-    box.innerHTML=`
-      <p style="color:#999;padding:15px 0">
-        No withdrawal history
-      </p>
-    `;
-
-    return;
-  }
-
-  box.innerHTML=withdrawals.map(w=>`
-
-    <div class="history-item">
-
-      <div class="history-icon">💸</div>
-
-      <div class="history-main">
-        <b>${w.coins.toLocaleString()} Coins</b>
-        <small>${escapeHtml(w.time)}</small>
-        <small>UPI: ${escapeHtml(w.upi)}</small>
-      </div>
-
-      <div style="color:#d28a18;font-weight:bold">
-        ${escapeHtml(w.status)}
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-function showCoinHistory(){
-
-  showPage("wallet");
-
-  setTimeout(()=>{
-    document.querySelector(".history")
-      ?.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
-  },100);
-}
-
-
-/* =========================
+/* =====================================
    PAGE NAVIGATION
-========================= */
+===================================== */
 
-function showPage(page){
+function showPage(id,nav){
 
-  document.getElementById("homePage").style.display =
-    page==="home" ? "block" : "none";
+  document.querySelectorAll(".page")
+    .forEach(p=>p.classList.remove("active"));
 
-  document.getElementById("walletPage").style.display =
-    page==="wallet" ? "block" : "none";
+  const page=document.getElementById(id);
 
-  document.getElementById("profilePage").style.display =
-    page==="profile" ? "block" : "none";
+  if(page) page.classList.add("active");
 
-  document.querySelectorAll(".nav button")
-    .forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".navItem")
+    .forEach(n=>n.classList.remove("active"));
 
-  if(page==="home")
-    document.getElementById("navHome").classList.add("active");
-
-  if(page==="wallet")
-    document.getElementById("navWallet").classList.add("active");
-
-  if(page==="profile")
-    document.getElementById("navProfile").classList.add("active");
+  if(nav) nav.classList.add("active");
 
   window.scrollTo({
     top:0,
@@ -1581,132 +1597,84 @@ function showPage(page){
 }
 
 
-/* =========================
+/* =====================================
+   COIN HISTORY
+===================================== */
+
+function showCoinHistory(){
+
+  const wallet=document.getElementById("walletPage");
+
+  if(!wallet.classList.contains("active")){
+
+    showPage("walletPage");
+
+  }
+
+  setTimeout(()=>{
+
+    document.querySelector(".history")
+      ?.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+  },100);
+}
+
+
+/* =====================================
    MODAL
-========================= */
+===================================== */
 
-function openModal(html){
+function openModal(title,content){
 
-  document.getElementById("modalContent").innerHTML=html;
+  document.getElementById("modalTitle")
+    .textContent=title;
 
-  document.getElementById("modal")
+  document.getElementById("modalContent")
+    .innerHTML=content;
+
+  document.getElementById("overlay")
     .classList.add("show");
 }
 
 function closeModal(){
 
-  document.getElementById("modal")
+  document.getElementById("overlay")
     .classList.remove("show");
 }
 
-function outsideClose(e){
 
-  if(e.target.id==="modal"){
-    closeModal();
-  }
+/* =====================================
+   TOAST
+===================================== */
+
+let toastTimer;
+
+function toast(message){
+
+  const el=document.getElementById("toast");
+
+  el.textContent=message;
+
+  el.classList.add("show");
+
+  clearTimeout(toastTimer);
+
+  toastTimer=setTimeout(()=>{
+    el.classList.remove("show");
+  },2200);
 }
 
 
-/* =========================
-   LOGOUT
-========================= */
+/* =====================================
+   INITIALIZE
+===================================== */
 
-function logout(){
-
-  openModal(`
-    <h2>🚪 Logout</h2>
-
-    <p style="color:#777">
-      Are you sure you want to logout?
-    </p>
-
-    <button class="primary"
-            onclick="confirmLogout()">
-      LOGOUT
-    </button>
-  `);
-}
-
-function confirmLogout(){
-
-  /*
-    Real authentication ho to yaha
-    backend/session logout lagana.
-  */
-
-  closeModal();
-  toast("Logged out");
-}
-
-
-/* =========================
-   SMOOTH REFERRAL SLIDER
-========================= */
-
-let refIndex=0;
-
-setInterval(()=>{
-
-  refIndex=(refIndex+1)%3;
-
-  document.getElementById("refTrack").style.transform =
-    `translate3d(-${refIndex*33.3333}%,0,0)`;
-
-},4000);
-
-
-/* =========================
-   CELEBRATION
-========================= */
-
-function celebration(){
-
-  const icons=["🎉","✨","🎊","⭐","💰"];
-
-  for(let i=0;i<24;i++){
-
-    const el=document.createElement("div");
-
-    el.className="confetti";
-
-    el.textContent=
-      icons[Math.floor(Math.random()*icons.length)];
-
-    el.style.left=
-      Math.random()*100+"vw";
-
-    el.style.animationDelay=
-      Math.random()*.5+"s";
-
-    document.body.appendChild(el);
-
-    setTimeout(()=>{
-      el.remove();
-    },1800);
-  }
-}
-
-
-/* =========================
-   SECURITY HELPER
-========================= */
-
-function escapeHtml(value){
-
-  return String(value)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-
-/* =========================
-   INIT
-========================= */
-
-updateUI();
+updateCoins();
+renderHistory();
+updateDailyButton();
 
 </script>
 
