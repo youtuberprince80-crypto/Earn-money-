@@ -1,522 +1,1343 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Prince Gamer</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Arial,sans-serif;
-  background:#f4f6fb;color:#172033;
-  padding-bottom:76px
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
 }
-button{border:0;cursor:pointer;font-family:inherit}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f6fc;
+  color:#172033;
+  padding-bottom:78px;
+  overflow-x:hidden
+}
+
+button{
+  border:0;
+  font-family:inherit;
+  cursor:pointer
+}
+
+/* ================= HEADER ================= */
 
 .header{
-  color:#fff;padding:15px 15px 22px;
-  background:linear-gradient(135deg,#5b21b6,#2563eb);
-  border-radius:0 0 24px 24px
-}
-.top{display:flex;justify-content:space-between;align-items:center}
-.user{display:flex;align-items:center;gap:10px}
-.avatar{
-  width:43px;height:43px;border-radius:50%;
-  background:#fff;color:#5b21b6;
-  display:grid;place-items:center;font-weight:800
-}
-.name{font-weight:bold}.uid{font-size:11px;opacity:.8}
-.coins{
-  background:#ffffff22;padding:9px 12px;
-  border-radius:20px;font-weight:bold
-}
-.hero{margin-top:20px}
-.hero h1{font-size:24px}.hero p{font-size:12px;opacity:.9;margin-top:5px}
-.features{display:flex;gap:7px;margin-top:14px}
-.feature{
-  flex:1;text-align:center;padding:8px 3px;
-  background:#ffffff18;border-radius:11px;font-size:10px
+  background:linear-gradient(135deg,#5420b8 0%,#3d43db 50%,#1677e8 100%);
+  color:#fff;
+  padding:17px 16px 23px;
+  border-radius:0 0 28px 28px;
 }
 
-main{padding:14px}
-.page{display:none}.page.active{display:block}
-.title{
-  display:flex;justify-content:space-between;
-  align-items:center;margin:5px 2px 11px
-}
-.title h2{font-size:18px}
-
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{
-  background:#fff;padding:14px;border-radius:17px;
-  box-shadow:0 5px 18px #0000000b
-}
-.icon{
-  width:40px;height:40px;border-radius:12px;
-  display:grid;place-items:center;
-  background:#eee8ff;font-size:21px;margin-bottom:9px
-}
-.card h3{font-size:14px}
-.card p{font-size:11px;color:#7b8495;margin-top:4px}
-.reward{
-  display:inline-block;margin-top:9px;
-  padding:4px 8px;border-radius:12px;
-  background:#fff2cf;color:#9a6500;
-  font-size:10px;font-weight:bold
-}
-
-.banner{
-  height:90px;margin:2px 0 15px;
-  border-radius:18px;padding:15px;
-  color:#fff;display:flex;align-items:center;
+.top{
+  display:flex;
+  align-items:center;
   justify-content:space-between;
-  background:linear-gradient(110deg,#111827,#4c1d95,#2563eb);
-  animation:slide .45s
-}
-@keyframes slide{
-  from{opacity:0;transform:translateX(20px)}
-  to{opacity:1;transform:translateX(0)}
-}
-.banner h3{font-size:15px}
-.banner p{font-size:11px;margin-top:5px;opacity:.85}
-.banner button{
-  background:#fff;color:#4c1d95;
-  padding:8px 11px;border-radius:11px;font-weight:bold
+  cursor:pointer
 }
 
-.wallet{
-  color:#fff;padding:20px;border-radius:20px;
-  background:linear-gradient(135deg,#4c1d95,#2563eb);
-  margin-bottom:12px
-}
-.wallet small{opacity:.8}.wallet strong{
-  display:block;font-size:31px;margin:5px 0
-}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.action{
-  background:#fff;padding:15px;border-radius:16px;
-  box-shadow:0 5px 18px #0000000b
-}
-.action p{font-size:11px;color:#777;margin-top:4px}
-
-.history{
-  background:#fff;border-radius:16px;
-  padding:14px;margin-top:12px
-}
-.row{
-  display:flex;justify-content:space-between;
-  padding:11px 0;border-bottom:1px solid #eee;
-  font-size:12px
-}
-.row:last-child{border:0}
-.pending{color:#d97706;font-weight:bold}
-
-.profile-menu{display:grid;gap:10px}
-.menu{
-  background:#fff;padding:15px;border-radius:16px;
-  display:flex;justify-content:space-between;
-  align-items:center;box-shadow:0 4px 15px #0000000a
-}
-.menu-left{display:flex;gap:11px;align-items:center}
-.menu-icon{
-  width:40px;height:40px;border-radius:12px;
-  background:#eee8ff;display:grid;place-items:center
-}
-.menu small{display:block;color:#888;margin-top:3px}
-
-.quiz{
-  background:#fff;padding:20px;border-radius:20px;
-  box-shadow:0 5px 20px #0000000b
-}
-.back{
-  padding:8px 12px;border-radius:11px;
-  background:#e9ddff;color:#5b21b6;
-  font-weight:bold;margin-bottom:11px
-}
-.question{
-  text-align:center;font-size:27px;
-  font-weight:bold;padding:23px 0
-}
-.options{display:grid;gap:9px}
-.option{
-  padding:13px;border-radius:13px;
-  background:#f1f5f9;font-weight:bold
-}
-.option:active{transform:scale(.98)}
-
-.modal{
-  position:fixed;inset:0;
-  background:#0008;display:none;
-  align-items:center;justify-content:center;
-  padding:20px;z-index:30
-}
-.modal.show{display:flex}
-.modal-box{
-  width:100%;max-width:390px;
-  background:#fff;border-radius:22px;
-  padding:20px;text-align:center;
-  animation:pop .25s
-}
-@keyframes pop{
-  from{transform:scale(.8);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
-.modal-box p{
-  color:#717b8c;font-size:12px;
-  margin:7px 0 15px
-}
-.input{
-  width:100%;padding:13px;
-  border:1px solid #ddd;border-radius:12px;
-  margin-bottom:10px;outline:none
-}
-.primary{
-  width:100%;padding:13px;
-  background:#6d28d9;color:#fff;
-  border-radius:13px;font-weight:bold
-}
-.secondary{
-  width:100%;padding:11px;
-  background:#eee;border-radius:13px;
-  margin-top:8px
-}
-.cards{display:flex;gap:9px;margin:15px 0}
-.reward-card{
-  flex:1;height:105px;border-radius:17px;
-  background:linear-gradient(135deg,#7c3aed,#2563eb);
-  color:#fff;font-size:30px;font-weight:bold
+.user{
+  display:flex;
+  align-items:center;
+  gap:11px
 }
 
-.bottom{
-  position:fixed;bottom:0;left:0;right:0;
-  height:68px;background:#fff;
-  border-top:1px solid #eee;
-  display:grid;grid-template-columns:repeat(4,1fr);
-  z-index:20
+.avatar{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fff;
+  color:#5b21b6;
+  display:grid;
+  place-items:center;
+  font-size:21px;
+  font-weight:800;
+  box-shadow:0 5px 15px #0002
 }
-.nav{
-  background:#fff;color:#8992a5;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  font-size:10px;gap:3px
-}
-.nav span{font-size:20px}
-.nav.active{color:#6d28d9;font-weight:bold}
 
-.toast{
-  position:fixed;left:50%;bottom:84px;
-  transform:translateX(-50%);
-  background:#111827;color:#fff;
-  padding:11px 16px;border-radius:25px;
-  font-size:12px;display:none;z-index:100;
+.name{
+  font-size:18px;
+  font-weight:800
+}
+
+.uid{
+  font-size:11px;
+  opacity:.8;
+  margin-top:2px
+}
+
+.coin-pill{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:#ffffff20;
+  border:1px solid #ffffff18;
+  padding:9px 13px;
+  border-radius:25px;
+  font-size:17px;
+  font-weight:800
+}
+
+.coin-icon{
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(#ffd95a,#f5ad00);
+  color:#fff;
+  font-size:14px;
+  box-shadow:inset 0 0 0 2px #ffe98b
+}
+
+.hero{
+  margin-top:27px
+}
+
+.hero h1{
+  font-size:29px;
+  letter-spacing:-.5px
+}
+
+.hero p{
+  font-size:14px;
+  margin-top:6px;
+  opacity:.9
+}
+
+.features{
+  display:flex;
+  gap:8px;
+  margin-top:19px
+}
+
+.feature{
+  flex:1;
+  padding:10px 4px;
+  text-align:center;
+  background:#ffffff18;
+  border:1px solid #ffffff12;
+  border-radius:14px;
+  font-size:11px
+}
+
+.feature-icon{
+  font-size:18px;
+  display:block;
+  margin-bottom:3px
+}
+
+/* ================= MAIN ================= */
+
+main{
+  padding:15px
+}
+
+.page{
+  display:none
+}
+
+.page.active{
+  display:block
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:6px 2px 12px
+}
+
+.section-title h2{
+  font-size:20px
+}
+
+/* ================= REFERRAL ================= */
+
+.banner-window{
+  position:relative;
+  height:96px;
+  overflow:hidden;
+  border-radius:20px;
+  margin:3px 0 17px
+}
+
+.banner-track{
+  display:flex;
+  height:100%;
+  width:400%;
+  transition:transform .65s cubic-bezier(.22,.61,.36,1)
+}
+
+.ref-banner{
+  width:25%;
+  flex-shrink:0;
+  padding:16px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:linear-gradient(105deg,#101827,#45208f,#1675e7);
+}
+
+.ref-text h3{
+  font-size:16px
+}
+
+.ref-text p{
+  font-size:11px;
+  margin-top:5px;
+  opacity:.88
+}
+
+.invite-btn{
+  background:#fff;
+  color:#4c1d95;
+  padding:10px 13px;
+  border-radius:13px;
+  font-weight:800;
+  font-size:11px;
   white-space:nowrap
 }
-.toast.show{display:block}
+
+.dots{
+  position:absolute;
+  bottom:7px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:4px
+}
+
+.dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#ffffff77
+}
+
+.dot.active{
+  width:15px;
+  border-radius:5px;
+  background:#fff
+}
+
+/* ================= CARDS ================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px
+}
+
+.card{
+  background:#fff;
+  border-radius:19px;
+  padding:15px;
+  box-shadow:0 5px 20px #0000000b;
+  transition:.15s;
+  min-height:153px
+}
+
+.card:active{
+  transform:scale(.975)
+}
+
+.card-icon{
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(135deg,#eee7ff,#f5efff);
+  font-size:23px;
+  margin-bottom:10px
+}
+
+.card h3{
+  font-size:15px
+}
+
+.card p{
+  color:#858e9e;
+  font-size:11px;
+  margin-top:5px;
+  line-height:1.35
+}
+
+.reward{
+  display:inline-block;
+  margin-top:10px;
+  background:#fff1c9;
+  color:#9a6500;
+  border-radius:13px;
+  padding:5px 9px;
+  font-size:10px;
+  font-weight:800
+}
+
+/* ================= WALLET ================= */
+
+.wallet-box{
+  color:#fff;
+  border-radius:21px;
+  padding:20px;
+  background:linear-gradient(135deg,#5220b7,#263de0,#1478e9);
+  box-shadow:0 8px 25px #4338ca35;
+  margin-bottom:12px
+}
+
+.wallet-box small{
+  opacity:.8;
+  font-size:13px
+}
+
+.wallet-amount{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:5px 0 8px
+}
+
+.wallet-amount strong{
+  font-size:36px
+}
+
+.wallet-note{
+  font-size:12px;
+  opacity:.85
+}
+
+.rate{
+  margin-top:12px;
+  background:#ffffff18;
+  border-radius:12px;
+  padding:9px;
+  font-size:12px
+}
+
+.action-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+
+.action{
+  background:#fff;
+  border-radius:17px;
+  padding:16px;
+  box-shadow:0 5px 18px #0000000b
+}
+
+.action-icon{
+  font-size:22px;
+  margin-bottom:7px
+}
+
+.action b{
+  font-size:14px
+}
+
+.action p{
+  font-size:11px;
+  color:#858e9e;
+  margin-top:4px
+}
+
+/* ================= HISTORY ================= */
+
+.history-box{
+  margin-top:13px;
+  background:#fff;
+  border-radius:19px;
+  padding:15px;
+  box-shadow:0 5px 18px #00000008
+}
+
+.history-title{
+  font-size:19px;
+  font-weight:800;
+  margin-bottom:5px
+}
+
+.history-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid #edf0f5
+}
+
+.history-item:last-child{
+  border-bottom:0
+}
+
+.history-left{
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.history-icon{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  background:#eee8ff;
+  display:grid;
+  place-items:center
+}
+
+.history-name{
+  font-size:13px;
+  font-weight:700
+}
+
+.history-date{
+  color:#9aa2af;
+  font-size:10px;
+  margin-top:3px
+}
+
+.history-coins{
+  color:#16a34a;
+  font-weight:800;
+  font-size:13px
+}
+
+.empty{
+  text-align:center;
+  color:#929aaa;
+  font-size:12px;
+  padding:25px 5px
+}
+
+/* ================= PROFILE ================= */
+
+.profile-head{
+  background:linear-gradient(135deg,#5420b8,#2378e8);
+  border-radius:20px;
+  padding:18px;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:13px
+}
+
+.profile-big{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:#fff;
+  color:#5420b8;
+  display:grid;
+  place-items:center;
+  font-size:24px;
+  font-weight:bold
+}
+
+.profile-menu{
+  display:grid;
+  gap:10px
+}
+
+.menu{
+  background:#fff;
+  border-radius:17px;
+  padding:15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 4px 16px #00000009
+}
+
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:11px
+}
+
+.menu-icon{
+  width:41px;
+  height:41px;
+  border-radius:13px;
+  background:#eee8ff;
+  display:grid;
+  place-items:center;
+  font-size:20px
+}
+
+.menu b{
+  font-size:14px
+}
+
+.menu small{
+  display:block;
+  color:#8992a1;
+  font-size:10px;
+  margin-top:3px
+}
+
+/* ================= QUIZ ================= */
+
+.back{
+  background:#e9ddff;
+  color:#5b21b6;
+  padding:9px 13px;
+  border-radius:12px;
+  font-weight:800;
+  margin-bottom:11px
+}
+
+.quiz-box{
+  background:#fff;
+  border-radius:21px;
+  padding:20px;
+  box-shadow:0 6px 22px #0000000a
+}
+
+.quiz-sub{
+  color:#8b94a3;
+  text-align:center;
+  font-size:11px;
+  margin-top:5px
+}
+
+.question{
+  text-align:center;
+  font-size:29px;
+  font-weight:800;
+  padding:27px 0
+}
+
+.options{
+  display:grid;
+  gap:9px
+}
+
+.option{
+  padding:14px;
+  background:#f1f4f9;
+  border-radius:14px;
+  font-weight:800;
+  font-size:14px
+}
+
+.option:active{
+  background:#e7dcff
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:#0008;
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  z-index:50;
+  padding:15px
+}
+
+.modal.show{
+  display:flex
+}
+
+.modal-box{
+  width:100%;
+  max-width:420px;
+  background:#fff;
+  border-radius:24px;
+  padding:21px;
+  animation:modalUp .25s ease
+}
+
+@keyframes modalUp{
+  from{transform:translateY(35px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+
+.modal-box h2{
+  font-size:20px
+}
+
+.modal-box p{
+  color:#727c8d;
+  font-size:12px;
+  line-height:1.55;
+  margin:7px 0 14px
+}
+
+.close{
+  width:100%;
+  background:#edf0f4;
+  padding:12px;
+  border-radius:13px;
+  margin-top:8px;
+  font-weight:bold
+}
+
+.primary{
+  width:100%;
+  padding:13px;
+  border-radius:13px;
+  background:linear-gradient(135deg,#6523c7,#2678e9);
+  color:#fff;
+  font-weight:800
+}
+
+.input{
+  width:100%;
+  padding:13px;
+  border:1px solid #dfe3ea;
+  border-radius:12px;
+  outline:none;
+  margin-bottom:9px;
+  font-size:13px
+}
+
+.input:focus{
+  border-color:#7040d5
+}
+
+/* ================= CARD REWARD ================= */
+
+.reward-cards{
+  display:flex;
+  gap:9px;
+  margin:15px 0
+}
+
+.reward-card{
+  flex:1;
+  height:110px;
+  border-radius:17px;
+  color:#fff;
+  background:linear-gradient(135deg,#6924c9,#2478e9);
+  font-size:31px;
+  font-weight:800
+}
+
+/* ================= INVITE ================= */
+
+.share-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:15px 0
+}
+
+.share-btn{
+  padding:14px;
+  border-radius:14px;
+  color:#fff;
+  font-weight:800;
+  font-size:13px
+}
+
+.whatsapp{
+  background:#20b85a
+}
+
+.native-share{
+  background:#2563eb
+}
+
+.rules{
+  background:#f5f6fa;
+  border-radius:14px;
+  padding:13px;
+  font-size:11px;
+  line-height:1.6;
+  color:#505a6b
+}
+
+.rules b{
+  color:#202938
+}
+
+/* ================= BOTTOM ================= */
+
+.bottom{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:70px;
+  background:#fff;
+  border-top:1px solid #e9ebef;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  z-index:40
+}
+
+.nav{
+  background:#fff;
+  color:#8992a2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  font-size:10px
+}
+
+.nav span{
+  font-size:21px
+}
+
+.nav.active{
+  color:#6d28d9;
+  font-weight:800
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:85px;
+  transform:translateX(-50%);
+  background:#111827;
+  color:#fff;
+  padding:11px 17px;
+  border-radius:25px;
+  font-size:12px;
+  z-index:100;
+  display:none;
+  white-space:nowrap
+}
+
+.toast.show{
+  display:block;
+}
+
+/* ================= CELEBRATION ================= */
 
 .confetti{
-  position:fixed;inset:0;
-  pointer-events:none;z-index:90;display:none
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:90;
+  display:none
 }
-.confetti.show{display:block}
-.piece{
-  position:absolute;width:8px;height:14px;
-  animation:fall 1.2s linear forwards
+
+.confetti.show{
+  display:block
 }
+
+.confetti-piece{
+  position:absolute;
+  width:8px;
+  height:14px;
+  animation:fall 1.4s linear forwards
+}
+
 @keyframes fall{
-  to{transform:translateY(100vh) rotate(720deg);opacity:0}
+  to{
+    transform:translateY(105vh) rotate(720deg);
+    opacity:0
+  }
+}
+
+@media(max-width:360px){
+  .hero h1{font-size:25px}
+  .card{padding:12px}
+  .card h3{font-size:14px}
 }
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header class="header">
-  <div class="top">
+
+  <div class="top" onclick="openPage('profile')">
+
     <div class="user">
+
       <div class="avatar">P</div>
+
       <div>
         <div class="name">Prince_Gamer</div>
         <div class="uid">ID: 10001</div>
       </div>
+
     </div>
-    <div class="coins">🪙 <span id="topCoins">0</span></div>
+
+    <div class="coin-pill">
+      <span class="coin-icon">🪙</span>
+      <span id="topCoins">0</span>
+    </div>
+
   </div>
 
   <div class="hero">
-    <h1>PLAY & EARN = COINS</h1>
+
+    <h1>PLAY & EARN = MONEY</h1>
+
     <p>Play Games • Complete Tasks • Collect Coins</p>
 
     <div class="features">
-      <div class="feature">⚡<br>Fast Rewards</div>
-      <div class="feature">🔒<br>Secure</div>
-      <div class="feature">🎁<br>Rewards</div>
+
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        Fast Rewards
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🔒</span>
+        Secure
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🎁</span>
+        Rewards
+      </div>
+
     </div>
+
   </div>
+
 </header>
 
 <main>
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
+
 <section id="home" class="page active">
 
-  <div class="banner" id="banner">
-    <div>
-      <h3 id="bannerTitle">🎁 Refer & Earn</h3>
-      <p id="bannerText">Friends ko invite karo aur rewards pao.</p>
+  <div class="banner-window">
+
+    <div class="banner-track" id="bannerTrack">
+
+      <div class="ref-banner">
+        <div class="ref-text">
+          <h3>🎁 Refer & Earn</h3>
+          <p>Friends ko invite karo aur 100 Coins pao.</p>
+        </div>
+        <button class="invite-btn" onclick="openInvite()">INVITE</button>
+      </div>
+
+      <div class="ref-banner">
+        <div class="ref-text">
+          <h3>🚀 Invite Friends</h3>
+          <p>Apne dosto ko join karwao aur reward pao.</p>
+        </div>
+        <button class="invite-btn" onclick="openInvite()">INVITE</button>
+      </div>
+
+      <div class="ref-banner">
+        <div class="ref-text">
+          <h3>⭐ Earn More Coins</h3>
+          <p>Tasks complete karke coins collect karo.</p>
+        </div>
+        <button class="invite-btn" onclick="openInvite()">INVITE</button>
+      </div>
+
+      <div class="ref-banner">
+        <div class="ref-text">
+          <h3>🎮 Play More</h3>
+          <p>Games khelo aur daily rewards collect karo.</p>
+        </div>
+        <button class="invite-btn" onclick="openInvite()">INVITE</button>
+      </div>
+
     </div>
-    <button onclick="showToast('Invite option opened')">INVITE</button>
+
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
   </div>
 
-  <div class="title"><h2>🎮 Play & Earn</h2></div>
+  <div class="section-title">
+    <h2>🎮 Play & Earn</h2>
+  </div>
 
   <div class="grid">
 
     <div class="card" onclick="dailyBonus()">
-      <div class="icon">🎁</div>
+      <div class="card-icon">🎁</div>
       <h3>Daily Bonus</h3>
       <p>Har din bonus claim karo</p>
       <span class="reward">+50 Coins</span>
     </div>
 
     <div class="card" onclick="watchAd()">
-      <div class="icon">📺</div>
+      <div class="card-icon">📺</div>
       <h3>Watch Ads</h3>
       <p>Rewarded ad complete karo</p>
       <span class="reward">+20 Coins</span>
     </div>
 
     <div class="card" onclick="openCards()">
-      <div class="icon">🃏</div>
+      <div class="card-icon">🃏</div>
       <h3>Reward Cards</h3>
-      <p>Fixed reward cards</p>
+      <p>Fixed reward collect karo</p>
       <span class="reward">+10 Coins</span>
     </div>
 
     <div class="card" onclick="openPage('quiz')">
-      <div class="icon">🧮</div>
+      <div class="card-icon">🧮</div>
       <h3>Math Quiz</h3>
       <p>Sahi answer do</p>
       <span class="reward">+10 Coins</span>
     </div>
 
   </div>
+
 </section>
 
-<!-- GAMES -->
+<!-- ================= GAMES ================= -->
+
 <section id="games" class="page">
-  <div class="title"><h2>🎮 Games & Tasks</h2></div>
+
+  <div class="section-title">
+    <h2>🎮 Games & Tasks</h2>
+  </div>
 
   <div class="grid">
 
     <div class="card" onclick="openPage('quiz')">
-      <div class="icon">🧮</div>
+      <div class="card-icon">🧮</div>
       <h3>Math Quiz</h3>
-      <p>Question solve karo</p>
+      <p>Questions solve karo</p>
       <span class="reward">+10 Coins</span>
     </div>
 
     <div class="card" onclick="dailyBonus()">
-      <div class="icon">🎁</div>
+      <div class="card-icon">🎁</div>
       <h3>Daily Bonus</h3>
       <p>Daily reward claim karo</p>
       <span class="reward">+50 Coins</span>
     </div>
 
     <div class="card" onclick="watchAd()">
-      <div class="icon">📺</div>
+      <div class="card-icon">📺</div>
       <h3>Watch Ads</h3>
-      <p>Rewarded ad</p>
+      <p>Rewarded advertisement</p>
       <span class="reward">+20 Coins</span>
     </div>
 
-    <div class="card" onclick="showToast('New task coming soon!')">
-      <div class="icon">🚀</div>
-      <h3>New Task</h3>
-      <p>Coming soon</p>
-      <span class="reward">SOON</span>
+    <div class="card" onclick="openInvite()">
+      <div class="card-icon">👥</div>
+      <h3>Refer Friends</h3>
+      <p>Friends ko invite karo</p>
+      <span class="reward">+100 Coins</span>
     </div>
 
   </div>
+
 </section>
 
-<!-- WALLET -->
+<!-- ================= WALLET ================= -->
+
 <section id="wallet" class="page">
 
-  <div class="wallet">
+  <div class="wallet-box">
+
     <small>Total Coins</small>
-    <strong>🪙 <span id="walletCoins">0</span></strong>
-    <small>Available Coins</small>
+
+    <div class="wallet-amount">
+      <span class="coin-icon">🪙</span>
+      <strong id="walletCoins">0</strong>
+    </div>
+
+    <div class="wallet-note">
+      Available Coins
+    </div>
+
+    <div class="rate">
+      💰 1000 Coins = ₹10
+    </div>
+
   </div>
 
-  <div class="actions">
+  <div class="action-grid">
+
     <div class="action" onclick="openWithdraw()">
-      <b>💸 Withdrawal</b>
-      <p>Withdrawal request</p>
+      <div class="action-icon">💸</div>
+      <b>Withdrawal</b>
+      <p>Minimum 5000 Coins</p>
     </div>
 
-    <div class="action" onclick="showToast('Coin history opened')">
-      <b>📊 Coin History</b>
-      <p>Recent activity</p>
+    <div class="action" onclick="scrollHistory()">
+      <div class="action-icon">📊</div>
+      <b>Coin History</b>
+      <p>All earning activity</p>
     </div>
+
   </div>
 
-  <div class="history">
-    <div class="title"><h2>Withdrawal History</h2></div>
-    <div id="history"></div>
+  <div class="history-box" id="coinHistoryBox">
+
+    <div class="history-title">
+      🪙 Coin History
+    </div>
+
+    <div id="coinHistory"></div>
+
+  </div>
+
+  <div class="history-box">
+
+    <div class="history-title">
+      💸 Withdrawal History
+    </div>
+
+    <div id="withdrawHistory"></div>
+
   </div>
 
 </section>
 
-<!-- PROFILE -->
+<!-- ================= PROFILE ================= -->
+
 <section id="profile" class="page">
 
-  <div class="title"><h2>👤 Profile</h2></div>
+  <div class="profile-head">
+
+    <div class="profile-big">P</div>
+
+    <div>
+      <h2>Prince_Gamer</h2>
+      <p style="font-size:11px;opacity:.8">
+        ID: 10001
+      </p>
+    </div>
+
+  </div>
 
   <div class="profile-menu">
 
     <div class="menu" onclick="openPage('wallet')">
+
       <div class="menu-left">
         <div class="menu-icon">💰</div>
+
         <div>
           <b>Wallet</b>
           <small>Coins & history</small>
         </div>
-      </div>➜
+      </div>
+
+      ➜
     </div>
 
     <div class="menu" onclick="openWithdraw()">
+
       <div class="menu-left">
         <div class="menu-icon">💸</div>
+
         <div>
           <b>Withdrawal</b>
-          <small>Withdrawal request</small>
+          <small>Minimum 5000 Coins</small>
         </div>
-      </div>➜
+      </div>
+
+      ➜
+    </div>
+
+    <div class="menu" onclick="openInvite()">
+
+      <div class="menu-left">
+        <div class="menu-icon">👥</div>
+
+        <div>
+          <b>Refer & Earn</b>
+          <small>Earn 100 Coins</small>
+        </div>
+      </div>
+
+      ➜
     </div>
 
     <div class="menu" onclick="openSettings()">
+
       <div class="menu-left">
         <div class="menu-icon">⚙️</div>
+
         <div>
           <b>Settings</b>
           <small>App settings</small>
         </div>
-      </div>➜
+      </div>
+
+      ➜
     </div>
 
     <div class="menu" onclick="logout()">
+
       <div class="menu-left">
         <div class="menu-icon">🚪</div>
+
         <div>
           <b>Logout</b>
           <small>Sign out</small>
         </div>
-      </div>➜
+      </div>
+
+      ➜
     </div>
 
   </div>
+
 </section>
 
-<!-- QUIZ -->
+<!-- ================= QUIZ ================= -->
+
 <section id="quiz" class="page">
 
-  <button class="back" onclick="openPage('home')">← Back</button>
+  <button class="back" onclick="openPage('home')">
+    ← Back
+  </button>
 
-  <div class="quiz">
-    <h2 style="text-align:center">🧮 Math Quiz</h2>
-    <p style="text-align:center;color:#888;font-size:12px;margin-top:5px">
+  <div class="quiz-box">
+
+    <h2 style="text-align:center">
+      🧮 Math Quiz
+    </h2>
+
+    <div class="quiz-sub">
       Har sahi answer par +10 Coins
-    </p>
+    </div>
 
     <div class="question" id="question"></div>
+
     <div class="options" id="options"></div>
+
   </div>
 
 </section>
 
 </main>
 
-<!-- BOTTOM NAV -->
+<!-- ================= BOTTOM NAV ================= -->
+
 <nav class="bottom">
+
   <button class="nav active" onclick="openPage('home',this)">
-    <span>🏠</span>Home
+    <span>🏠</span>
+    Home
   </button>
+
   <button class="nav" onclick="openPage('games',this)">
-    <span>🎮</span>Games
+    <span>🎮</span>
+    Games
   </button>
+
   <button class="nav" onclick="openPage('wallet',this)">
-    <span>💰</span>Wallet
+    <span>💰</span>
+    Wallet
   </button>
+
   <button class="nav" onclick="openPage('profile',this)">
-    <span>👤</span>Profile
+    <span>👤</span>
+    Profile
   </button>
+
 </nav>
 
-<!-- CARD MODAL -->
-<div class="modal" id="cardsModal">
-  <div class="modal-box">
-    <h2>🃏 Reward Cards</h2>
-    <p>Card select karo aur fixed reward pao.</p>
+<!-- ================= REWARD CARD MODAL ================= -->
 
-    <div class="cards">
+<div class="modal" id="cardsModal">
+
+  <div class="modal-box">
+
+    <h2>🃏 Reward Cards</h2>
+
+    <p>
+      Card select karo aur fixed 10 Coins reward collect karo.
+    </p>
+
+    <div class="reward-cards">
+
       <button class="reward-card" onclick="claimCard()">?</button>
+
       <button class="reward-card" onclick="claimCard()">?</button>
+
       <button class="reward-card" onclick="claimCard()">?</button>
+
     </div>
 
-    <button class="secondary" onclick="closeModal('cardsModal')">
+    <button class="close"
+            onclick="closeModal('cardsModal')">
       Close
     </button>
+
   </div>
+
 </div>
 
-<!-- AD MODAL -->
+<!-- ================= AD MODAL ================= -->
+
 <div class="modal" id="adModal">
+
   <div class="modal-box">
-    <h2>📺 Watch Ad</h2>
-    <p>Advertisement chal raha hai...</p>
-    <div id="timer" style="font-size:35px;font-weight:bold;margin:15px">5</div>
-    <button class="secondary" onclick="closeModal('adModal')">
+
+    <h2>📺 Watch Ads</h2>
+
+    <p>
+      Advertisement complete hone ke baad reward milega.
+    </p>
+
+    <div id="timer"
+         style="text-align:center;font-size:38px;font-weight:800;margin:18px">
+      5
+    </div>
+
+    <button class="close"
+            onclick="closeModal('adModal')">
       Close
     </button>
+
   </div>
+
 </div>
 
-<!-- WITHDRAW -->
+<!-- ================= WITHDRAW MODAL ================= -->
+
 <div class="modal" id="withdrawModal">
+
   <div class="modal-box">
+
     <h2>💸 Withdrawal</h2>
-    <p>Withdrawal request submit karein.</p>
 
-    <input class="input" id="upi" placeholder="UPI ID">
-    <input class="input" id="amount"
-           type="number" placeholder="Enter Coins">
+    <p>
+      Minimum withdrawal: <b>5000 Coins</b><br>
+      1000 Coins = ₹10
+    </p>
 
-    <button class="primary" onclick="submitWithdrawal()">
+    <input
+      class="input"
+      id="upi"
+      placeholder="Enter UPI ID"
+      autocomplete="off"
+    >
+
+    <input
+      class="input"
+      id="withdrawCoins"
+      type="number"
+      placeholder="Enter Coins"
+      oninput="calculateMoney()"
+    >
+
+    <div id="moneyPreview"
+         style="text-align:left;
+                font-size:12px;
+                color:#667085;
+                margin-bottom:10px">
+      Amount: ₹0
+    </div>
+
+    <button class="primary"
+            onclick="submitWithdrawal()">
       Request Withdrawal
     </button>
 
-    <button class="secondary" onclick="closeModal('withdrawModal')">
+    <button class="close"
+            onclick="closeModal('withdrawModal')">
       Cancel
     </button>
+
   </div>
+
 </div>
 
-<!-- SETTINGS -->
-<div class="modal" id="settingsModal">
-  <div class="modal-box">
-    <h2>⚙️ Settings</h2>
-    <p>Settings save karne ke liye button dabayein.</p>
+<!-- ================= INVITE MODAL ================= -->
 
-    <button class="primary" onclick="saveSettings()">
+<div class="modal" id="inviteModal">
+
+  <div class="modal-box">
+
+    <h2>🎁 Refer & Earn</h2>
+
+    <p>
+      Apne friends aur jaan-pehchaan ke logon ke saath
+      website share karein aur referral reward earn karein.
+    </p>
+
+    <div class="rules">
+
+      <b>📋 Referral Rules</b><br><br>
+
+      1. Website ko apne friends ya jaan-pehchaan
+      wale logon ke saath share karein.<br>
+
+      2. Aapke referral se aaye person ko website par
+      apna account/ID register karna hoga.<br>
+
+      3. Registration aur referral rules complete hone
+      ke baad referral reward eligible hoga.<br>
+
+      4. Har eligible referral par
+      <b>100 Coins</b> reward milega.<br><br>
+
+      Thank you for sharing and supporting us ❤️
+
+    </div>
+
+    <div class="share-options">
+
+      <button class="share-btn whatsapp"
+              onclick="shareWhatsApp()">
+        💬 WhatsApp
+      </button>
+
+      <button class="share-btn native-share"
+              onclick="shareWebsite()">
+        📤 Share
+      </button>
+
+    </div>
+
+    <button class="close"
+            onclick="closeModal('inviteModal')">
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================= SETTINGS ================= -->
+
+<div class="modal" id="settingsModal">
+
+  <div class="modal-box">
+
+    <h2>⚙️ Settings</h2>
+
+    <p>
+      Account settings
+    </p>
+
+    <button class="primary"
+            onclick="showToast('Settings saved')">
       Save Settings
     </button>
 
-    <button class="secondary" onclick="closeModal('settingsModal')">
+    <button class="close"
+            onclick="closeModal('settingsModal')">
       Close
     </button>
+
   </div>
+
 </div>
 
 <div class="confetti" id="confetti"></div>
@@ -524,111 +1345,226 @@ main{padding:14px}
 
 <script>
 
-let coins = Number(localStorage.getItem("coins") || 0);
+/* =====================================================
+   COINS
+===================================================== */
+
+let coins =
+  Number(localStorage.getItem("coins") || 0);
 
 function updateCoins(){
-  document.getElementById("topCoins").textContent=coins;
-  document.getElementById("walletCoins").textContent=coins;
+
+  document.getElementById("topCoins").textContent =
+    coins;
+
+  document.getElementById("walletCoins").textContent =
+    coins;
 }
 
 function saveCoins(){
+
   localStorage.setItem("coins",coins);
+
   updateCoins();
 }
 
-function addCoins(n,text){
-  coins += n;
+function addCoins(amount,reason,icon="🪙"){
+
+  coins += amount;
+
   saveCoins();
-  showToast("🎉 +"+n+" Coins — "+text);
+
+  addCoinHistory(
+    reason,
+    amount,
+    icon
+  );
+
+  showToast(
+    "🎉 +" + amount + " Coins"
+  );
 }
 
-function showToast(text){
-  const t=document.getElementById("toast");
-  t.textContent=text;
-  t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"),2200);
+
+/* =====================================================
+   COIN HISTORY
+===================================================== */
+
+function addCoinHistory(
+  reason,
+  amount,
+  icon
+){
+
+  const history =
+    JSON.parse(
+      localStorage.getItem("coinHistory") || "[]"
+    );
+
+  history.unshift({
+
+    reason:reason,
+    amount:amount,
+    icon:icon,
+
+    date:new Date().toLocaleString()
+
+  });
+
+  localStorage.setItem(
+    "coinHistory",
+    JSON.stringify(history)
+  );
+
+  renderCoinHistory();
 }
 
-/* PAGE */
 
-function openPage(id,btn){
+function renderCoinHistory(){
 
-  document.querySelectorAll(".page")
-    .forEach(x=>x.classList.remove("active"));
+  const box =
+    document.getElementById("coinHistory");
 
-  document.getElementById(id).classList.add("active");
+  const history =
+    JSON.parse(
+      localStorage.getItem("coinHistory") || "[]"
+    );
 
-  document.querySelectorAll(".nav")
-    .forEach(x=>x.classList.remove("active"));
+  if(!history.length){
 
-  if(btn)btn.classList.add("active");
-  else{
-    const nav=document.querySelectorAll(".nav");
+    box.innerHTML =
+      `<div class="empty">
+        Abhi koi coin activity nahi hai.
+      </div>`;
 
-    if(id==="home")nav[0].classList.add("active");
-    if(id==="games")nav[1].classList.add("active");
-    if(id==="wallet")nav[2].classList.add("active");
-    if(id==="profile")nav[3].classList.add("active");
-  }
-
-  if(id==="quiz")loadQuiz();
-
-  window.scrollTo(0,0);
-}
-
-/* DAILY */
-
-function dailyBonus(){
-
-  const today=new Date().toDateString();
-
-  if(localStorage.getItem("dailyBonus")===today){
-    showToast("🎁 Aaj ka bonus already claimed!");
     return;
   }
 
-  localStorage.setItem("dailyBonus",today);
+  box.innerHTML =
+    history.map(item=>`
 
-  addCoins(50,"Daily Bonus");
+      <div class="history-item">
+
+        <div class="history-left">
+
+          <div class="history-icon">
+            ${item.icon}
+          </div>
+
+          <div>
+
+            <div class="history-name">
+              ${escapeHTML(item.reason)}
+            </div>
+
+            <div class="history-date">
+              ${escapeHTML(item.date)}
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="history-coins">
+          +${item.amount}
+        </div>
+
+      </div>
+
+    `).join("");
+}
+
+
+/* =====================================================
+   DAILY BONUS
+===================================================== */
+
+function dailyBonus(){
+
+  const today =
+    new Date().toDateString();
+
+  const claimed =
+    localStorage.getItem("dailyBonusDate");
+
+  if(claimed === today){
+
+    showToast(
+      "🎁 Aaj ka Daily Bonus already claimed!"
+    );
+
+    return;
+  }
+
+  localStorage.setItem(
+    "dailyBonusDate",
+    today
+  );
+
+  addCoins(
+    50,
+    "Daily Bonus",
+    "🎁"
+  );
+
   celebrate();
 }
 
-/* ADS */
 
-let adTimer;
+/* =====================================================
+   WATCH AD
+===================================================== */
+
+let adInterval;
 
 function watchAd(){
 
-  document.getElementById("adModal")
+  document
+    .getElementById("adModal")
     .classList.add("show");
 
-  let n=5;
-  document.getElementById("timer").textContent=n;
+  let time = 5;
 
-  clearInterval(adTimer);
+  document.getElementById("timer")
+    .textContent = time;
 
-  adTimer=setInterval(()=>{
+  clearInterval(adInterval);
 
-    n--;
-    document.getElementById("timer").textContent=n;
+  adInterval =
+    setInterval(()=>{
 
-    if(n<=0){
+      time--;
 
-      clearInterval(adTimer);
+      document.getElementById("timer")
+        .textContent = time;
 
-      closeModal("adModal");
+      if(time <= 0){
 
-      addCoins(20,"Watch Ads");
-      celebrate();
-    }
+        clearInterval(adInterval);
 
-  },1000);
+        closeModal("adModal");
+
+        addCoins(
+          20,
+          "Watch Ads",
+          "📺"
+        );
+
+        celebrate();
+      }
+
+    },1000);
 }
 
-/* CARDS */
+
+/* =====================================================
+   REWARD CARDS
+===================================================== */
 
 function openCards(){
-  document.getElementById("cardsModal")
+
+  document
+    .getElementById("cardsModal")
     .classList.add("show");
 }
 
@@ -636,265 +1572,736 @@ function claimCard(){
 
   closeModal("cardsModal");
 
-  addCoins(10,"Reward Card");
+  addCoins(
+    10,
+    "Reward Card",
+    "🃏"
+  );
+
   celebrate();
 }
 
-/* QUIZ */
+
+/* =====================================================
+   QUIZ
+===================================================== */
 
 const questions=[
+
   {
     q:"5 + 5 = ?",
     a:["8","10","12","15"],
     c:"10"
   },
+
   {
     q:"12 - 4 = ?",
     a:["6","7","8","9"],
     c:"8"
   },
+
   {
     q:"3 × 4 = ?",
     a:["7","10","12","14"],
     c:"12"
   },
+
   {
     q:"20 ÷ 5 = ?",
     a:["2","3","4","5"],
     c:"4"
   },
+
   {
     q:"9 + 6 = ?",
     a:["13","14","15","16"],
     c:"15"
   }
+
 ];
 
-let qi=0;
+let questionIndex = 0;
 
 function loadQuiz(){
 
-  const q=questions[qi];
+  const q =
+    questions[questionIndex];
 
-  document.getElementById("question").textContent=q.q;
+  document.getElementById("question")
+    .textContent = q.q;
 
-  const box=document.getElementById("options");
-  box.innerHTML="";
+  const options =
+    document.getElementById("options");
 
-  q.a.forEach(x=>{
+  options.innerHTML = "";
 
-    const b=document.createElement("button");
+  q.a.forEach(answer=>{
 
-    b.className="option";
-    b.textContent=x;
+    const btn =
+      document.createElement("button");
 
-    b.onclick=()=>answerQuiz(x,q.c);
+    btn.className = "option";
 
-    box.appendChild(b);
+    btn.textContent = answer;
+
+    btn.onclick = ()=>{
+      checkAnswer(
+        answer,
+        q.c
+      );
+    };
+
+    options.appendChild(btn);
+
   });
 }
 
-function answerQuiz(answer,correct){
 
-  if(answer===correct){
+function checkAnswer(
+  answer,
+  correct
+){
 
-    addCoins(10,"Correct Answer");
+  if(answer === correct){
+
+    addCoins(
+      10,
+      "Math Quiz - Correct Answer",
+      "🧮"
+    );
+
     celebrate();
 
-    qi++;
+    questionIndex++;
 
-    if(qi>=questions.length){
+    if(
+      questionIndex >=
+      questions.length
+    ){
 
-      qi=0;
-      showToast("🏆 Quiz complete!");
+      questionIndex = 0;
+
+      setTimeout(()=>{
+        showToast(
+          "🏆 Quiz complete!"
+        );
+      },300);
+
     }
 
-    setTimeout(loadQuiz,700);
+    setTimeout(
+      loadQuiz,
+      650
+    );
 
   }else{
 
-    showToast("❌ Wrong Answer! Try again.");
+    showToast(
+      "❌ Wrong Answer! Try Again."
+    );
+
   }
+
 }
 
-/* WITHDRAWAL HISTORY */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function openPage(
+  page,
+  button
+){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(p=>{
+      p.classList.remove("active");
+    });
+
+  document
+    .getElementById(page)
+    .classList.add("active");
+
+  document
+    .querySelectorAll(".nav")
+    .forEach(n=>{
+      n.classList.remove("active");
+    });
+
+  if(button){
+
+    button.classList.add("active");
+
+  }else{
+
+    const nav =
+      document.querySelectorAll(".nav");
+
+    if(page==="home")
+      nav[0].classList.add("active");
+
+    if(page==="games")
+      nav[1].classList.add("active");
+
+    if(page==="wallet")
+      nav[2].classList.add("active");
+
+    if(page==="profile")
+      nav[3].classList.add("active");
+  }
+
+  if(page==="quiz"){
+    loadQuiz();
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+
+/* =====================================================
+   WITHDRAWAL
+===================================================== */
 
 function openWithdraw(){
-  document.getElementById("withdrawModal")
+
+  document
+    .getElementById("withdrawModal")
     .classList.add("show");
+
 }
+
+function calculateMoney(){
+
+  const value =
+    Number(
+      document.getElementById(
+        "withdrawCoins"
+      ).value || 0
+    );
+
+  const money =
+    value / 100;
+
+  document.getElementById(
+    "moneyPreview"
+  ).textContent =
+    "Amount: ₹" +
+    money.toFixed(2);
+}
+
+
+function validUPI(upi){
+
+  /*
+    Basic UPI format check only.
+    Actual ownership/payment verification
+    requires a legitimate server/payment provider.
+  */
+
+  return /^[a-zA-Z0-9._-]{2,}@[a-zA-Z]{2,}$/
+    .test(upi);
+}
+
 
 function submitWithdrawal(){
 
-  const upi=document.getElementById("upi").value.trim();
-  const amount=Number(
-    document.getElementById("amount").value
-  );
+  const upi =
+    document.getElementById("upi")
+      .value.trim();
 
-  if(!upi || !amount){
+  const amount =
+    Number(
+      document.getElementById(
+        "withdrawCoins"
+      ).value
+    );
 
-    showToast("⚠️ Sabhi details bhariye");
+  if(!validUPI(upi)){
+
+    showToast(
+      "⚠️ Valid UPI ID enter karein"
+    );
+
     return;
   }
 
-  if(amount<=0){
+  if(!amount || amount < 5000){
 
-    showToast("⚠️ Valid Coins enter karein");
+    showToast(
+      "⚠️ Minimum withdrawal 5000 Coins hai"
+    );
+
     return;
   }
 
-  if(amount>coins){
+  if(amount > coins){
 
-    showToast("⚠️ Insufficient Coins");
+    showToast(
+      "⚠️ Aapke paas enough Coins nahi hain"
+    );
+
     return;
   }
 
-  const list=
-    JSON.parse(localStorage.getItem("withdrawals")||"[]");
+  /*
+    Request/history UI only.
+    No money is transferred here.
+  */
 
-  list.unshift({
+  const history =
+    JSON.parse(
+      localStorage.getItem(
+        "withdrawHistory"
+      ) || "[]"
+    );
+
+  history.unshift({
+
     coins:amount,
-    upi:upi,
+
+    money:amount / 100,
+
+    upi:maskUPI(upi),
+
     status:"Pending",
+
     date:new Date().toLocaleString()
+
   });
 
   localStorage.setItem(
-    "withdrawals",
-    JSON.stringify(list)
+    "withdrawHistory",
+    JSON.stringify(history)
   );
 
-  coins-=amount;
+  coins -= amount;
+
   saveCoins();
 
-  closeModal("withdrawModal");
+  addCoinHistory(
+    "Withdrawal Request",
+    -amount,
+    "💸"
+  );
 
-  document.getElementById("upi").value="";
-  document.getElementById("amount").value="";
+  closeModal(
+    "withdrawModal"
+  );
 
-  showToast("✅ Withdrawal request accepted");
-  renderHistory();
+  document.getElementById("upi")
+    .value="";
+
+  document.getElementById(
+    "withdrawCoins"
+  ).value="";
+
+  document.getElementById(
+    "moneyPreview"
+  ).textContent="Amount: ₹0";
+
+  renderWithdrawHistory();
+
+  showToast(
+    "✅ Withdrawal request submitted"
+  );
 }
 
-function renderHistory(){
 
-  const box=document.getElementById("history");
+function maskUPI(upi){
 
-  const list=
-    JSON.parse(localStorage.getItem("withdrawals")||"[]");
+  const parts =
+    upi.split("@");
 
-  if(!list.length){
+  if(parts.length !== 2)
+    return "****";
 
-    box.innerHTML=
-      '<div style="text-align:center;color:#888;font-size:12px;padding:15px">No withdrawal history</div>';
+  const name =
+    parts[0];
+
+  return (
+    name.substring(
+      0,
+      Math.min(2,name.length)
+    ) +
+    "****@" +
+    parts[1]
+  );
+}
+
+
+/* =====================================================
+   WITHDRAWAL HISTORY
+===================================================== */
+
+function renderWithdrawHistory(){
+
+  const box =
+    document.getElementById(
+      "withdrawHistory"
+    );
+
+  const history =
+    JSON.parse(
+      localStorage.getItem(
+        "withdrawHistory"
+      ) || "[]"
+    );
+
+  if(!history.length){
+
+    box.innerHTML =
+      `<div class="empty">
+        No withdrawal history
+      </div>`;
 
     return;
   }
 
-  box.innerHTML=list.map(x=>`
+  box.innerHTML =
+    history.map(item=>`
 
-    <div class="row">
-      <div>
-        <b>🪙 ${x.coins} Coins</b><br>
-        <small style="color:#999">${x.date}</small>
+      <div class="history-item">
+
+        <div class="history-left">
+
+          <div class="history-icon">
+            💸
+          </div>
+
+          <div>
+
+            <div class="history-name">
+              ${item.coins} Coins
+              • ₹${Number(item.money).toFixed(2)}
+            </div>
+
+            <div class="history-date">
+              ${escapeHTML(item.date)}<br>
+              ${escapeHTML(item.upi)}
+            </div>
+
+          </div>
+
+        </div>
+
+        <div style="
+          color:#d97706;
+          font-size:12px;
+          font-weight:800">
+          ${item.status}
+        </div>
+
       </div>
-      <div class="pending">${x.status}</div>
-    </div>
 
-  `).join("");
+    `).join("");
 }
 
-/* SETTINGS */
 
-function openSettings(){
-  document.getElementById("settingsModal")
+function scrollHistory(){
+
+  document
+    .getElementById("coinHistoryBox")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   REFERRAL
+===================================================== */
+
+let bannerIndex = 0;
+
+const track =
+  document.getElementById(
+    "bannerTrack"
+  );
+
+const dots =
+  document.querySelectorAll(".dot");
+
+function changeBanner(){
+
+  bannerIndex++;
+
+  if(bannerIndex >= 4)
+    bannerIndex=0;
+
+  track.style.transform =
+    "translateX(-" +
+    (bannerIndex * 25) +
+    "%)";
+
+  dots.forEach((dot,i)=>{
+
+    dot.classList.toggle(
+      "active",
+      i===bannerIndex
+    );
+
+  });
+}
+
+setInterval(
+  changeBanner,
+  3500
+);
+
+
+function openInvite(){
+
+  document
+    .getElementById("inviteModal")
     .classList.add("show");
 }
 
-function saveSettings(){
 
-  closeModal("settingsModal");
-  showToast("⚙️ Settings saved");
+function shareWhatsApp(){
+
+  const text =
+`🎁 Refer & Earn
+
+Prince Gamer par apne friends ko invite karein.
+
+Referral Rules:
+• Friend ko website par register karna hoga.
+• Referral rules complete hone par reward eligible hoga.
+• Har eligible referral par 100 Coins.
+
+Thank you ❤️`;
+
+  const url =
+    "https://wa.me/?text=" +
+    encodeURIComponent(text);
+
+  window.open(
+    url,
+    "_blank"
+  );
 }
 
-/* LOGOUT */
+
+async function shareWebsite(){
+
+  const text =
+`🎮 Prince Gamer
+
+Play Games • Complete Tasks • Collect Coins
+
+Refer & Earn: Eligible referral par 100 Coins.
+
+Thank you ❤️`;
+
+  if(
+    navigator.share
+  ){
+
+    try{
+
+      await navigator.share({
+        title:"Prince Gamer",
+        text:text,
+        url:location.href
+      });
+
+    }catch(e){}
+
+  }else{
+
+    try{
+
+      await navigator.clipboard.writeText(
+        location.href
+      );
+
+      showToast(
+        "🔗 Website link copied"
+      );
+
+    }catch(e){
+
+      showToast(
+        "📤 Share option available nahi hai"
+      );
+
+    }
+
+  }
+}
+
+
+/* =====================================================
+   PROFILE / SETTINGS
+===================================================== */
+
+function openSettings(){
+
+  document
+    .getElementById("settingsModal")
+    .classList.add("show");
+}
 
 function logout(){
-  showToast("🚪 Logout clicked");
+
+  showToast(
+    "🚪 Logout selected"
+  );
 }
 
-/* MODAL */
+
+/* =====================================================
+   MODALS
+===================================================== */
 
 function closeModal(id){
-  document.getElementById(id).classList.remove("show");
+
+  document
+    .getElementById(id)
+    .classList.remove("show");
 }
 
-/* CELEBRATION */
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+let toastTimer;
+
+function showToast(message){
+
+  const toast =
+    document.getElementById(
+      "toast"
+    );
+
+  toast.textContent =
+    message;
+
+  toast.classList.add("show");
+
+  clearTimeout(
+    toastTimer
+  );
+
+  toastTimer =
+    setTimeout(()=>{
+
+      toast.classList.remove(
+        "show"
+      );
+
+    },2200);
+}
+
+
+/* =====================================================
+   CELEBRATION
+===================================================== */
 
 function celebrate(){
 
-  const box=document.getElementById("confetti");
+  const box =
+    document.getElementById(
+      "confetti"
+    );
 
   box.innerHTML="";
-  box.classList.add("show");
 
-  for(let i=0;i<55;i++){
+  box.classList.add(
+    "show"
+  );
 
-    const p=document.createElement("div");
+  const colors=[
+    "#7c3aed",
+    "#2563eb",
+    "#f59e0b",
+    "#10b981",
+    "#ef4444",
+    "#ec4899"
+  ];
 
-    p.className="piece";
+  for(
+    let i=0;
+    i<65;
+    i++
+  ){
 
-    p.style.left=Math.random()*100+"%";
-    p.style.top="-20px";
-    p.style.background=
-      ["#7c3aed","#2563eb","#f59e0b",
-       "#10b981","#ef4444"][Math.floor(Math.random()*5)];
+    const piece =
+      document.createElement(
+        "div"
+      );
 
-    p.style.animationDelay=
-      Math.random()*.5+"s";
+    piece.className =
+      "confetti-piece";
 
-    box.appendChild(p);
+    piece.style.left =
+      Math.random()*100 +
+      "%";
+
+    piece.style.top =
+      "-20px";
+
+    piece.style.background =
+      colors[
+        Math.floor(
+          Math.random() *
+          colors.length
+        )
+      ];
+
+    piece.style.animationDelay =
+      Math.random()*.5 +
+      "s";
+
+    box.appendChild(
+      piece
+    );
   }
 
   setTimeout(()=>{
-    box.classList.remove("show");
+
+    box.classList.remove(
+      "show"
+    );
+
     box.innerHTML="";
-  },1500);
+
+  },1600);
 }
 
-/* REFERRAL BANNER */
 
-const banners=[
-  ["🎁 Refer & Earn","Friends ko invite karo aur rewards pao."],
-  ["🚀 Invite Friends","Apne friends ko app ke baare mein batao."],
-  ["⭐ Earn More Coins","Tasks complete karo aur coins collect karo."],
-  ["🎮 Play More","Games khelo aur daily rewards collect karo."]
-];
+/* =====================================================
+   SECURITY HELPER
+===================================================== */
 
-let bi=0;
+function escapeHTML(value){
 
-setInterval(()=>{
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
 
-  bi=(bi+1)%banners.length;
 
-  const banner=document.getElementById("banner");
-
-  banner.style.animation="none";
-  void banner.offsetWidth;
-  banner.style.animation="slide .45s";
-
-  document.getElementById("bannerTitle").textContent=
-    banners[bi][0];
-
-  document.getElementById("bannerText").textContent=
-    banners[bi][1];
-
-},3000);
-
-/* INIT */
+/* =====================================================
+   INIT
+===================================================== */
 
 updateCoins();
-renderHistory();
+
+renderCoinHistory();
+
+renderWithdrawHistory();
+
 loadQuiz();
 
 </script>
