@@ -17,17 +17,19 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:#f4f6fb;
   color:#182033;
-  padding-bottom:70px;
+  padding-bottom:76px;
+}
+
+button,input{
+  font-family:inherit;
 }
 
 button{
   border:0;
   cursor:pointer;
-  font-family:inherit;
 }
 
 .app{
-  width:100%;
   max-width:700px;
   margin:auto;
 }
@@ -35,130 +37,96 @@ button{
 /* ================= HERO ================= */
 
 .hero{
-  background:linear-gradient(135deg,#4520b8,#176fe8);
+  background:linear-gradient(135deg,#4b22c7,#1678e8);
   color:#fff;
-  padding:15px 18px 18px;
-  border-radius:0 0 30px 30px;
+  padding:18px 22px 22px;
+  border-radius:0 0 36px 36px;
 }
 
 .heroTop{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:8px;
+  gap:10px;
 }
 
 .profileArea{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:9px;
   cursor:pointer;
 }
 
 .avatar{
-  width:44px;
-  height:44px;
-  min-width:44px;
+  width:48px;
+  height:48px;
+  min-width:48px;
   border-radius:50%;
   background:#fff;
-  color:#4520b8;
+  color:#5425c5;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:21px;
+  font-size:22px;
   font-weight:bold;
-  box-shadow:0 3px 10px rgba(0,0,0,.12);
 }
 
 .profileText h2{
-  font-size:17px;
+  font-size:18px;
 }
 
 .profileText p{
-  font-size:11px;
+  font-size:12px;
   opacity:.85;
-  margin-top:2px;
+  margin-top:3px;
 }
 
 .coinBalance{
   display:flex;
   align-items:center;
-  gap:5px;
-  padding:7px 10px;
-  background:rgba(255,255,255,.15);
+  gap:6px;
+  padding:7px 12px;
+  background:rgba(255,255,255,.14);
   border-radius:24px;
-  font-size:16px;
+  font-size:17px;
   font-weight:bold;
+  cursor:pointer;
 }
 
 .coinIcon{
   width:28px;
   height:28px;
   border-radius:50%;
-  background:#f7c843;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:17px;
 }
 
-.heroTitle{
-  margin-top:19px;
+.hero h1{
   font-size:25px;
   line-height:1.1;
-  font-weight:800;
+  margin-top:25px;
   white-space:nowrap;
 }
 
 .heroSub{
-  font-size:12px;
-  margin-top:8px;
+  font-size:13px;
+  margin-top:9px;
   opacity:.9;
 }
-
-/* ================= WITHDRAW BUTTON ================= */
-
-.heroWithdraw{
-  width:100%;
-  margin-top:12px;
-  padding:10px 13px;
-  border-radius:13px;
-  background:#fff;
-  color:#4520b8;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  font-size:14px;
-  font-weight:bold;
-  box-shadow:0 3px 10px rgba(0,0,0,.12);
-}
-
-.heroWithdrawIcon{
-  width:25px;
-  height:25px;
-  border-radius:8px;
-  background:#18c56a;
-  color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-}
-
-/* ================= FEATURES ================= */
 
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:7px;
-  margin-top:13px;
+  gap:9px;
+  margin-top:18px;
 }
 
 .feature{
-  min-height:59px;
-  background:rgba(255,255,255,.12);
-  border-radius:14px;
+  min-height:68px;
+  background:rgba(255,255,255,.13);
+  border-radius:17px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -167,170 +135,157 @@ button{
 }
 
 .featureIcon{
-  width:27px;
-  height:27px;
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(255,255,255,.18);
-  font-size:17px;
-  margin-bottom:3px;
+  font-size:22px;
+  line-height:1;
+  margin-bottom:5px;
 }
 
 .feature span{
-  font-size:11px;
+  font-size:12px;
 }
 
 /* ================= CONTENT ================= */
 
 .content{
-  padding:14px 16px 8px;
+  padding:18px 18px 8px;
 }
 
 .sectionTitle{
-  font-size:23px;
-  margin:17px 3px 12px;
+  font-size:25px;
+  margin:20px 3px 14px;
 }
 
 /* ================= BANNER ================= */
 
 .refBanner{
-  height:112px;
-  border-radius:23px;
+  height:125px;
+  border-radius:27px;
   color:#fff;
-  background:linear-gradient(110deg,#32145d,#5a22ce,#1680e9);
+  background:linear-gradient(110deg,#281344,#5420ca,#167be8);
   position:relative;
   overflow:hidden;
-  margin-top:13px;
+  margin-top:17px;
 }
 
 .bannerSlide{
   position:absolute;
   inset:0;
-  padding:15px 16px;
+  padding:18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:8px;
+  gap:10px;
 }
 
 .bannerText h3{
-  font-size:19px;
-  margin-bottom:4px;
+  font-size:20px;
+  margin-bottom:5px;
 }
 
 .bannerText p{
-  font-size:12px;
+  font-size:13px;
   opacity:.9;
-  max-width:235px;
 }
 
 .inviteBtn{
   background:#fff;
   color:#5223bd;
-  padding:10px 15px;
-  border-radius:14px;
+  padding:12px 17px;
+  border-radius:16px;
   font-weight:bold;
-  font-size:13px;
+  font-size:14px;
+  white-space:nowrap;
 }
 
 .dots{
   position:absolute;
-  bottom:7px;
+  bottom:8px;
   left:50%;
   transform:translateX(-50%);
   display:flex;
-  gap:5px;
+  gap:6px;
 }
 
 .dot{
-  width:7px;
-  height:7px;
+  width:8px;
+  height:8px;
   border-radius:50%;
-  background:rgba(255,255,255,.4);
+  background:rgba(255,255,255,.45);
 }
 
 .dot.active{
-  width:21px;
+  width:24px;
+  border-radius:10px;
   background:#fff;
 }
 
-/* ================= GAME CARDS ================= */
+/* ================= GAMES ================= */
 
 .gamesGrid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:12px;
 }
 
 .gameCard{
   background:#fff;
-  border-radius:19px;
-  padding:13px;
-  min-height:166px;
-  box-shadow:0 3px 13px rgba(30,40,70,.06);
+  border-radius:21px;
+  padding:15px;
+  min-height:175px;
+  box-shadow:0 3px 15px rgba(30,40,70,.06);
 }
 
 .gameIcon{
-  width:47px;
-  height:47px;
-  border-radius:14px;
-  background:#eee9ff;
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  background:#eeeaff;
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:24px;
-  margin-bottom:9px;
-}
-
-.gameCard:nth-child(2) .gameIcon{
-  background:#e3f3ff;
-}
-
-.gameCard:nth-child(3) .gameIcon{
-  background:#fff1d9;
-}
-
-.gameCard:nth-child(4) .gameIcon{
-  background:#e3f8ec;
+  margin-bottom:10px;
 }
 
 .gameCard h3{
-  font-size:16px;
+  font-size:17px;
 }
 
 .gameCard p{
   color:#89909d;
-  margin-top:4px;
+  margin-top:5px;
   line-height:1.3;
-  font-size:11px;
+  font-size:12px;
 }
 
 .actionBtn{
   width:100%;
-  margin-top:10px;
-  padding:9px;
-  border-radius:12px;
+  margin-top:12px;
+  padding:10px;
+  border-radius:13px;
   color:#fff;
-  background:linear-gradient(100deg,#5522c5,#207de8);
+  background:linear-gradient(100deg,#5722c5,#217ce8);
   font-weight:bold;
-  font-size:12px;
+  font-size:13px;
 }
 
 .actionBtn:disabled{
-  background:#d9dde5;
-  color:#737985;
+  opacity:.6;
   cursor:not-allowed;
+}
+
+.actionBtn.claimed{
+  background:#d9dde5;
+  color:#727985;
 }
 
 /* ================= WALLET ================= */
 
 .walletBox{
-  background:linear-gradient(135deg,#4320b7,#1478e9);
+  background:linear-gradient(135deg,#5122c4,#1478e9);
   color:#fff;
-  border-radius:23px;
-  padding:19px;
+  border-radius:26px;
+  padding:21px;
 }
 
 .walletLabel{
@@ -342,63 +297,65 @@ button{
   display:flex;
   align-items:center;
   gap:8px;
-  font-size:39px;
+  font-size:38px;
   font-weight:bold;
   margin:5px 0;
 }
 
 .walletRate{
-  margin-top:10px;
-  padding:9px 12px;
-  border-radius:13px;
+  margin-top:11px;
+  padding:10px 13px;
+  border-radius:14px;
   background:rgba(255,255,255,.13);
-  font-size:13px;
+  font-size:14px;
 }
 
 .walletActions{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:13px;
+  gap:12px;
+  margin-top:15px;
 }
 
 .walletAction{
   background:#fff;
-  border-radius:19px;
-  padding:15px;
-  min-height:118px;
+  border-radius:21px;
+  padding:17px;
+  text-align:left;
+  min-height:125px;
   cursor:pointer;
-  box-shadow:0 3px 13px rgba(30,40,70,.05);
+  box-shadow:0 3px 15px rgba(30,40,70,.05);
 }
 
 .withdrawIcon{
-  width:48px;
-  height:48px;
+  width:46px;
+  height:46px;
   border-radius:14px;
-  background:#18c56a;
-  color:#fff;
+  background:#19c566;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:24px;
-  margin-bottom:9px;
+  font-size:23px;
+  margin-bottom:10px;
 }
 
 .walletAction h3{
-  font-size:16px;
+  font-size:17px;
 }
 
 .walletAction p{
   color:#8a909c;
-  margin-top:4px;
-  font-size:11px;
+  margin-top:5px;
+  font-size:12px;
 }
+
+/* ================= HISTORY ================= */
 
 .history{
   background:#fff;
-  border-radius:21px;
-  margin-top:13px;
-  padding:15px;
+  border-radius:23px;
+  margin-top:15px;
+  padding:16px;
 }
 
 .historyTitle{
@@ -409,8 +366,8 @@ button{
 .historyItem{
   display:flex;
   align-items:center;
-  gap:9px;
-  padding:11px 0;
+  gap:10px;
+  padding:12px 0;
   border-bottom:1px solid #edf0f4;
 }
 
@@ -419,15 +376,15 @@ button{
 }
 
 .historyIcon{
-  width:41px;
-  height:41px;
-  min-width:41px;
+  width:40px;
+  height:40px;
+  min-width:40px;
   border-radius:12px;
-  background:#eee9ff;
+  background:#f0eaff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:20px;
+  font-size:19px;
 }
 
 .historyInfo{
@@ -436,105 +393,111 @@ button{
 
 .historyInfo strong{
   display:block;
-  font-size:13px;
+  font-size:14px;
 }
 
 .historyInfo small{
   display:block;
   color:#969ca7;
-  margin-top:2px;
+  margin-top:3px;
   font-size:10px;
 }
 
 .plus{
-  color:#169957;
+  color:#209957;
   font-weight:bold;
   font-size:15px;
+}
+
+/* ================= PAGES ================= */
+
+.page{
+  display:none;
+}
+
+.page.active{
+  display:block;
 }
 
 /* ================= QUIZ ================= */
 
 .quizBox{
   background:#fff;
-  border-radius:24px;
-  padding:19px 15px;
+  border-radius:25px;
+  padding:22px 16px;
   text-align:center;
-  box-shadow:0 3px 14px rgba(30,40,70,.05);
+  box-shadow:0 3px 15px rgba(30,40,70,.05);
 }
 
 .quizType{
   display:inline-block;
-  background:#eee9ff;
-  color:#5524c3;
-  padding:7px 12px;
-  border-radius:17px;
-  font-size:11px;
+  background:#eeeaff;
+  color:#5424c6;
+  padding:8px 15px;
+  border-radius:20px;
+  font-size:14px;
   font-weight:bold;
+  margin-bottom:12px;
 }
 
-.quizHint{
-  margin-top:9px;
-  color:#858c98;
-  font-size:13px;
+.questionHint{
+  color:#8a909c;
+  font-size:14px;
 }
 
 .question{
-  font-size:27px;
+  font-size:29px;
   font-weight:bold;
-  line-height:1.2;
-  margin:21px 4px;
-  min-height:64px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  margin:24px 5px;
+  line-height:1.25;
 }
 
 .answerGrid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:9px;
+  gap:10px;
 }
 
 .answer{
-  padding:13px 7px;
-  min-height:51px;
-  border-radius:14px;
-  background:#ece9ff;
-  color:#28559f;
-  font-size:16px;
+  padding:15px 8px;
+  border-radius:16px;
+  background:#eeeaff;
+  color:#28539a;
+  font-size:17px;
   font-weight:bold;
+  cursor:pointer;
   transition:.15s;
 }
 
 .answer:active{
-  transform:scale(.97);
+  transform:scale(.96);
 }
 
 .answer.correct{
-  background:#dff8e9;
-  color:#15924d;
+  background:#20c66b!important;
+  color:#fff!important;
 }
 
 .answer.wrong{
-  background:#ffe1e1;
-  color:#d93636;
+  background:#e1e4ea!important;
+  color:#777!important;
 }
 
 /* ================= PROFILE ================= */
 
 .profileMenu{
   background:#fff;
-  border-radius:22px;
-  padding:6px 16px;
+  border-radius:23px;
+  padding:7px 17px;
 }
 
 .menuItem{
-  padding:14px 3px;
+  padding:15px 2px;
   border-bottom:1px solid #edf0f4;
   display:flex;
   align-items:center;
-  gap:11px;
-  font-size:15px;
+  gap:12px;
+  font-size:16px;
   cursor:pointer;
 }
 
@@ -543,14 +506,14 @@ button{
 }
 
 .menuIcon{
-  width:38px;
-  height:38px;
-  border-radius:11px;
-  background:#eee9ff;
+  width:39px;
+  height:39px;
+  border-radius:12px;
+  background:#eeeaff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:19px;
+  font-size:20px;
 }
 
 /* ================= MODAL ================= */
@@ -559,11 +522,11 @@ button{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.5);
+  background:rgba(0,0,0,.48);
   z-index:100;
   align-items:center;
   justify-content:center;
-  padding:15px;
+  padding:18px;
 }
 
 .overlay.show{
@@ -573,17 +536,17 @@ button{
 .modal{
   background:#fff;
   width:100%;
-  max-width:420px;
+  max-width:430px;
   max-height:90vh;
-  overflow:auto;
-  border-radius:25px;
-  padding:20px;
+  overflow-y:auto;
+  border-radius:27px;
+  padding:21px;
   animation:pop .2s ease;
 }
 
 @keyframes pop{
   from{
-    transform:scale(.9);
+    transform:scale(.92);
     opacity:0;
   }
   to{
@@ -593,200 +556,124 @@ button{
 }
 
 .modal h2{
-  font-size:22px;
-  margin-bottom:10px;
+  font-size:26px;
+  margin-bottom:14px;
 }
 
 .modal p{
   color:#737a86;
   line-height:1.45;
-  font-size:13px;
-}
-
-.modalClose{
-  width:100%;
-  margin-top:13px;
-  padding:11px;
-  border-radius:13px;
-  background:#5424c6;
-  color:#fff;
-  font-weight:bold;
+  font-size:14px;
 }
 
 /* ================= WITHDRAWAL ================= */
 
 .withdrawBanner{
-  background:linear-gradient(120deg,#123d91,#177ce8,#d29a1c);
+  background:linear-gradient(115deg,#174aa0,#1978e8,#d6a62b);
   color:#fff;
-  padding:13px;
-  border-radius:16px;
-  margin-bottom:12px;
+  border-radius:22px;
+  padding:18px 12px;
   text-align:center;
+  margin-bottom:16px;
 }
 
-.withdrawBannerIcon{
-  width:45px;
-  height:45px;
-  margin:auto;
-  border-radius:13px;
-  background:#18c56a;
+.bankLarge{
+  width:58px;
+  height:58px;
+  border-radius:17px;
+  background:#19c566;
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:28px;
+  margin:0 auto 9px;
+}
+
+.withdrawBanner h3{
   font-size:22px;
 }
 
-.inputGroup{
-  margin-top:12px;
-}
-
-.inputGroup label{
-  display:block;
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:5px;
-}
-
-.inputGroup input{
-  width:100%;
-  padding:11px;
-  border:1px solid #dfe3ea;
-  border-radius:12px;
-  outline:none;
+.withdrawBanner p{
+  color:#fff;
+  margin-top:4px;
   font-size:14px;
 }
 
-.amountPreview{
-  margin-top:10px;
-  background:#f0f5ff;
-  border-radius:13px;
-  padding:10px;
-  text-align:center;
-}
-
-.amountPreview small{
-  color:#777f8d;
-  font-size:11px;
-}
-
-.amountPreview strong{
+.formLabel{
   display:block;
-  color:#159957;
-  font-size:22px;
-  margin-top:2px;
-}
-
-/* NEW WITHDRAW MESSAGE */
-
-.withdrawTime{
-  margin-top:9px;
-  padding:10px;
-  border-radius:12px;
-  background:#fff8e3;
-  color:#805f0c;
-  text-align:center;
-  font-size:12px;
+  font-size:14px;
   font-weight:bold;
-  line-height:1.4;
+  margin:12px 0 7px;
 }
 
-.limitInfo{
-  margin-top:8px;
-  font-size:11px;
-  color:#7b8290;
-  line-height:1.5;
+.formInput{
+  width:100%;
+  padding:14px;
+  border:1px solid #e0e3e8;
+  border-radius:16px;
+  outline:none;
+  font-size:15px;
+  background:#fff;
 }
 
-.withdrawError{
-  color:#d93636;
-  font-size:11px;
-  margin-top:6px;
-  display:none;
+.formInput:focus{
+  border-color:#5722c5;
 }
 
-/* ================= WATCH TIMER ================= */
+.infoNotice{
+  background:#fff8df;
+  color:#765d1b;
+  padding:13px;
+  border-radius:15px;
+  margin-top:13px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.withdrawRules{
+  margin-top:13px;
+  color:#737a86;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.modalClose{
+  width:100%;
+  margin-top:12px;
+  padding:13px;
+  border-radius:14px;
+  background:#5424c6;
+  color:#fff;
+  font-weight:bold;
+  font-size:14px;
+}
+
+/* ================= TIMER ================= */
 
 .timerCircle{
-  width:100px;
-  height:100px;
+  width:105px;
+  height:105px;
   border-radius:50%;
-  margin:15px auto;
-  background:#eee9ff;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  background:#eeeaff;
   color:#5424c6;
-}
-
-.timerCircle strong{
-  font-size:32px;
-}
-
-.timerCircle span{
-  font-size:10px;
-}
-
-.adStatus{
-  text-align:center;
-  font-weight:bold;
-  font-size:13px;
-}
-
-/* ================= REFER ================= */
-
-.ruleBox{
-  background:#f6f7fb;
-  border-radius:14px;
-  padding:12px;
-  margin-top:12px;
-}
-
-.rule{
-  display:flex;
-  gap:8px;
-  margin:8px 0;
-  color:#555d6b;
-  line-height:1.35;
-  font-size:12px;
-}
-
-.ruleIcon{
-  min-width:23px;
-  height:23px;
-  border-radius:50%;
-  background:#e7ddff;
-  color:#5524c4;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:11px;
+  font-size:30px;
   font-weight:bold;
-}
-
-.refReward{
-  background:#fff7df;
-  border:1px solid #efd17b;
-  border-radius:14px;
-  padding:10px;
-  text-align:center;
-  margin-top:10px;
-}
-
-.refReward strong{
-  display:block;
-  font-size:20px;
-  color:#a87500;
+  margin:20px auto;
+  border:7px solid #ddd5ff;
 }
 
 /* ================= SUCCESS ================= */
 
 .successOverlay{
-  display:none;
   position:fixed;
   inset:0;
-  z-index:300;
-  background:rgba(18,25,43,.72);
+  background:rgba(13,25,47,.62);
+  z-index:500;
+  display:none;
   align-items:center;
   justify-content:center;
 }
@@ -796,51 +683,54 @@ button{
 }
 
 .successBox{
-  width:230px;
-  text-align:center;
   background:#fff;
-  border-radius:25px;
-  padding:24px 16px;
-  animation:successPop .4s ease;
+  width:85%;
+  max-width:330px;
+  border-radius:30px;
+  padding:28px 18px;
+  text-align:center;
+  animation:successPop .35s ease;
 }
 
 @keyframes successPop{
-  0%{transform:scale(.3);opacity:0}
+  0%{transform:scale(.4);opacity:0}
   70%{transform:scale(1.08)}
   100%{transform:scale(1);opacity:1}
 }
 
-.bigCheck{
-  width:85px;
-  height:85px;
+.successLogo{
+  width:90px;
+  height:90px;
   border-radius:50%;
-  margin:auto;
-  background:#18c56a;
+  background:#20c66b;
   color:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:52px;
+  font-size:53px;
+  margin:0 auto 13px;
+  box-shadow:0 8px 25px rgba(32,198,107,.35);
 }
 
 .successBox h2{
-  margin-top:13px;
-  font-size:23px;
+  font-size:25px;
+  color:#1c9b56;
 }
 
 .successBox p{
-  color:#777f8d;
-  margin-top:5px;
-  font-size:13px;
+  margin-top:7px;
+  color:#7b818b;
 }
+
+/* celebration */
 
 .confetti{
   position:fixed;
+  width:8px;
+  height:13px;
   top:-20px;
-  font-size:21px;
-  animation:fall 1.7s linear forwards;
-  pointer-events:none;
-  z-index:350;
+  z-index:600;
+  animation:fall 1.4s linear forwards;
 }
 
 @keyframes fall{
@@ -850,6 +740,30 @@ button{
   }
 }
 
+/* ================= TOAST ================= */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:88px;
+  transform:translateX(-50%) translateY(20px);
+  background:#172033;
+  color:#fff;
+  padding:11px 17px;
+  border-radius:18px;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:700;
+  white-space:nowrap;
+  font-size:13px;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
 /* ================= NAV ================= */
 
 .bottomNav{
@@ -857,9 +771,9 @@ button{
   bottom:0;
   left:0;
   right:0;
-  height:68px;
+  height:72px;
   background:#fff;
-  box-shadow:0 -3px 15px rgba(20,30,60,.08);
+  box-shadow:0 -4px 18px rgba(20,30,60,.08);
   display:flex;
   justify-content:center;
   z-index:50;
@@ -883,80 +797,62 @@ button{
 
 .navIcon{
   font-size:22px;
-  height:26px;
+  height:27px;
 }
 
 .navItem span{
   font-size:12px;
-  margin-top:2px;
+  margin-top:3px;
 }
 
 .navItem.active{
-  color:#5524c3;
+  color:#5623c6;
 }
 
-/* ================= TOAST ================= */
-
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:80px;
-  transform:translateX(-50%) translateY(20px);
-  background:#172033;
-  color:#fff;
-  padding:10px 16px;
-  border-radius:17px;
-  opacity:0;
-  pointer-events:none;
-  transition:.3s;
-  z-index:500;
-  white-space:nowrap;
-  font-size:12px;
-}
-
-.toast.show{
-  opacity:1;
-  transform:translateX(-50%) translateY(0);
-}
-
-/* ================= PAGE ================= */
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
+/* ================= MOBILE ================= */
 
 @media(max-width:390px){
 
-  .heroTitle{
-    font-size:23px;
+  .hero{
+    padding:16px 17px 20px;
   }
 
-  .content{
-    padding-left:14px;
-    padding-right:14px;
+  .hero h1{
+    font-size:22px;
+  }
+
+  .heroSub{
+    font-size:12px;
+  }
+
+  .feature{
+    min-height:62px;
+  }
+
+  .featureIcon{
+    font-size:19px;
+  }
+
+  .feature span{
+    font-size:11px;
+  }
+
+  .sectionTitle{
+    font-size:23px;
   }
 
   .gameCard{
-    padding:12px;
-    min-height:162px;
+    padding:13px;
   }
 
   .gameIcon{
-    width:45px;
-    height:45px;
-    font-size:23px;
+    width:44px;
+    height:44px;
+    font-size:22px;
   }
 
   .question{
-    font-size:25px;
-  }
-
-  .answer{
-    font-size:15px;
+    font-size:26px;
   }
 }
 </style>
@@ -974,7 +870,7 @@ button{
 
 <div class="heroTop">
 
-<div class="profileArea" id="profileTop">
+<div class="profileArea" onclick="openProfile()">
 
 <div class="avatar">P</div>
 
@@ -985,32 +881,20 @@ button{
 
 </div>
 
-<div class="coinBalance">
+<!-- COIN CLICK = WALLET -->
+
+<div class="coinBalance" onclick="goWallet()">
 <div class="coinIcon">🪙</div>
 <span id="topCoins">0</span>
 </div>
 
 </div>
 
-<!-- SAME LINE -->
-
-<h1 class="heroTitle">
-PLAY & EARN = MONEY
-</h1>
+<h1>PLAY &amp; EARN = MONEY</h1>
 
 <div class="heroSub">
 Play Games • Complete Tasks • Collect Coins
 </div>
-
-<!-- WITHDRAW DIRECTLY BELOW -->
-
-<button class="heroWithdraw" id="heroWithdraw">
-
-<span class="heroWithdrawIcon">↗</span>
-
-WITHDRAW
-
-</button>
 
 <div class="features">
 
@@ -1020,7 +904,7 @@ WITHDRAW
 </div>
 
 <div class="feature">
-<div class="featureIcon">🔐</div>
+<div class="featureIcon">🔒</div>
 <span>Secure</span>
 </div>
 
@@ -1030,27 +914,22 @@ WITHDRAW
 </div>
 
 </div>
-
 </header>
 
-
 <div class="content">
+
+<!-- REFER BANNER -->
 
 <div class="refBanner">
 
 <div class="bannerSlide">
 
 <div class="bannerText">
-
-<h3>🎁 Refer & Earn</h3>
-
-<p>
-Friends ko invite karo aur reward pao.
-</p>
-
+<h3>🎁 Refer &amp; Earn</h3>
+<p>Friends ko invite karo.</p>
 </div>
 
-<button class="inviteBtn" id="inviteBtn">
+<button class="inviteBtn" onclick="openInvite()">
 INVITE
 </button>
 
@@ -1064,13 +943,11 @@ INVITE
 
 </div>
 
-
-<h2 class="sectionTitle">
-🎮 Play & Earn
-</h2>
-
+<h2 class="sectionTitle">🎮 Play &amp; Earn</h2>
 
 <div class="gamesGrid">
+
+<!-- DAILY BONUS -->
 
 <div class="gameCard">
 
@@ -1078,16 +955,17 @@ INVITE
 
 <h3>Daily Bonus</h3>
 
-<p>
-Har din ek baar bonus claim karo.
-</p>
+<p>Har din ek baar bonus claim karo.</p>
 
-<button id="dailyBtn" class="actionBtn">
+<button id="dailyBtn"
+class="actionBtn"
+onclick="claimDaily()">
 CLAIM
 </button>
 
 </div>
 
+<!-- WATCH ADS -->
 
 <div class="gameCard">
 
@@ -1095,52 +973,51 @@ CLAIM
 
 <h3>Watch Ads</h3>
 
-<p>
-20 second task complete karo.
-</p>
+<p>20 second task complete karo.</p>
 
-<button class="actionBtn watchBtn">
+<button class="actionBtn"
+onclick="watchAd()">
 WATCH
 </button>
 
 </div>
 
+<!-- REWARD CARD -->
 
 <div class="gameCard">
 
 <div class="gameIcon">🃏</div>
 
-<h3>Reward Cards</h3>
+<h3>Reward Card</h3>
 
-<p>
-Din me ek baar card open karo.
-</p>
+<p>Din me ek baar reward card.</p>
 
-<button id="cardBtn" class="actionBtn">
+<button id="cardBtn"
+class="actionBtn"
+onclick="rewardCard()">
 OPEN
 </button>
 
 </div>
 
+<!-- MATH & GK -->
 
 <div class="gameCard">
 
 <div class="gameIcon">🧮</div>
 
-<h3>Math & GK</h3>
+<h3>Math &amp; GK</h3>
 
-<p>
-Easy questions solve karo.
-</p>
+<p>Easy questions solve karo.</p>
 
-<button class="actionBtn quizBtn">
+<button class="actionBtn"
+onclick="openQuiz()">
 PLAY
 </button>
 
 </div>
 
 </div>
-
 </div>
 
 </section>
@@ -1152,9 +1029,7 @@ PLAY
 
 <div class="content">
 
-<h2 class="sectionTitle">
-🎮 Games
-</h2>
+<h2 class="sectionTitle">🎮 Games</h2>
 
 <div class="gamesGrid">
 
@@ -1162,32 +1037,37 @@ PLAY
 <div class="gameIcon">🎁</div>
 <h3>Daily Bonus</h3>
 <p>Daily fixed reward.</p>
-<button id="dailyBtn2" class="actionBtn">CLAIM</button>
+<button id="dailyBtn2"
+class="actionBtn"
+onclick="claimDaily()">CLAIM</button>
 </div>
 
 <div class="gameCard">
 <div class="gameIcon">📺</div>
 <h3>Watch Ads</h3>
 <p>20 second task.</p>
-<button class="actionBtn watchBtn">WATCH</button>
+<button class="actionBtn"
+onclick="watchAd()">WATCH</button>
 </div>
 
 <div class="gameCard">
 <div class="gameIcon">🃏</div>
-<h3>Reward Cards</h3>
-<p>Daily one card.</p>
-<button id="cardBtn2" class="actionBtn">OPEN</button>
+<h3>Reward Card</h3>
+<p>Daily reward card.</p>
+<button id="cardBtn2"
+class="actionBtn"
+onclick="rewardCard()">OPEN</button>
 </div>
 
 <div class="gameCard">
 <div class="gameIcon">🧮</div>
-<h3>Math & GK</h3>
-<p>Unlimited questions.</p>
-<button class="actionBtn quizBtn">PLAY</button>
+<h3>Math &amp; GK</h3>
+<p>Unlimited easy questions.</p>
+<button class="actionBtn"
+onclick="openQuiz()">PLAY</button>
 </div>
 
 </div>
-
 </div>
 
 </section>
@@ -1201,9 +1081,7 @@ PLAY
 
 <div class="walletBox">
 
-<div class="walletLabel">
-Total Coins
-</div>
+<div class="walletLabel">Total Coins</div>
 
 <div class="walletCoins">
 🪙 <span id="walletCoins">0</span>
@@ -1222,11 +1100,12 @@ Available Coins
 
 <div class="walletActions">
 
-<div class="walletAction" id="withdrawBox">
+<!-- BANK WITHDRAWAL -->
 
-<div class="withdrawIcon">
-↗
-</div>
+<div class="walletAction"
+onclick="openWithdrawal()">
+
+<div class="withdrawIcon">🏦</div>
 
 <h3>Withdrawal</h3>
 
@@ -1235,11 +1114,10 @@ Available Coins
 </div>
 
 
-<div class="walletAction" id="historyBox">
+<div class="walletAction"
+onclick="showCoinHistory()">
 
-<div class="gameIcon">
-📊
-</div>
+<div class="gameIcon">📊</div>
 
 <h3>Coin History</h3>
 
@@ -1271,39 +1149,53 @@ Available Coins
 
 <div class="content">
 
-<h2 class="sectionTitle">
-👤 Profile
-</h2>
+<h2 class="sectionTitle">👤 Profile</h2>
 
 <div class="profileMenu">
 
-<div class="menuItem" id="walletMenu">
+<div class="menuItem"
+onclick="goWallet()">
+
 <div class="menuIcon">💰</div>
 Wallet
+
 </div>
 
-<div class="menuItem" id="settingsMenu">
+<div class="menuItem"
+onclick="openSettings()">
+
 <div class="menuIcon">⚙️</div>
 Settings
+
 </div>
 
-<div class="menuItem" id="withdrawMenu">
-<div class="menuIcon">↗</div>
+<!-- BANK ICON -->
+
+<div class="menuItem"
+onclick="openWithdrawal()">
+
+<div class="menuIcon">🏦</div>
 Withdrawal
+
 </div>
 
-<div class="menuItem" id="referMenu">
+<div class="menuItem"
+onclick="openInvite()">
+
 <div class="menuIcon">🎁</div>
-Refer & Earn
+Refer &amp; Earn
+
 </div>
 
-<div class="menuItem" id="logoutMenu">
+<div class="menuItem"
+onclick="logoutUser()">
+
 <div class="menuIcon">🚪</div>
 Logout
-</div>
 
 </div>
 
+</div>
 </div>
 
 </section>
@@ -1316,24 +1208,28 @@ Logout
 <div class="content">
 
 <h2 class="sectionTitle">
-🧮 Math & GK
+🧮 Math &amp; GK
 </h2>
 
 <div class="quizBox">
 
-<div id="quizType" class="quizType">
-MATH QUESTION
+<div id="quizType"
+class="quizType">
+MATH
 </div>
 
-<p class="quizHint">
+<p class="questionHint">
 Correct answer choose karo
 </p>
 
-<div id="question" class="question">
+<div id="question"
+class="question">
 Loading...
 </div>
 
-<div id="answers" class="answerGrid"></div>
+<div id="answers"
+class="answerGrid">
+</div>
 
 </div>
 
@@ -1344,30 +1240,42 @@ Loading...
 </div>
 
 
-<!-- ================= NAV ================= -->
+<!-- ================= BOTTOM NAV ================= -->
 
 <div class="bottomNav">
 
 <div class="navInner">
 
-<div class="navItem active" data-page="homePage">
+<div class="navItem active"
+onclick="showPage('homePage',this)">
+
 <div class="navIcon">🏠</div>
 <span>Home</span>
+
 </div>
 
-<div class="navItem" data-page="gamesPage">
+<div class="navItem"
+onclick="showPage('gamesPage',this)">
+
 <div class="navIcon">🎮</div>
 <span>Games</span>
+
 </div>
 
-<div class="navItem" data-page="walletPage">
+<div class="navItem"
+onclick="showPage('walletPage',this)">
+
 <div class="navIcon">💰</div>
 <span>Wallet</span>
+
 </div>
 
-<div class="navItem" id="profileNav">
+<div class="navItem"
+onclick="openProfile()">
+
 <div class="navIcon">👤</div>
 <span>Profile</span>
+
 </div>
 
 </div>
@@ -1377,15 +1285,19 @@ Loading...
 
 <!-- ================= MODAL ================= -->
 
-<div id="overlay" class="overlay">
+<div id="overlay"
+class="overlay"
+onclick="outsideModal(event)">
 
-<div class="modal">
+<div class="modal"
+onclick="event.stopPropagation()">
 
 <h2 id="modalTitle"></h2>
 
 <div id="modalContent"></div>
 
-<button class="modalClose" id="modalClose">
+<button class="modalClose"
+onclick="closeModal()">
 CLOSE
 </button>
 
@@ -1396,18 +1308,17 @@ CLOSE
 
 <!-- ================= SUCCESS ================= -->
 
-<div id="successOverlay" class="successOverlay">
+<div id="successOverlay"
+class="successOverlay">
 
 <div class="successBox">
 
-<div class="bigCheck">
-✓
-</div>
+<div class="successLogo">✓</div>
 
-<h2>Correct! 🎉</h2>
+<h2>Correct Answer!</h2>
 
-<p id="successText">
-+1 Coin Added
+<p id="successReward">
++1 Coin 🎉
 </p>
 
 </div>
@@ -1415,1548 +1326,919 @@ CLOSE
 </div>
 
 
-<div id="toast" class="toast"></div>
+<div id="toast"
+class="toast">
+</div>
 
 
 <script>
 
-/* ================= COINS ================= */
+/* =====================================================
+   BASIC DATA
+===================================================== */
 
-let coins =
-Number(localStorage.getItem("coins") || 0);
+let coins = Number(localStorage.getItem("coins") || 0);
 
 let historyData =
-JSON.parse(
-localStorage.getItem("coinHistory") || "[]"
-);
+JSON.parse(localStorage.getItem("coinHistory") || "[]");
+
+let correctAnswer = null;
+
+let quizBusy = false;
+
+let quizType = "math";
+
+let adTimer = null;
+
+
+/* =====================================================
+   COINS
+===================================================== */
+
+function saveCoins(){
+
+  localStorage.setItem("coins",coins);
+
+  updateCoins();
+
+}
 
 
 function updateCoins(){
 
-document.getElementById("topCoins").textContent =
-coins.toLocaleString();
+  document.getElementById("topCoins").textContent =
+    coins.toLocaleString();
 
-document.getElementById("walletCoins").textContent =
-coins.toLocaleString();
+  document.getElementById("walletCoins").textContent =
+    coins.toLocaleString();
 
 }
 
 
 function addCoins(amount,title,icon){
 
-coins += amount;
+  coins += amount;
 
-historyData.unshift({
-title:title,
-amount:amount,
-icon:icon,
-time:new Date().toLocaleString()
-});
+  historyData.unshift({
+    title:title,
+    amount:amount,
+    icon:icon,
+    time:new Date().toLocaleString()
+  });
 
-historyData =
-historyData.slice(0,50);
+  historyData =
+    historyData.slice(0,50);
 
-localStorage.setItem(
-"coins",
-coins
-);
+  localStorage.setItem(
+    "coinHistory",
+    JSON.stringify(historyData)
+  );
 
-localStorage.setItem(
-"coinHistory",
-JSON.stringify(historyData)
-);
+  saveCoins();
 
-updateCoins();
-renderHistory();
+  renderHistory();
 
 }
 
+
+/* =====================================================
+   HISTORY
+===================================================== */
 
 function renderHistory(){
 
-const list =
-document.getElementById("historyList");
+  const list =
+    document.getElementById("historyList");
 
-if(!historyData.length){
+  if(!historyData.length){
 
-list.innerHTML =
-'<p style="color:#9298a3;padding:14px 0;font-size:12px">Abhi koi earning history nahi hai.</p>';
+    list.innerHTML =
+      '<p style="color:#9298a3;padding:15px 0;font-size:13px">Abhi koi earning history nahi hai.</p>';
 
-return;
+    return;
+  }
+
+  list.innerHTML =
+    historyData.map(item => `
+
+      <div class="historyItem">
+
+        <div class="historyIcon">
+          ${item.icon}
+        </div>
+
+        <div class="historyInfo">
+
+          <strong>
+            ${item.title}
+          </strong>
+
+          <small>
+            ${item.time}
+          </small>
+
+        </div>
+
+        <div class="plus">
+          +${item.amount}
+        </div>
+
+      </div>
+
+    `).join("");
 
 }
 
-list.innerHTML =
-historyData.map(item=>`
 
-<div class="historyItem">
-
-<div class="historyIcon">
-${item.icon}
-</div>
-
-<div class="historyInfo">
-<strong>${item.title}</strong>
-<small>${item.time}</small>
-</div>
-
-<div class="plus">
-+${item.amount}
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-/* ================= DATE ================= */
+/* =====================================================
+   DAILY BONUS
+===================================================== */
 
 function todayKey(){
 
-const d=new Date();
+  const d = new Date();
 
-return d.getFullYear()+"-"+
-(d.getMonth()+1)+"-"+
-d.getDate();
+  return d.getFullYear()
+    +"-"
+    +(d.getMonth()+1)
+    +"-"
+    +d.getDate();
 
 }
 
-
-/* ================= DAILY BONUS ================= */
 
 function updateDailyButton(){
 
-const claimed =
-localStorage.getItem("dailyClaimed")
-===todayKey();
+  const claimed =
+    localStorage.getItem("dailyClaimed")
+    === todayKey();
 
-document.querySelectorAll(
-"#dailyBtn,#dailyBtn2"
-).forEach(btn=>{
+  document
+    .querySelectorAll("#dailyBtn,#dailyBtn2")
+    .forEach(btn => {
 
-btn.disabled=claimed;
+      if(claimed){
 
-if(claimed){
+        btn.textContent =
+          "CLAIMED ✓";
 
-btn.textContent="CLAIMED ✓";
+        btn.classList.add("claimed");
 
-}else{
+      }else{
 
-btn.textContent="CLAIM";
+        btn.textContent =
+          "CLAIM";
 
-}
+        btn.classList.remove("claimed");
 
-});
+      }
+
+    });
 
 }
 
 
 function claimDaily(){
 
-if(
-localStorage.getItem("dailyClaimed")
-===todayKey()
-){
+  if(
+    localStorage.getItem("dailyClaimed")
+    === todayKey()
+  ){
 
-toast("Aaj ka bonus already claimed hai.");
+    toast("Aaj ka bonus already claimed hai.");
 
-return;
+    return;
+  }
+
+  localStorage.setItem(
+    "dailyClaimed",
+    todayKey()
+  );
+
+  addCoins(
+    50,
+    "Daily Bonus",
+    "🎁"
+  );
+
+  updateDailyButton();
+
+  toast("+50 Coins added 🎉");
 
 }
 
-localStorage.setItem(
-"dailyClaimed",
-todayKey()
-);
 
-addCoins(
-50,
-"Daily Bonus",
-"🎁"
-);
-
-updateDailyButton();
-
-toast("+50 Coins added 🎉");
-
-}
-
-
-/* ================= REWARD CARD ================= */
+/* =====================================================
+   REWARD CARD - ONE TIME PER DAY
+===================================================== */
 
 function updateCardButton(){
 
-const used =
-localStorage.getItem("rewardCardClaimed")
-===todayKey();
+  const claimed =
+    localStorage.getItem("rewardCardClaimed")
+    === todayKey();
 
-document.querySelectorAll(
-"#cardBtn,#cardBtn2"
-).forEach(btn=>{
+  document
+    .querySelectorAll("#cardBtn,#cardBtn2")
+    .forEach(btn => {
 
-btn.disabled=used;
+      if(claimed){
 
-btn.textContent =
-used ? "CLAIMED ✓" : "OPEN";
+        btn.textContent =
+          "CLAIMED ✓";
 
-});
+        btn.classList.add("claimed");
+
+      }else{
+
+        btn.textContent =
+          "OPEN";
+
+        btn.classList.remove("claimed");
+
+      }
+
+    });
 
 }
 
 
 function rewardCard(){
 
-if(
-localStorage.getItem("rewardCardClaimed")
-===todayKey()
-){
+  if(
+    localStorage.getItem("rewardCardClaimed")
+    === todayKey()
+  ){
 
-toast(
-"Aaj ka Reward Card already use ho chuka hai."
-);
+    toast("Reward Card aaj already use ho chuka hai.");
 
-return;
+    return;
+  }
 
-}
+  openModal(
+    "🃏 Reward Card",
+    `
 
-openModal(
-"🃏 Reward Card",
-`
+    <p style="text-align:center">
+      Ek card choose karo.
+    </p>
 
-<p style="text-align:center">
-Aaj ek card choose karo.
-</p>
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:9px;
+      margin-top:16px;
+    ">
 
-<div style="
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
-margin-top:14px;
-">
+      <button
+      class="answer"
+      onclick="claimCard(10)">
+      🎁
+      </button>
 
-<button class="answer cardChoice" data-reward="10">
-🎁<br>+10
-</button>
+      <button
+      class="answer"
+      onclick="claimCard(20)">
+      🎁
+      </button>
 
-<button class="answer cardChoice" data-reward="20">
-🎁<br>+20
-</button>
+      <button
+      class="answer"
+      onclick="claimCard(30)">
+      🎁
+      </button>
 
-<button class="answer cardChoice" data-reward="30">
-🎁<br>+30
-</button>
+    </div>
 
-</div>
-
-<p style="
-text-align:center;
-font-size:10px;
-margin-top:10px;
-">
-Reward Card din me sirf 1 baar.
-</p>
-
-`
-);
-
-document.querySelectorAll(
-".cardChoice"
-).forEach(btn=>{
-
-btn.addEventListener(
-"click",
-function(){
-
-claimCard(
-Number(this.dataset.reward)
-);
-
-}
-);
-
-});
+    `
+  );
 
 }
 
 
 function claimCard(amount){
 
-if(
-localStorage.getItem("rewardCardClaimed")
-===todayKey()
-){
+  if(
+    localStorage.getItem("rewardCardClaimed")
+    === todayKey()
+  ){
 
-closeModal();
+    closeModal();
 
-toast(
-"Aaj ka card already use ho chuka hai."
-);
+    toast("Aaj ka card already claimed hai.");
 
-return;
+    return;
+  }
 
-}
+  localStorage.setItem(
+    "rewardCardClaimed",
+    todayKey()
+  );
 
-localStorage.setItem(
-"rewardCardClaimed",
-todayKey()
-);
+  addCoins(
+    amount,
+    "Reward Card",
+    "🃏"
+  );
 
-closeModal();
+  updateCardButton();
 
-addCoins(
-amount,
-"Reward Card",
-"🃏"
-);
+  closeModal();
 
-updateCardButton();
-
-toast(
-"🎉 +"+amount+" Coins collected!"
-);
+  toast("Reward collected 🎉");
 
 }
 
 
-/* ================= WATCH ADS ================= */
-
-let adInterval=null;
+/* =====================================================
+   WATCH ADS - 20 SECOND TIMER
+===================================================== */
 
 function watchAd(){
 
-openModal(
-"📺 Watch & Earn",
-`
+  openModal(
+    "📺 Watch Ads",
+    `
 
-<p style="text-align:center">
-20 second timer complete hone ke baad
-20 coins claim karo.
-</p>
+    <p style="text-align:center">
+      Task complete hone ke baad
+      <b>20 Coins</b> milenge.
+    </p>
 
-<div class="timerCircle">
+    <div class="timerCircle"
+    id="adTimer">
+      20
+    </div>
 
-<strong id="adTimer">
-20
-</strong>
+    <button
+    id="adStartBtn"
+    class="actionBtn"
+    onclick="startAdTimer()">
+      START 20 SECOND TASK
+    </button>
 
-<span>SECONDS</span>
-
-</div>
-
-<div id="adStatus"
-class="adStatus">
-⏳ Please wait...
-</div>
-
-<button id="adCompleteBtn"
-class="actionBtn"
-disabled>
-WAIT...
-</button>
-
-`
-);
-
-startAdTimer();
+    `
+  );
 
 }
 
 
 function startAdTimer(){
 
-clearInterval(adInterval);
+  const button =
+    document.getElementById("adStartBtn");
 
-let time=20;
+  const timer =
+    document.getElementById("adTimer");
 
-const timer=
-document.getElementById("adTimer");
+  if(!button || !timer) return;
 
-const status=
-document.getElementById("adStatus");
+  button.disabled = true;
 
-const button=
-document.getElementById("adCompleteBtn");
+  let seconds = 20;
 
-adInterval=setInterval(()=>{
+  timer.textContent = seconds;
 
-time--;
+  clearInterval(adTimer);
 
-if(timer)
-timer.textContent=time;
+  adTimer =
+    setInterval(() => {
 
-if(time<=0){
+      seconds--;
 
-clearInterval(adInterval);
+      timer.textContent =
+        seconds;
 
-if(status)
-status.textContent=
-"✅ Task completed!";
+      if(seconds <= 0){
 
-if(button){
+        clearInterval(adTimer);
 
-button.disabled=false;
+        addCoins(
+          20,
+          "Watch Ads",
+          "📺"
+        );
 
-button.textContent=
-"CLAIM 20 COINS";
+        closeModal();
 
-button.onclick=
-completeAd;
+        toast("+20 Coins added 🎉");
 
-}
+      }
 
-}
-
-},1000);
+    },1000);
 
 }
 
 
-function completeAd(){
+/* =====================================================
+   MATH + GK QUIZ
+===================================================== */
 
-clearInterval(adInterval);
+const gkQuestions = [
 
-closeModal();
+  {
+    q:"Ghar me khana banane ki jagah ko kya kehte hain?",
+    a:["Garage","Office","Garden","Kitchen"],
+    c:"Kitchen"
+  },
 
-addCoins(
-20,
-"Watch Ads",
-"📺"
-);
+  {
+    q:"Suraj kis direction se ugta hai?",
+    a:["North","South","East","West"],
+    c:"East"
+  },
 
-toast("+20 Coins added 🎉");
+  {
+    q:"Ek week me kitne din hote hain?",
+    a:["5","6","7","8"],
+    c:"7"
+  },
 
-}
+  {
+    q:"Paani peene ke liye hum kya use karte hain?",
+    a:["Glass","Pillow","Shoe","Book"],
+    c:"Glass"
+  },
 
+  {
+    q:"Hum phone se kya kar sakte hain?",
+    a:["Call","Cooking","Sleeping","Driving"],
+    c:"Call"
+  },
 
-/* ================= QUIZ ================= */
+  {
+    q:"Traffic signal me rukne ke liye kaunsa colour hota hai?",
+    a:["Green","Blue","Red","White"],
+    c:"Red"
+  },
 
-let correctAnswer="";
+  {
+    q:"Doodh aam taur par kis colour ka hota hai?",
+    a:["Black","White","Blue","Green"],
+    c:"White"
+  },
 
-let quizNumber=0;
-
-let quizLocked=false;
-
-
-const gkQuestions=[
-
-{
-q:"Ek hafte me kitne din hote hain?",
-a:["5","6","7","8"],
-c:"7"
-},
-
-{
-q:"Suraj kis direction se nikalta hai?",
-a:["West","East","North","South"],
-c:"East"
-},
-
-{
-q:"Hum pani kis cheez se peete hain?",
-a:["Glass","Book","Shoes","Pillow"],
-c:"Glass"
-},
-
-{
-q:"Traffic signal me red light ka matlab kya hai?",
-a:["Go","Stop","Run","Sleep"],
-c:"Stop"
-},
-
-{
-q:"Ek din me kitne ghante hote hain?",
-a:["12","18","24","30"],
-c:"24"
-},
-
-{
-q:"Likhne ke liye kya use hota hai?",
-a:["Pen","Plate","Cup","Ball"],
-c:"Pen"
-},
-
-{
-q:"Barish me hum kya use karte hain?",
-a:["Umbrella","Spoon","Pillow","Book"],
-c:"Umbrella"
-},
-
-{
-q:"Phone charge karne ke liye kya chahiye?",
-a:["Charger","Plate","Shoes","Bottle"],
-c:"Charger"
-},
-
-{
-q:"Ghar me khana banane ki jagah ko kya kehte hain?",
-a:["Garage","Office","Garden","Kitchen"],
-c:"Kitchen"
-},
-
-{
-q:"Raat me aasman me kya dikhta hai?",
-a:["Moon","Sun","Rainbow","Traffic Light"],
-c:"Moon"
-},
-
-{
-q:"Daant saaf karne ke liye kya use karte hain?",
-a:["Toothbrush","Spoon","Glass","Pen"],
-c:"Toothbrush"
-},
-
-{
-q:"Padhne ke liye hum kya use karte hain?",
-a:["Book","Bottle","Umbrella","Shoes"],
-c:"Book"
-}
+  {
+    q:"Ek din me kitne hours hote hain?",
+    a:["12","18","24","30"],
+    c:"24"
+  }
 
 ];
 
 
 function openQuiz(){
 
-showPage("quizPage");
+  showPage("quizPage");
 
-quizNumber=0;
+  quizType =
+    Math.random() < .5
+      ? "math"
+      : "gk";
 
-loadQuiz();
+  loadQuiz();
 
 }
 
 
 function loadQuiz(){
 
-quizLocked=false;
+  quizBusy = false;
 
-quizNumber++;
+  if(quizType === "math"){
 
-const answersBox=
-document.getElementById("answers");
+    loadMath();
 
-answersBox.innerHTML="";
+  }else{
 
+    loadGK();
 
-/* MATH */
-
-if(quizNumber%2===1){
-
-document.getElementById(
-"quizType"
-).textContent=
-"MATH QUESTION";
-
-let a=
-Math.floor(Math.random()*20)+1;
-
-let b=
-Math.floor(Math.random()*20)+1;
-
-let result;
-
-if(Math.random()<.5){
-
-result=a+b;
-
-document.getElementById(
-"question"
-).textContent=
-a+" + "+b+" = ?";
-
-}else{
-
-if(a<b){
-
-let temp=a;
-a=b;
-b=temp;
-
-}
-
-result=a-b;
-
-document.getElementById(
-"question"
-).textContent=
-a+" - "+b+" = ?";
-
-}
-
-correctAnswer=String(result);
-
-let list=[
-result,
-result+2,
-result+4,
-result+5
-];
-
-list=[
-...new Set(list)
-];
-
-while(list.length<4){
-
-list.push(
-result+list.length+7
-);
-
-}
-
-list.sort(
-()=>Math.random()-.5
-);
-
-createAnswerButtons(list);
+  }
 
 }
 
 
-/* GK */
+function loadMath(){
 
-else{
+  document.getElementById("quizType")
+    .textContent =
+    "MATH";
 
-document.getElementById(
-"quizType"
-).textContent=
-"GENERAL KNOWLEDGE";
+  const a =
+    Math.floor(Math.random()*15)+2;
 
-const item=
-gkQuestions[
-Math.floor(
-Math.random()*gkQuestions.length
-)
-];
+  const b =
+    Math.floor(Math.random()*15)+2;
 
-correctAnswer=item.c;
+  const operations =
+    ["+","-"];
 
-document.getElementById(
-"question"
-).textContent=
-item.q;
+  const op =
+    operations[
+      Math.floor(Math.random()*operations.length)
+    ];
 
-let list=[...item.a];
+  let answer;
 
-list.sort(
-()=>Math.random()-.5
-);
+  if(op === "+"){
 
-createAnswerButtons(list);
+    answer = a+b;
+
+  }else{
+
+    answer = a-b;
+
+  }
+
+  correctAnswer =
+    String(answer);
+
+  document.getElementById("question")
+    .textContent =
+    a+" "+op+" "+b+" = ?";
+
+  createAnswers(answer);
+
+}
+
+
+function createAnswers(correct){
+
+  let answers = [
+    correct,
+    correct+2,
+    correct-2,
+    correct+5
+  ];
+
+  answers =
+    [...new Set(answers)];
+
+  while(answers.length < 4){
+
+    answers.push(
+      correct +
+      Math.floor(Math.random()*11)-5
+    );
+
+    answers =
+      [...new Set(answers)];
+
+  }
+
+  answers =
+    answers.slice(0,4);
+
+  answers.sort(
+    () => Math.random()-.5
+  );
+
+  document.getElementById("answers")
+    .innerHTML =
+    answers.map(x => `
+
+      <button
+      class="answer"
+      onclick="answerQuiz(this,'${String(x).replace(/'/g,"\\'")}')">
+
+        ${x}
+
+      </button>
+
+    `).join("");
 
 }
 
-}
 
+function loadGK(){
 
-function createAnswerButtons(list){
+  document.getElementById("quizType")
+    .textContent =
+    "GENERAL KNOWLEDGE";
 
-const box=
-document.getElementById("answers");
+  const item =
+    gkQuestions[
+      Math.floor(
+        Math.random()*gkQuestions.length
+      )
+    ];
 
-list.forEach(value=>{
+  correctAnswer =
+    item.c;
 
-const button=
-document.createElement("button");
+  document.getElementById("question")
+    .textContent =
+    item.q;
 
-button.className="answer";
+  let options =
+    [...item.a];
 
-button.type="button";
+  options.sort(
+    () => Math.random()-.5
+  );
 
-button.textContent=value;
+  document.getElementById("answers")
+    .innerHTML =
+    options.map(x => `
 
-button.addEventListener(
-"click",
-function(){
+      <button
+      class="answer"
+      onclick="answerQuiz(this,${JSON.stringify(x)})">
 
-answerQuiz(
-button,
-String(value)
-);
+        ${x}
 
-}
-);
+      </button>
 
-box.appendChild(button);
-
-});
+    `).join("");
 
 }
 
 
 function answerQuiz(button,answer){
 
-if(quizLocked)
-return;
+  if(quizBusy) return;
 
-if(
-String(answer)===
-String(correctAnswer)
-){
+  if(String(answer) === String(correctAnswer)){
 
-quizLocked=true;
+    quizBusy = true;
 
-document.querySelectorAll(
-"#answers .answer"
-).forEach(btn=>{
-btn.disabled=true;
-});
+    button.classList.add("correct");
 
-button.classList.add("correct");
+    addCoins(
+      1,
+      quizType === "math"
+        ? "Math Quiz"
+        : "GK Quiz",
+      "🧮"
+    );
 
-addCoins(
-1,
-"Quiz Reward",
-"🧮"
-);
+    showCorrectAnimation();
 
-showSuccess(
-"+1 Coin Added 🎉"
-);
+    setTimeout(() => {
 
-setTimeout(()=>{
+      hideCorrectAnimation();
 
-hideSuccess();
+      /* हर सही answer के बाद दूसरा type */
 
-loadQuiz();
+      quizType =
+        quizType === "math"
+          ? "gk"
+          : "math";
 
-},1400);
+      loadQuiz();
 
-}else{
+    },1200);
 
-button.classList.add("wrong");
+  }else{
 
-toast(
-"❌ Galat answer, phir try karo."
-);
+    button.classList.add("wrong");
 
-setTimeout(()=>{
+    toast("❌ Galat answer, phir try karo.");
 
-button.classList.remove("wrong");
+    setTimeout(() => {
 
-},550);
+      button.classList.remove("wrong");
 
-}
+    },500);
+
+  }
 
 }
 
 
-/* ================= SUCCESS ================= */
+/* =====================================================
+   SUCCESS + CELEBRATION
+===================================================== */
 
-function showSuccess(text){
+function showCorrectAnimation(){
 
-document.getElementById(
-"successText"
-).textContent=text;
+  document.getElementById(
+    "successOverlay"
+  ).classList.add("show");
 
-document.getElementById(
-"successOverlay"
-).classList.add("show");
+  document.getElementById(
+    "successReward"
+  ).textContent =
+    "+1 Coin 🎉";
 
-createConfetti();
+  createConfetti();
 
 }
 
 
-function hideSuccess(){
+function hideCorrectAnimation(){
 
-document.getElementById(
-"successOverlay"
-).classList.remove("show");
+  document.getElementById(
+    "successOverlay"
+  ).classList.remove("show");
 
 }
 
 
 function createConfetti(){
 
-const symbols=[
-"🎉","🎊","✨","⭐","🎈","🥳"
-];
+  for(let i=0;i<28;i++){
 
-for(let i=0;i<22;i++){
+    const piece =
+      document.createElement("div");
 
-const c=
-document.createElement("div");
+    piece.className =
+      "confetti";
 
-c.className="confetti";
+    piece.style.left =
+      Math.random()*100+"%";
 
-c.textContent=
-symbols[
-Math.floor(
-Math.random()*symbols.length
-)
-];
+    piece.style.animationDelay =
+      Math.random()*.5+"s";
 
-c.style.left=
-Math.random()*100+"%";
+    piece.style.background =
+      ["#ff4757",
+       "#2ed573",
+       "#ffa502",
+       "#3742fa",
+       "#a55eea"]
+      [Math.floor(Math.random()*5)];
 
-c.style.animationDelay=
-Math.random()*.4+"s";
+    document.body.appendChild(piece);
 
-document.body.appendChild(c);
+    setTimeout(() => {
+      piece.remove();
+    },1700);
 
-setTimeout(()=>{
-c.remove();
-},2200);
-
-}
+  }
 
 }
 
 
-/* ================= PAGE ================= */
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
 
-function showPage(pageId){
+function showPage(pageId,nav){
 
-document.querySelectorAll(
-".page"
-).forEach(page=>{
-page.classList.remove("active");
-});
+  document.querySelectorAll(".page")
+    .forEach(p =>
+      p.classList.remove("active")
+    );
 
-const page=
-document.getElementById(pageId);
+  const page =
+    document.getElementById(pageId);
 
-if(page)
-page.classList.add("active");
+  if(page){
 
-document.querySelectorAll(
-".navItem"
-).forEach(item=>{
-item.classList.remove("active");
-});
+    page.classList.add("active");
 
-const nav=
-document.querySelector(
-'.navItem[data-page="'+pageId+'"]'
-);
+  }
 
-if(nav)
-nav.classList.add("active");
+  if(nav){
 
-window.scrollTo(0,0);
+    document.querySelectorAll(".navItem")
+      .forEach(n =>
+        n.classList.remove("active")
+      );
+
+    nav.classList.add("active");
+
+  }
+
+  window.scrollTo(0,0);
 
 }
 
 
 function openProfile(){
 
-showPage("profilePage");
+  showPage("profilePage");
 
-document.getElementById(
-"profileNav"
-).classList.add("active");
+  document.querySelectorAll(".navItem")
+    .forEach(n =>
+      n.classList.remove("active")
+    );
+
+  document.querySelectorAll(".navItem")[3]
+    .classList.add("active");
 
 }
 
+
+/* =====================================================
+   COIN → WALLET
+===================================================== */
 
 function goWallet(){
 
-showPage("walletPage");
+  showPage("walletPage");
+
+  document.querySelectorAll(".navItem")
+    .forEach(n =>
+      n.classList.remove("active")
+    );
+
+  document.querySelectorAll(".navItem")[2]
+    .classList.add("active");
 
 }
 
 
-/* ================= WITHDRAWAL ================= */
+/* =====================================================
+   WITHDRAWAL
+===================================================== */
 
 function openWithdrawal(){
 
-openModal(
-"💸 Withdrawal",
-`
+  openModal(
+    "🏦 Withdrawal",
+    `
 
-<div class="withdrawBanner">
+    <div class="withdrawBanner">
 
-<div class="withdrawBannerIcon">
-↗
-</div>
+      <div class="bankLarge">
+        🏦
+      </div>
 
-<h3 style="margin-top:7px">
-Withdrawal
-</h3>
+      <h3>Withdrawal</h3>
 
-<p style="
-color:white;
-margin-top:3px;
-font-size:12px;
-">
-Available Coins:
-<b>${coins.toLocaleString()}</b>
-</p>
+      <p>
+        Available Coins:
+        <b>${coins.toLocaleString()}</b>
+      </p>
 
-</div>
+    </div>
 
 
-<div class="inputGroup">
+    <label class="formLabel">
+      UPI ID
+    </label>
 
-<label>
-UPI ID
-</label>
-
-<input
-id="upiInput"
-type="text"
-placeholder="example@upi"
-autocomplete="off"
->
-
-</div>
+    <input
+      id="upiInput"
+      class="formInput"
+      type="text"
+      placeholder="example@upi"
+      autocomplete="off"
+    >
 
 
-<div class="inputGroup">
+    <label class="formLabel">
+      Coins to Withdraw
+    </label>
 
-<label>
-Coins to Withdraw
-</label>
-
-<input
-id="withdrawCoins"
-type="number"
-min="5000"
-max="50000"
-placeholder="Minimum 5000"
->
-
-</div>
+    <input
+      id="withdrawCoins"
+      class="formInput"
+      type="number"
+      min="5000"
+      max="50000"
+      placeholder="Minimum 5000"
+    >
 
 
-<div id="withdrawError"
-class="withdrawError">
-</div>
+    <div class="infoNotice">
+      ⏱ 24 to 72 hours — your withdrawal will be completed.
+    </div>
 
 
-<div class="amountPreview">
+    <div class="withdrawRules">
 
-<small>
-Withdrawal Amount
-</small>
+      • Minimum withdrawal:
+      <b>5000 Coins</b><br>
 
-<strong id="withdrawAmount">
-₹0.00
-</strong>
+      • Maximum withdrawal per day:
+      <b>50000 Coins</b><br>
 
-<div style="
-font-size:10px;
-color:#777;
-margin-top:3px;
-">
-1000 Coins = ₹10
-</div>
+      • 1000 Coins = ₹10
 
-</div>
+    </div>
 
 
-<!-- REQUESTED MESSAGE -->
+    <button
+      class="actionBtn"
+      onclick="withdrawRequest()">
+      WITHDRAW
+    </button>
 
-<div class="withdrawTime">
-⏱ 24 to 72 hours — your withdrawal will be completed.
-</div>
-
-
-<div class="limitInfo">
-
-• Minimum withdrawal:
-<b>5000 Coins</b><br>
-
-• Maximum withdrawal per day:
-<b>50000 Coins</b><br>
-
-• Amount automatically calculate hoga.
-
-</div>
-
-
-<button id="withdrawSubmit"
-class="actionBtn">
-WITHDRAW
-</button>
-
-`
-);
-
-
-const coinInput=
-document.getElementById(
-"withdrawCoins"
-);
-
-coinInput.addEventListener(
-"input",
-calculateWithdraw
-);
-
-
-document.getElementById(
-"withdrawSubmit"
-).addEventListener(
-"click",
-withdrawRequest
-);
+    `
+  );
 
 }
 
 
-function calculateWithdraw(){
-
-const input=
-document.getElementById(
-"withdrawCoins"
-);
-
-const amount=
-document.getElementById(
-"withdrawAmount"
-);
-
-let value=
-Number(input.value||0);
-
-if(value<0)
-value=0;
-
-amount.textContent=
-"₹"+(value/100).toFixed(2);
-
-}
-
+/* =====================================================
+   DEMO WITHDRAWAL VALIDATION
+===================================================== */
 
 function withdrawRequest(){
 
-const upi=
-document.getElementById(
-"upiInput"
-).value.trim();
-
-const coinInput=
-Number(
-document.getElementById(
-"withdrawCoins"
-).value
-);
-
-const error=
-document.getElementById(
-"withdrawError"
-);
-
-
-function showError(message){
-
-error.style.display="block";
-
-error.textContent=message;
-
-}
-
-
-error.style.display="none";
-
-
-if(!upi){
-
-showError(
-"Please UPI ID enter karo."
-);
-
-return;
-
-}
-
-
-if(
-!upi.includes("@") ||
-upi.length<5
-){
-
-showError(
-"Please valid UPI ID enter karo."
-);
-
-return;
-
-}
-
-
-if(coinInput<5000){
-
-showError(
-"Minimum 5000 Coins required."
-);
-
-return;
-
-}
-
-
-if(coinInput>50000){
-
-showError(
-"Maximum 50000 Coins/day allowed hai."
-);
-
-return;
-
-}
-
-
-if(coinInput>coins){
-
-showError(
-"Available coins se zyada withdrawal nahi kar sakte."
-);
-
-return;
-
-}
-
-
-const amount=
-coinInput/100;
-
-closeModal();
-
-openModal(
-"✅ Withdrawal Request",
-`
-
-<div style="
-text-align:center;
-padding:6px 0;
-">
-
-<div style="
-width:65px;
-height:65px;
-border-radius:50%;
-background:#e0f8ea;
-color:#159957;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:37px;
-margin:auto;
-">
-✓
-</div>
-
-<h3 style="margin-top:12px">
-Request Ready
-</h3>
-
-<p style="margin-top:6px">
-Coins:
-<b>${coinInput.toLocaleString()}</b>
-</p>
-
-<p>
-Amount:
-<b style="color:#159957">
-₹${amount.toFixed(2)}
-</b>
-</p>
-
-<p style="
-font-size:11px;
-margin-top:7px;
-">
-UPI: ${upi}
-</p>
-
-<p style="
-font-size:11px;
-margin-top:10px;
-">
-⏱ 24 to 72 hours — your withdrawal will be completed.
-</p>
-
-<p style="
-font-size:10px;
-margin-top:9px;
-">
-Demo withdrawal interface. Actual UPI transfer
-ke liye secure backend/payment system required hai.
-</p>
-
-</div>
-
-`
-);
-
-}
-
-
-/* ================= REFER ================= */
-
-function openInvite(){
-
-openModal(
-"🎁 Refer & Earn",
-`
-
-<p style="text-align:center">
-Apne friends ko app share karo.
-</p>
-
-
-<div class="refReward">
-
-🎁 Referral Reward
-
-<strong>
-+100 Coins
-</strong>
-
-</div>
-
-
-<div class="ruleBox">
-
-<div class="rule">
-
-<div class="ruleIcon">1</div>
-
-<div>
-Apne dosto ko invite/share link bhejo.
-</div>
-
-</div>
-
-
-<div class="rule">
-
-<div class="ruleIcon">2</div>
-
-<div>
-Aapka dost app me signup kare.
-</div>
-
-</div>
-
-
-<div class="rule">
-
-<div class="ruleIcon">3</div>
-
-<div>
-Dost ka signup complete hone par
-aapko <b>100 Coins</b> milenge.
-</div>
-
-</div>
-
-
-<div class="rule">
-
-<div class="ruleIcon">✓</div>
-
-<div>
-Sirf share karne se reward nahi milega.
-Valid signup zaroori hai.
-</div>
-
-</div>
-
-</div>
-
-
-<button id="shareInviteBtn"
-class="actionBtn">
-
-🎁 SHARE INVITE
-
-</button>
-
-`
-);
-
-
-document.getElementById(
-"shareInviteBtn"
-).addEventListener(
-"click",
-shareInvite
-);
-
-}
-
-
-function shareInvite(){
-
-const text=
-"Play & Earn app join karo! Mere invite se signup karo.";
-
-if(navigator.share){
-
-navigator.share({
-
-title:"Play & Earn",
-
-text:text
-
-}).catch(()=>{});
-
-}else{
-
-toast(
-"Invite option ready hai."
-);
-
-}
-
-}
-
-
-/* ================= SETTINGS ================= */
-
-function openSettings(){
-
-openModal(
-"⚙️ Settings",
-`
-<p>
-Profile aur app settings yahan manage ki ja sakti hain.
-</p>
-`
-);
-
-}
-
-
-function logoutUser(){
-
-openModal(
-"🚪 Logout",
-`
-<p>
-Ye demo profile logout option hai.
-</p>
-`
-);
-
-}
-
-
-/* ================= MODAL ================= */
-
-function openModal(title,content){
-
-document.getElementById(
-"modalTitle"
-).textContent=title;
-
-document.getElementById(
-"modalContent"
-).innerHTML=content;
-
-document.getElementById(
-"overlay"
-).classList.add("show");
-
-}
-
-
-function closeModal(){
-
-clearInterval(adInterval);
-
-document.getElementById(
-"overlay"
-).classList.remove("show");
-
-}
-
-
-document.getElementById(
-"modalClose"
-).addEventListener(
-"click",
-closeModal
-);
-
-
-/* ================= BUTTONS ================= */
-
-document.querySelectorAll(
-"#dailyBtn,#dailyBtn2"
-).forEach(btn=>{
-
-btn.addEventListener(
-"click",
-claimDaily
-);
-
-});
-
-
-document.querySelectorAll(
-"#cardBtn,#cardBtn2"
-).forEach(btn=>{
-
-btn.addEventListener(
-"click",
-rewardCard
-);
-
-});
-
-
-document.querySelectorAll(
-".watchBtn"
-).forEach(btn=>{
-
-btn.addEventListener(
-"click",
-watchAd
-);
-
-});
-
-
-document.querySelectorAll(
-".quizBtn"
-).forEach(btn=>{
-
-btn.addEventListener(
-"click",
-openQuiz
-);
-
-});
-
-
-document.getElementById(
-"inviteBtn"
-).addEventListener(
-"click",
-openInvite
-);
-
-
-document.getElementById(
-"heroWithdraw"
-).addEventListener(
-"click",
-openWithdrawal
-);
-
-
-document.getElementById(
-"withdrawBox"
-).addEventListener(
-"click",
-openWithdrawal
-);
-
-
-document.getElementById(
-"profileTop"
-).addEventListener(
-"click",
-openProfile
-);
-
-
-document.getElementById(
-"profileNav"
-).addEventListener(
-"click",
-openProfile
-);
-
-
-document.getElementById(
-"walletMenu"
-).addEventListener(
-"click",
-goWallet
-);
-
-
-document.getElementById(
-"withdrawMenu"
-).addEventListener(
-"click",
-openWithdrawal
-);
-
-
-document.getElementById(
-"referMenu"
-).addEventListener(
-"click",
-openInvite
-);
-
-
-document.getElementById(
-"settingsMenu"
-).addEventListener(
-"click",
-openSettings
-);
-
-
-document.getElementById(
-"logoutMenu"
-).addEventListener(
-"click",
-logoutUser
-);
-
-
-document.getElementById(
-"historyBox"
-).addEventListener(
-"click",
-function(){
-
-showPage("walletPage");
-
-setTimeout(()=>{
-
-document.querySelector(
-".history"
-).scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
-
-},100);
-
-}
-);
-
-
-document.querySelectorAll(
-".navItem[data-page]"
-).forEach(item=>{
-
-item.addEventListener(
-"click",
-function(){
-
-showPage(
-this.dataset.page
-);
-
-}
-);
-
-});
-
-
-/* ================= START ================= */
-
-updateCoins();
-
-renderHistory();
-
-updateDailyButton();
-
-updateCardButton();
-
-</script>
-
-</body>
-</html>
+  const upi =
+    document.getElementById("upiInput")
+      ?.value.trim();
+
+  const amount =
+    Number(
+      document.getElementById("withdrawCoins")
+        ?.value
+    );
+
+  if(!upi){
+
+    toast("UPI ID
