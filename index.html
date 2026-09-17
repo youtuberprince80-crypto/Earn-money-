@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>Play & Earn</title>
+<title>Play & Earn Coin</title>
 
 <style>
 *{
@@ -37,7 +37,7 @@ body{
   overflow-x:hidden;
 }
 
-button,input{
+button,input,select{
   font-family:inherit;
 }
 
@@ -138,8 +138,6 @@ button{
   font-size:15px;
   font-weight:800;
 }
-
-/* COMPACT ONE-LINE HEADING */
 
 .hero h1{
   font-size:clamp(20px,6vw,28px);
@@ -380,16 +378,6 @@ button{
   margin:4px 0 10px;
 }
 
-.walletRate{
-  margin-top:10px;
-  padding:9px 11px;
-  border-radius:12px;
-  background:#081733;
-  color:#ffd84a;
-  font-size:13px;
-  border:1px solid #765b13;
-}
-
 .walletActions{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -450,7 +438,9 @@ button{
   border-bottom:1px solid #183252;
 }
 
-.historyItem:last-child{border-bottom:0}
+.historyItem:last-child{
+  border-bottom:0;
+}
 
 .historyIcon{
   width:34px;
@@ -578,7 +568,9 @@ button{
   cursor:pointer;
 }
 
-.menuItem:last-child{border:0}
+.menuItem:last-child{
+  border:0;
+}
 
 .menuIcon{
   width:35px;
@@ -621,8 +613,14 @@ button{
 }
 
 @keyframes pop{
-  from{transform:scale(.92);opacity:0}
-  to{transform:scale(1);opacity:1}
+  from{
+    transform:scale(.92);
+    opacity:0
+  }
+  to{
+    transform:scale(1);
+    opacity:1
+  }
 }
 
 .modal h2{
@@ -645,7 +643,7 @@ button{
   font-weight:800;
 }
 
-/* ================= WITHDRAWAL ================= */
+/* ================= REDEEM ================= */
 
 .withdrawBanner{
   background:linear-gradient(115deg,#0755b8,#1588ed,#d0a32b);
@@ -701,7 +699,9 @@ button{
   border-color:#5b35db;
 }
 
-/* 24-72 HOURS NOTICE ONLY */
+.redeemSelect{
+  appearance:auto;
+}
 
 .amountNotice{
   background:#fff7d8;
@@ -755,9 +755,17 @@ button{
 }
 
 @keyframes successPop{
-  0%{transform:scale(.3);opacity:0}
-  70%{transform:scale(1.15)}
-  100%{transform:scale(1);opacity:1}
+  0%{
+    transform:scale(.3);
+    opacity:0
+  }
+  70%{
+    transform:scale(1.15)
+  }
+  100%{
+    transform:scale(1);
+    opacity:1
+  }
 }
 
 .successLogo{
@@ -987,7 +995,7 @@ button{
 
 </div>
 
-<h1>PLAY &amp; EARN = MONEY</h1>
+<h1>PLAY &amp; EARN = COIN</h1>
 
 <div class="heroSub">
 Play Games • Complete Tasks • Collect Coins
@@ -1043,6 +1051,8 @@ INVITE
 
 <div class="gamesGrid">
 
+<!-- DAILY BONUS -->
+
 <div class="gameCard">
 
 <div class="gameIcon">🎁</div>
@@ -1059,20 +1069,24 @@ CLAIM
 
 </div>
 
+<!-- GK -->
+
 <div class="gameCard">
 
-<div class="gameIcon">📺</div>
+<div class="gameIcon">🌎</div>
 
-<h3>Watch Ads</h3>
+<h3>GK</h3>
 
-<p>20 second task complete karo.</p>
+<p>Easy useful GK questions solve karo.</p>
 
 <button class="actionBtn"
-onclick="watchAd()">
-WATCH
+onclick="openGK()">
+PLAY
 </button>
 
 </div>
+
+<!-- REWARD CARDS -->
 
 <div class="gameCard">
 
@@ -1090,16 +1104,18 @@ OPEN
 
 </div>
 
+<!-- MATH -->
+
 <div class="gameCard">
 
-<div class="gameIcon">🧠</div>
+<div class="gameIcon">🧮</div>
 
-<h3>Math &amp; GK</h3>
+<h3>Math</h3>
 
-<p>Easy questions solve karo.</p>
+<p>Easy math questions solve karo.</p>
 
 <button class="actionBtn"
-onclick="openQuiz()">
+onclick="openMath()">
 PLAY
 </button>
 
@@ -1123,37 +1139,65 @@ PLAY
 <div class="gamesGrid">
 
 <div class="gameCard">
+
 <div class="gameIcon">🎁</div>
+
 <h3>Daily Bonus</h3>
+
 <p>Daily fixed reward.</p>
+
 <button id="dailyBtn2"
 class="actionBtn"
-onclick="claimDaily()">CLAIM</button>
+onclick="claimDaily()">
+CLAIM
+</button>
+
 </div>
 
 <div class="gameCard">
-<div class="gameIcon">📺</div>
-<h3>Watch Ads</h3>
-<p>20 second task.</p>
+
+<div class="gameIcon">🌎</div>
+
+<h3>GK</h3>
+
+<p>Unlimited easy GK questions.</p>
+
 <button class="actionBtn"
-onclick="watchAd()">WATCH</button>
+onclick="openGK()">
+PLAY
+</button>
+
 </div>
 
 <div class="gameCard">
+
 <div class="gameIcon">🃏</div>
+
 <h3>Reward Cards</h3>
+
 <p>Daily card reward.</p>
+
 <button id="cardBtn2"
 class="actionBtn"
-onclick="rewardCard()">OPEN</button>
+onclick="rewardCard()">
+OPEN
+</button>
+
 </div>
 
 <div class="gameCard">
-<div class="gameIcon">🧠</div>
-<h3>Math &amp; GK</h3>
-<p>Easy questions.</p>
+
+<div class="gameIcon">🧮</div>
+
+<h3>Math</h3>
+
+<p>Unlimited easy math questions.</p>
+
 <button class="actionBtn"
-onclick="openQuiz()">PLAY</button>
+onclick="openMath()">
+PLAY
+</button>
+
 </div>
 
 </div>
@@ -1183,24 +1227,20 @@ Total Coins
 Available Coins
 </div>
 
-<div class="walletRate">
-💰 1000 Coins = ₹10
-</div>
-
 </div>
 
 <div class="walletActions">
 
 <div class="walletAction"
-onclick="openWithdrawal()">
+onclick="openRedeem()">
 
 <div class="withdrawIcon">
 🏦
 </div>
 
-<h3>Withdrawal</h3>
+<h3>Redeem</h3>
 
-<p>Minimum 5000 Coins</p>
+<p>Coins redeem request</p>
 
 </div>
 
@@ -1256,9 +1296,9 @@ Wallet
 Settings
 </div>
 
-<div class="menuItem" onclick="openWithdrawal()">
+<div class="menuItem" onclick="openRedeem()">
 <div class="menuIcon">🏦</div>
-Withdrawal
+Redeem
 </div>
 
 <div class="menuItem" onclick="openInvite()">
@@ -1284,14 +1324,14 @@ Coin History
 
 <div class="content">
 
-<h2 class="sectionTitle">
-🧠 Math &amp; GK
+<h2 id="quizPageTitle" class="sectionTitle">
+🧠 Quiz
 </h2>
 
 <div class="quizBox">
 
 <div id="quizType" class="quizType">
-MATH
+🧮 MATH
 </div>
 
 <div class="quizHint">
@@ -1404,11 +1444,15 @@ let coins=Number(localStorage.getItem("coins")||0);
 let historyData;
 
 try{
+
   historyData=JSON.parse(
     localStorage.getItem("coinHistory")||"[]"
   );
+
 }catch(e){
+
   historyData=[];
+
 }
 
 
@@ -1425,8 +1469,11 @@ function saveCoins(){
 
 function updateCoins(){
 
-  const top=document.getElementById("topCoins");
-  const wallet=document.getElementById("walletCoins");
+  const top=
+    document.getElementById("topCoins");
+
+  const wallet=
+    document.getElementById("walletCoins");
 
   if(top)
     top.textContent=coins.toLocaleString();
@@ -1442,13 +1489,16 @@ function addCoins(amount,title,icon){
   coins+=amount;
 
   historyData.unshift({
+
     title:title,
     amount:amount,
     icon:icon,
     time:new Date().toLocaleString()
+
   });
 
-  historyData=historyData.slice(0,50);
+  historyData=
+    historyData.slice(0,50);
 
   localStorage.setItem(
     "coinHistory",
@@ -1466,7 +1516,8 @@ function addCoins(amount,title,icon){
 
 function renderHistory(){
 
-  const list=document.getElementById("historyList");
+  const list=
+    document.getElementById("historyList");
 
   if(!list)return;
 
@@ -1476,28 +1527,37 @@ function renderHistory(){
       '<p style="color:#788ba9;padding:13px 0;font-size:12px">Abhi koi earning history nahi hai.</p>';
 
     return;
+
   }
 
-  list.innerHTML=historyData.map(item=>`
+  list.innerHTML=
+    historyData.map(item=>`
 
-    <div class="historyItem">
+      <div class="historyItem">
 
-      <div class="historyIcon">
-        ${item.icon}
+        <div class="historyIcon">
+          ${item.icon}
+        </div>
+
+        <div class="historyInfo">
+
+          <strong>
+            ${item.title}
+          </strong>
+
+          <small>
+            ${item.time}
+          </small>
+
+        </div>
+
+        <div class="plus">
+          +${item.amount}
+        </div>
+
       </div>
 
-      <div class="historyInfo">
-        <strong>${item.title}</strong>
-        <small>${item.time}</small>
-      </div>
-
-      <div class="plus">
-        +${item.amount}
-      </div>
-
-    </div>
-
-  `).join("");
+    `).join("");
 
 }
 
@@ -1551,9 +1611,12 @@ function claimDaily(){
     ===todayKey()
   ){
 
-    toast("Aaj ka bonus already claimed hai.");
+    toast(
+      "Aaj ka bonus already claimed hai."
+    );
 
     return;
+
   }
 
   localStorage.setItem(
@@ -1561,7 +1624,11 @@ function claimDaily(){
     todayKey()
   );
 
-  addCoins(50,"Daily Bonus","🎁");
+  addCoins(
+    50,
+    "Daily Bonus",
+    "🎁"
+  );
 
   updateDailyButton();
 
@@ -1570,197 +1637,176 @@ function claimDaily(){
 }
 
 
-/* ================= WATCH TASK ================= */
+/* ================= GK QUESTIONS ================= */
 
-let adTimer=null;
+const gkQuestions=[
 
-function watchAd(){
+  {
+    q:"Bharat ki rajdhani kya hai?",
+    a:["Mumbai","New Delhi","Kolkata","Chennai"],
+    c:"New Delhi"
+  },
 
-  openModal(
-    "📺 Watch Ads",
-    `
-      <p style="text-align:center">
-        Task complete karne ke liye
-        20 seconds wait karo.
-      </p>
+  {
+    q:"Suraj kis disha se ugta hai?",
+    a:["West","North","East","South"],
+    c:"East"
+  },
 
-      <div class="timerCircle" id="adTimer">
-        20
-      </div>
+  {
+    q:"Ek hafte me kitne din hote hain?",
+    a:["5","6","7","8"],
+    c:"7"
+  },
 
-      <button id="adCompleteBtn"
-        class="actionBtn"
-        disabled
-        style="opacity:.5">
-        WAIT 20 SECONDS
-      </button>
-    `
-  );
+  {
+    q:"Hum paani kis cheez me peete hain?",
+    a:["Glass","Book","Shoes","Bag"],
+    c:"Glass"
+  },
 
-  let seconds=20;
+  {
+    q:"Bharat ka rashtriya pakshi kaunsa hai?",
+    a:["Crow","Peacock","Parrot","Sparrow"],
+    c:"Peacock"
+  },
 
-  clearInterval(adTimer);
+  {
+    q:"Traffic signal me red light ka kya matlab hai?",
+    a:["Go","Stop","Run","Sleep"],
+    c:"Stop"
+  },
 
-  adTimer=setInterval(()=>{
+  {
+    q:"Baarish me aam taur par kya use karte hain?",
+    a:["Umbrella","Pillow","Plate","Book"],
+    c:"Umbrella"
+  },
 
-    seconds--;
+  {
+    q:"Hum school me kya karte hain?",
+    a:["Padhai","Driving","Cooking","Sleeping"],
+    c:"Padhai"
+  },
 
-    const timer=
-      document.getElementById("adTimer");
+  {
+    q:"Phone charge karne ke liye kya chahiye?",
+    a:["Charger","Spoon","Ball","Pen"],
+    c:"Charger"
+  },
 
-    const btn=
-      document.getElementById("adCompleteBtn");
+  {
+    q:"Fridge ka use kisliye hota hai?",
+    a:[
+      "Khana thanda rakhne",
+      "Kapde dhone",
+      "Padhne",
+      "Sone"
+    ],
+    c:"Khana thanda rakhne"
+  },
 
-    if(timer)
-      timer.textContent=seconds;
+  {
+    q:"Ek saal me kitne mahine hote hain?",
+    a:["10","11","12","13"],
+    c:"12"
+  },
 
-    if(seconds<=0){
+  {
+    q:"India ka national animal kaunsa hai?",
+    a:["Lion","Tiger","Elephant","Horse"],
+    c:"Tiger"
+  },
 
-      clearInterval(adTimer);
+  {
+    q:"Computer par typing kis cheez se karte hain?",
+    a:["Keyboard","Spoon","Bottle","Clock"],
+    c:"Keyboard"
+  },
 
-      if(btn){
+  {
+    q:"Ped-paudhe hume kya dete hain?",
+    a:["Oxygen","Plastic","Mobile","Shoes"],
+    c:"Oxygen"
+  },
 
-        btn.disabled=false;
-        btn.style.opacity="1";
-        btn.textContent="COLLECT +20 COINS";
-        btn.onclick=completeAd;
+  {
+    q:"Din ke baad kya aata hai?",
+    a:["Morning","Night","School","Summer"],
+    c:"Night"
+  },
 
-      }
+  {
+    q:"Bharat ki currency kya hai?",
+    a:["Dollar","Rupee","Euro","Pound"],
+    c:"Rupee"
+  },
 
-    }
+  {
+    q:"Aasmaan ka rang aam taur par kaisa dikhta hai?",
+    a:["Blue","Black","Green","Pink"],
+    c:"Blue"
+  },
 
-  },1000);
+  {
+    q:"Hum dekhne ke liye kis body part ka use karte hain?",
+    a:["Eyes","Ears","Hands","Legs"],
+    c:"Eyes"
+  },
 
-}
+  {
+    q:"Hum sunne ke liye kis body part ka use karte hain?",
+    a:["Eyes","Ears","Nose","Hands"],
+    c:"Ears"
+  },
 
+  {
+    q:"Doodh ka rang aam taur par kya hota hai?",
+    a:["White","Blue","Black","Green"],
+    c:"White"
+  },
 
-function completeAd(){
+  {
+    q:"Ped ka kaunsa hissa zameen ke andar hota hai?",
+    a:["Root","Leaf","Flower","Fruit"],
+    c:"Root"
+  },
 
-  clearInterval(adTimer);
+  {
+    q:"School me padhane wale ko kya kehte hain?",
+    a:["Teacher","Driver","Chef","Pilot"],
+    c:"Teacher"
+  },
 
-  closeModal();
+  {
+    q:"Machhli kahan rehti hai?",
+    a:["Water","Tree","Sky","Road"],
+    c:"Water"
+  },
 
-  addCoins(20,"Watch Ads","📺");
+  {
+    q:"Aag ko bujhane ke liye aam taur par kya use hota hai?",
+    a:["Water","Paper","Oil","Wood"],
+    c:"Water"
+  },
 
-  toast("+20 Coins added 🎉");
-
-}
-
-
-/* ================= REWARD CARD ================= */
-
-function updateCardButton(){
-
-  const claimed=
-    localStorage.getItem("cardClaimed")
-    ===todayKey();
-
-  document
-    .querySelectorAll("#cardBtn,#cardBtn2")
-    .forEach(btn=>{
-
-      if(claimed){
-
-        btn.textContent="OPENED ✓";
-        btn.classList.add("claimed");
-
-      }else{
-
-        btn.textContent="OPEN";
-        btn.classList.remove("claimed");
-
-      }
-
-    });
-
-}
-
-
-function rewardCard(){
-
-  if(
-    localStorage.getItem("cardClaimed")
-    ===todayKey()
-  ){
-
-    toast("Aaj ka Reward Card already open ho gaya.");
-
-    return;
+  {
+    q:"Bharat ka rashtriya phool kaunsa hai?",
+    a:["Rose","Lotus","Sunflower","Lily"],
+    c:"Lotus"
   }
 
-  openModal(
-    "🃏 Reward Card",
-    `
-      <p style="text-align:center">
-        Aaj ka reward card choose karo.
-      </p>
-
-      <div style="
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:8px;
-        margin-top:13px;
-      ">
-
-        <button class="answer"
-          onclick="claimCard(10)">
-          🎁<br>+10
-        </button>
-
-        <button class="answer"
-          onclick="claimCard(20)">
-          🎁<br>+20
-        </button>
-
-        <button class="answer"
-          onclick="claimCard(15)">
-          🎁<br>+15
-        </button>
-
-      </div>
-    `
-  );
-
-}
+];
 
 
-function claimCard(amount){
-
-  if(
-    localStorage.getItem("cardClaimed")
-    ===todayKey()
-  ){
-    toast("Card already claimed.");
-    return;
-  }
-
-  localStorage.setItem(
-    "cardClaimed",
-    todayKey()
-  );
-
-  addCoins(amount,"Reward Card","🃏");
-
-  updateCardButton();
-
-  closeModal();
-
-  toast("Reward Card collected 🎉");
-
-}
-
-
-/* ================= QUIZ ================= */
-
-let correctAnswer=null;
-let currentType="MATH";
+/* ================= MATH QUESTIONS ================= */
 
 const mathQuestions=[
 
   {
-    q:"12 + 8 = ?",
-    a:["18","20","22","24"],
-    c:"20"
+    q:"5 + 7 = ?",
+    a:["10","11","12","13"],
+    c:"12"
   },
 
   {
@@ -1770,7 +1816,7 @@ const mathQuestions=[
   },
 
   {
-    q:"5 × 4 = ?",
+    q:"4 × 5 = ?",
     a:["15","20","25","30"],
     c:"20"
   },
@@ -1803,67 +1849,144 @@ const mathQuestions=[
     q:"24 ÷ 6 = ?",
     a:["3","4","5","6"],
     c:"4"
+  },
+
+  {
+    q:"9 + 6 = ?",
+    a:["13","14","15","16"],
+    c:"15"
+  },
+
+  {
+    q:"18 - 8 = ?",
+    a:["8","9","10","12"],
+    c:"10"
+  },
+
+  {
+    q:"7 × 2 = ?",
+    a:["12","14","16","18"],
+    c:"14"
+  },
+
+  {
+    q:"36 ÷ 6 = ?",
+    a:["4","5","6","7"],
+    c:"6"
+  },
+
+  {
+    q:"11 + 9 = ?",
+    a:["18","19","20","21"],
+    c:"20"
+  },
+
+  {
+    q:"25 - 10 = ?",
+    a:["10","15","20","25"],
+    c:"15"
+  },
+
+  {
+    q:"3 × 8 = ?",
+    a:["21","24","27","30"],
+    c:"24"
+  },
+
+  {
+    q:"40 ÷ 5 = ?",
+    a:["6","7","8","9"],
+    c:"8"
+  },
+
+  {
+    q:"14 + 6 = ?",
+    a:["18","19","20","21"],
+    c:"20"
+  },
+
+  {
+    q:"50 - 20 = ?",
+    a:["20","25","30","35"],
+    c:"30"
+  },
+
+  {
+    q:"5 × 6 = ?",
+    a:["25","30","35","40"],
+    c:"30"
+  },
+
+  {
+    q:"45 ÷ 5 = ?",
+    a:["7","8","9","10"],
+    c:"9"
+  },
+
+  {
+    q:"8 + 12 = ?",
+    a:["18","19","20","21"],
+    c:"20"
+  },
+
+  {
+    q:"22 - 12 = ?",
+    a:["8","9","10","11"],
+    c:"10"
+  },
+
+  {
+    q:"9 × 2 = ?",
+    a:["16","18","20","22"],
+    c:"18"
+  },
+
+  {
+    q:"32 ÷ 4 = ?",
+    a:["6","7","8","9"],
+    c:"8"
+  },
+
+  {
+    q:"13 + 7 = ?",
+    a:["18","19","20","21"],
+    c:"20"
   }
 
 ];
 
 
-const gkQuestions=[
+/* ================= QUIZ ================= */
 
-  {
-    q:"Ghar me khana banane ki jagah ko kya kehte hain?",
-    a:["Garage","Office","Garden","Kitchen"],
-    c:"Kitchen"
-  },
+let correctAnswer=null;
 
-  {
-    q:"Hum paani kis cheez me peete hain?",
-    a:["Glass","Shoes","Book","Pillow"],
-    c:"Glass"
-  },
-
-  {
-    q:"Suraj kab dikhta hai?",
-    a:["Din me","Raat me","Sirf Monday","Kabhi nahi"],
-    c:"Din me"
-  },
-
-  {
-    q:"Hum school me kya karte hain?",
-    a:["Padhai","Sona","Cooking","Driving"],
-    c:"Padhai"
-  },
-
-  {
-    q:"Phone ko charge karne ke liye kya chahiye?",
-    a:["Charger","Spoon","Book","Ball"],
-    c:"Charger"
-  },
-
-  {
-    q:"Fridge ka use kisliye hota hai?",
-    a:["Khana thanda rakhne","Kapde dhone","Padhne","Sone"],
-    c:"Khana thanda rakhne"
-  },
-
-  {
-    q:"Traffic signal me green light ka kya matlab hai?",
-    a:["Go","Stop","Sleep","Eat"],
-    c:"Go"
-  },
-
-  {
-    q:"Hum baarish me kya use karte hain?",
-    a:["Umbrella","Pillow","Plate","Shoes box"],
-    c:"Umbrella"
-  }
-
-];
+let currentType="MATH";
 
 
-function openQuiz(){
+function openGK(){
+
+  currentType="GK";
 
   showPage("quizPage");
+
+  document.getElementById(
+    "quizPageTitle"
+  ).textContent="🌎 GK";
+
+  loadQuiz();
+
+}
+
+
+function openMath(){
+
+  currentType="MATH";
+
+  showPage("quizPage");
+
+  document.getElementById(
+    "quizPageTitle"
+  ).textContent="🧮 Math";
 
   loadQuiz();
 
@@ -1872,33 +1995,40 @@ function openQuiz(){
 
 function loadQuiz(){
 
-  currentType=
-    currentType==="MATH"
-    ?"GK"
-    :"MATH";
-
   const list=
     currentType==="MATH"
     ?mathQuestions
     :gkQuestions;
 
   const item=
-    list[Math.floor(Math.random()*list.length)];
+    list[
+      Math.floor(
+        Math.random()*list.length
+      )
+    ];
 
   correctAnswer=item.c;
 
-  document.getElementById("quizType").textContent=
+  document.getElementById(
+    "quizType"
+  ).textContent=
     currentType==="MATH"
     ?"🧮 MATH"
     :"🌎 GENERAL KNOWLEDGE";
 
-  document.getElementById("question").textContent=item.q;
+  document.getElementById(
+    "question"
+  ).textContent=item.q;
 
   let answers=[...item.a];
 
-  answers.sort(()=>Math.random()-.5);
+  answers.sort(
+    ()=>Math.random()-.5
+  );
 
-  document.getElementById("answers").innerHTML=
+  document.getElementById(
+    "answers"
+  ).innerHTML=
     answers.map(x=>`
 
       <button
@@ -1921,14 +2051,18 @@ function answerQuiz(answer){
       currentType==="MATH"
       ?"Math Quiz"
       :"GK Quiz",
-      "🧠"
+      currentType==="MATH"
+      ?"🧮"
+      :"🌎"
     );
 
     showSuccess();
 
   }else{
 
-    toast("❌ Galat answer, phir try karo.");
+    toast(
+      "❌ Galat answer, phir try karo."
+    );
 
   }
 
@@ -1940,7 +2074,9 @@ function answerQuiz(answer){
 function showSuccess(){
 
   const overlay=
-    document.getElementById("successOverlay");
+    document.getElementById(
+      "successOverlay"
+    );
 
   overlay.classList.add("show");
 
@@ -1955,7 +2091,10 @@ function closeSuccess(){
     .getElementById("successOverlay")
     .classList.remove("show");
 
-  setTimeout(loadQuiz,250);
+  setTimeout(
+    loadQuiz,
+    250
+  );
 
 }
 
@@ -1963,15 +2102,19 @@ function closeSuccess(){
 function createConfetti(){
 
   const overlay=
-    document.getElementById("successOverlay");
+    document.getElementById(
+      "successOverlay"
+    );
 
   for(let i=0;i<35;i++){
 
-    const c=document.createElement("div");
+    const c=
+      document.createElement("div");
 
     c.className="confetti";
 
-    c.style.left=Math.random()*100+"%";
+    c.style.left=
+      Math.random()*100+"%";
 
     c.style.background=
       [
@@ -1980,14 +2123,21 @@ function createConfetti(){
         "#ffc928",
         "#9b35ff",
         "#ff4b7b"
-      ][Math.floor(Math.random()*5)];
+      ][
+        Math.floor(
+          Math.random()*5
+        )
+      ];
 
     c.style.animationDelay=
       Math.random()*.5+"s";
 
     overlay.appendChild(c);
 
-    setTimeout(()=>c.remove(),2300);
+    setTimeout(
+      ()=>c.remove(),
+      2300
+    );
 
   }
 
@@ -2000,9 +2150,12 @@ function showPage(pageId,nav){
 
   document
     .querySelectorAll(".page")
-    .forEach(p=>p.classList.remove("active"));
+    .forEach(p=>
+      p.classList.remove("active")
+    );
 
-  const page=document.getElementById(pageId);
+  const page=
+    document.getElementById(pageId);
 
   if(page)
     page.classList.add("active");
@@ -2011,7 +2164,9 @@ function showPage(pageId,nav){
 
     document
       .querySelectorAll(".navItem")
-      .forEach(n=>n.classList.remove("active"));
+      .forEach(n=>
+        n.classList.remove("active")
+      );
 
     nav.classList.add("active");
 
@@ -2031,7 +2186,9 @@ function openProfile(){
 
   document
     .querySelectorAll(".navItem")
-    .forEach(n=>n.classList.remove("active"));
+    .forEach(n=>
+      n.classList.remove("active")
+    );
 
   document
     .querySelectorAll(".navItem")[3]
@@ -2046,7 +2203,9 @@ function goWallet(){
 
   document
     .querySelectorAll(".navItem")
-    .forEach(n=>n.classList.remove("active"));
+    .forEach(n=>
+      n.classList.remove("active")
+    );
 
   document
     .querySelectorAll(".navItem")[2]
@@ -2055,20 +2214,21 @@ function goWallet(){
 }
 
 
-/* ================= WITHDRAWAL ================= */
+/* ================= REDEEM ================= */
 
-function openWithdrawal(){
+function openRedeem(){
 
   openModal(
-    "🏦 Withdrawal",
+    "🏦 Redeem",
     `
+
       <div class="withdrawBanner">
 
         <div class="bankLogo">
           🏦
         </div>
 
-        <h3>Withdrawal</h3>
+        <h3>Redeem</h3>
 
         <p>
           Available Coins:
@@ -2090,101 +2250,146 @@ function openWithdrawal(){
       >
 
       <label class="formLabel">
-        Coins to Withdraw
+        Select Coins
       </label>
 
-      <input
-        id="withdrawCoins"
-        class="formInput"
-        type="number"
-        min="5000"
-        max="50000"
-        placeholder="Minimum 5000"
-      >
+      <select
+        id="redeemCoins"
+        class="formInput redeemSelect">
+
+        <option value="">
+          Select Redeem Coins
+        </option>
+
+        <option value="8000">
+          8000 Coins = ₹50
+        </option>
+
+        <option value="15000">
+          15000 Coins = ₹100
+        </option>
+
+        <option value="30000">
+          30000 Coins
+        </option>
+
+      </select>
 
       <div class="amountNotice">
-        ⏱ 24 to 72 hours — your withdrawal will be completed.
+        ⏱ 24 to 72 hours — redeem request demo me process hogi.
       </div>
 
       <div class="withdrawRules">
 
-        • Minimum withdrawal:
-        <b>5000 Coins</b><br>
+        • <b>15000 Coins = ₹100</b><br>
 
-        • Maximum withdrawal per day:
-        <b>50000 Coins</b><br>
+        • <b>Minimum Redeem: 8000 Coins = ₹50</b><br>
 
-        • 1000 Coins = ₹10<br>
+        • <b>Maximum Redeem: 30000 Coins / Day</b><br>
 
-        • Request demo mode me submit hogi.
+        • Redeem request demo/UI mode me hai.
 
       </div>
 
       <button
         class="withdrawBtn"
-        onclick="withdrawRequest()">
-        WITHDRAW
+        onclick="redeemRequest()">
+        REDEEM
       </button>
+
     `
   );
 
 }
 
 
-function withdrawRequest(){
+/* ================= REDEEM REQUEST ================= */
+
+function redeemRequest(){
 
   const upi=
-    document.getElementById("upiInput");
+    document.getElementById(
+      "upiInput"
+    );
 
   const amount=
-    document.getElementById("withdrawCoins");
+    document.getElementById(
+      "redeemCoins"
+    );
 
   if(!upi || !amount)
     return;
 
-  const upiValue=upi.value.trim();
+  const upiValue=
+    upi.value.trim();
 
-  const coinValue=Number(amount.value);
+  const coinValue=
+    Number(amount.value);
 
   if(!upiValue){
 
-    toast("UPI ID enter karo.");
+    toast(
+      "UPI ID enter karo."
+    );
 
     return;
+
   }
 
   if(!upiValue.includes("@")){
 
-    toast("Valid UPI ID enter karo.");
+    toast(
+      "Valid UPI ID enter karo."
+    );
 
     return;
+
   }
 
-  if(coinValue<5000){
+  if(!coinValue){
 
-    toast("Minimum 5000 Coins required.");
+    toast(
+      "Redeem coins select karo."
+    );
 
     return;
+
   }
 
-  if(coinValue>50000){
+  if(coinValue<8000){
 
-    toast("Maximum 50000 Coins per day hai.");
+    toast(
+      "Minimum 8000 Coins required."
+    );
 
     return;
+
+  }
+
+  if(coinValue>30000){
+
+    toast(
+      "Maximum 30000 Coins per day hai."
+    );
+
+    return;
+
   }
 
   if(coinValue>coins){
 
-    toast("Aapke paas itne coins nahi hain.");
+    toast(
+      "Aapke paas itne coins nahi hain."
+    );
 
     return;
+
   }
 
   closeModal();
 
   toast(
-    "Withdrawal request demo me submitted."
+    "Redeem request demo me submitted."
   );
 
 }
@@ -2197,6 +2402,7 @@ function openInvite(){
   openModal(
     "🎁 Refer & Earn",
     `
+
       <div style="
         background:linear-gradient(135deg,#351080,#147ee8);
         color:white;
@@ -2248,6 +2454,7 @@ function openInvite(){
         onclick="shareInvite()">
         INVITE FRIENDS
       </button>
+
     `
   );
 
@@ -2257,18 +2464,22 @@ function openInvite(){
 function shareInvite(){
 
   const text=
-    "Play & Earn app join karo! 🎮🎁";
+    "Play & Earn Coin app join karo! 🎮🎁";
 
   if(navigator.share){
 
     navigator.share({
-      title:"Play & Earn",
+
+      title:"Play & Earn Coin",
       text:text
+
     }).catch(()=>{});
 
   }else{
 
-    toast("Invite option ready hai.");
+    toast(
+      "Invite option ready hai."
+    );
 
   }
 
@@ -2282,6 +2493,7 @@ function openSettings(){
   openModal(
     "⚙️ Settings",
     `
+
       <p>
         Profile aur app settings yahan
         manage ki ja sakti hain.
@@ -2292,6 +2504,7 @@ function openSettings(){
         onclick="toast('Settings saved')">
         SAVE SETTINGS
       </button>
+
     `
   );
 
@@ -2307,7 +2520,9 @@ function showCoinHistory(){
   setTimeout(()=>{
 
     const history=
-      document.querySelector(".history");
+      document.querySelector(
+        ".history"
+      );
 
     if(history){
 
@@ -2325,7 +2540,10 @@ function showCoinHistory(){
 
 /* ================= MODAL ================= */
 
-function openModal(title,content){
+function openModal(
+  title,
+  content
+){
 
   document.getElementById(
     "modalTitle"
@@ -2348,8 +2566,6 @@ function closeModal(){
     .getElementById("overlay")
     .classList.remove("show");
 
-  clearInterval(adTimer);
-
 }
 
 
@@ -2360,13 +2576,17 @@ let toastTimer;
 function toast(message){
 
   const box=
-    document.getElementById("toast");
+    document.getElementById(
+      "toast"
+    );
 
   box.textContent=message;
 
   box.classList.add("show");
 
-  clearTimeout(toastTimer);
+  clearTimeout(
+    toastTimer
+  );
 
   toastTimer=setTimeout(()=>{
 
@@ -2384,8 +2604,6 @@ updateCoins();
 renderHistory();
 
 updateDailyButton();
-
-updateCardButton();
 
 </script>
 
